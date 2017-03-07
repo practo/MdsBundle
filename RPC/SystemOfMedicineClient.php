@@ -1,7 +1,7 @@
 <?php
 // GENERATED CODE -- DO NOT EDIT!
 
-namespace Practo\MdsBundle\RPC {
+namespace Practo\MDS\RPC {
 
   class SystemOfMedicineClient extends \Grpc\BaseStub {
 
@@ -15,67 +15,67 @@ namespace Practo\MdsBundle\RPC {
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\AddSystemOfMedicineRequest $argument input argument
+     * @param \Practo\MDS\RPC\AddSystemOfMedicineRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function add(\Practo\MdsBundle\RPC\AddSystemOfMedicineRequest $argument,
+    public function add(\Practo\MDS\RPC\AddSystemOfMedicineRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.SystemOfMedicine/add',
+      return $this->_simpleRequest('/Practo.MDS.RPC.SystemOfMedicine/add',
       $argument,
-      ['\Practo\MdsBundle\RPC\AddResponse', 'decode'],
+      ['\Practo\MDS\RPC\AddResponse', 'decode'],
       $metadata, $options);
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\FetchRequest $argument input argument
+     * @param \Practo\MDS\RPC\FetchRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function fetch(\Practo\MdsBundle\RPC\FetchRequest $argument,
+    public function fetch(\Practo\MDS\RPC\FetchRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.SystemOfMedicine/fetch',
+      return $this->_simpleRequest('/Practo.MDS.RPC.SystemOfMedicine/fetch',
       $argument,
-      ['\Practo\MdsBundle\RPC\SystemOfMedicineModel', 'decode'],
+      ['\Practo\MDS\RPC\SystemOfMedicineModel', 'decode'],
       $metadata, $options);
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\FetchAllRequest $argument input argument
+     * @param \Practo\MDS\RPC\FetchAllRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function fetchAll(\Practo\MdsBundle\RPC\FetchAllRequest $argument,
+    public function fetchAll(\Practo\MDS\RPC\FetchAllRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.SystemOfMedicine/fetchAll',
+      return $this->_simpleRequest('/Practo.MDS.RPC.SystemOfMedicine/fetchAll',
       $argument,
-      ['\Practo\MdsBundle\RPC\FetchAllSystemOfMedicineResponse', 'decode'],
+      ['\Practo\MDS\RPC\FetchAllSystemOfMedicineResponse', 'decode'],
       $metadata, $options);
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\FetchRequest $argument input argument
+     * @param \Practo\MDS\RPC\FetchRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function fetchExtended(\Practo\MdsBundle\RPC\FetchRequest $argument,
+    public function fetchExtended(\Practo\MDS\RPC\FetchRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.SystemOfMedicine/fetchExtended',
+      return $this->_simpleRequest('/Practo.MDS.RPC.SystemOfMedicine/fetchExtended',
       $argument,
-      ['\Practo\MdsBundle\RPC\SystemOfMedicineExtendedModel', 'decode'],
+      ['\Practo\MDS\RPC\SystemOfMedicineExtendedModel', 'decode'],
       $metadata, $options);
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\FetchAllRequest $argument input argument
+     * @param \Practo\MDS\RPC\FetchAllRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function fetchAllExtended(\Practo\MdsBundle\RPC\FetchAllRequest $argument,
+    public function fetchAllExtended(\Practo\MDS\RPC\FetchAllRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.SystemOfMedicine/fetchAllExtended',
+      return $this->_simpleRequest('/Practo.MDS.RPC.SystemOfMedicine/fetchAllExtended',
       $argument,
-      ['\Practo\MdsBundle\RPC\FetchAllSystemOfMedicineExtendedResponse', 'decode'],
+      ['\Practo\MDS\RPC\FetchAllSystemOfMedicineExtendedResponse', 'decode'],
       $metadata, $options);
     }
 

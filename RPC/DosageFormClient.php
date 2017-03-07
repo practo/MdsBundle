@@ -1,7 +1,7 @@
 <?php
 // GENERATED CODE -- DO NOT EDIT!
 
-namespace Practo\MdsBundle\RPC {
+namespace Practo\MDS\RPC {
 
   class DosageFormClient extends \Grpc\BaseStub {
 
@@ -15,67 +15,67 @@ namespace Practo\MdsBundle\RPC {
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\AddDosageFormRequest $argument input argument
+     * @param \Practo\MDS\RPC\AddDosageFormRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function add(\Practo\MdsBundle\RPC\AddDosageFormRequest $argument,
+    public function add(\Practo\MDS\RPC\AddDosageFormRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.DosageForm/add',
+      return $this->_simpleRequest('/Practo.MDS.RPC.DosageForm/add',
       $argument,
-      ['\Practo\MdsBundle\RPC\AddResponse', 'decode'],
+      ['\Practo\MDS\RPC\AddResponse', 'decode'],
       $metadata, $options);
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\FetchRequest $argument input argument
+     * @param \Practo\MDS\RPC\FetchRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function fetch(\Practo\MdsBundle\RPC\FetchRequest $argument,
+    public function fetch(\Practo\MDS\RPC\FetchRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.DosageForm/fetch',
+      return $this->_simpleRequest('/Practo.MDS.RPC.DosageForm/fetch',
       $argument,
-      ['\Practo\MdsBundle\RPC\DosageFormModel', 'decode'],
+      ['\Practo\MDS\RPC\DosageFormModel', 'decode'],
       $metadata, $options);
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\FetchAllRequest $argument input argument
+     * @param \Practo\MDS\RPC\FetchAllRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function fetchAll(\Practo\MdsBundle\RPC\FetchAllRequest $argument,
+    public function fetchAll(\Practo\MDS\RPC\FetchAllRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.DosageForm/fetchAll',
+      return $this->_simpleRequest('/Practo.MDS.RPC.DosageForm/fetchAll',
       $argument,
-      ['\Practo\MdsBundle\RPC\FetchAllDosageFormResponse', 'decode'],
+      ['\Practo\MDS\RPC\FetchAllDosageFormResponse', 'decode'],
       $metadata, $options);
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\FetchRequest $argument input argument
+     * @param \Practo\MDS\RPC\FetchRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function fetchExtended(\Practo\MdsBundle\RPC\FetchRequest $argument,
+    public function fetchExtended(\Practo\MDS\RPC\FetchRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.DosageForm/fetchExtended',
+      return $this->_simpleRequest('/Practo.MDS.RPC.DosageForm/fetchExtended',
       $argument,
-      ['\Practo\MdsBundle\RPC\DosageFormExtendedModel', 'decode'],
+      ['\Practo\MDS\RPC\DosageFormExtendedModel', 'decode'],
       $metadata, $options);
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\FetchAllRequest $argument input argument
+     * @param \Practo\MDS\RPC\FetchAllRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function fetchAllExtended(\Practo\MdsBundle\RPC\FetchAllRequest $argument,
+    public function fetchAllExtended(\Practo\MDS\RPC\FetchAllRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.DosageForm/fetchAllExtended',
+      return $this->_simpleRequest('/Practo.MDS.RPC.DosageForm/fetchAllExtended',
       $argument,
-      ['\Practo\MdsBundle\RPC\FetchAllDosageFormExtendedResponse', 'decode'],
+      ['\Practo\MDS\RPC\FetchAllDosageFormExtendedResponse', 'decode'],
       $metadata, $options);
     }
 

@@ -1,7 +1,7 @@
 <?php
 // GENERATED CODE -- DO NOT EDIT!
 
-namespace Practo\MdsBundle\RPC {
+namespace Practo\MDS\RPC {
 
   class RouteOfAdministrationClient extends \Grpc\BaseStub {
 
@@ -15,41 +15,41 @@ namespace Practo\MdsBundle\RPC {
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\AddRouteOfAdministrationRequest $argument input argument
+     * @param \Practo\MDS\RPC\AddRouteOfAdministrationRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function add(\Practo\MdsBundle\RPC\AddRouteOfAdministrationRequest $argument,
+    public function add(\Practo\MDS\RPC\AddRouteOfAdministrationRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.RouteOfAdministration/add',
+      return $this->_simpleRequest('/Practo.MDS.RPC.RouteOfAdministration/add',
       $argument,
-      ['\Practo\MdsBundle\RPC\AddResponse', 'decode'],
+      ['\Practo\MDS\RPC\AddResponse', 'decode'],
       $metadata, $options);
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\FetchRequest $argument input argument
+     * @param \Practo\MDS\RPC\FetchRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function fetch(\Practo\MdsBundle\RPC\FetchRequest $argument,
+    public function fetch(\Practo\MDS\RPC\FetchRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.RouteOfAdministration/fetch',
+      return $this->_simpleRequest('/Practo.MDS.RPC.RouteOfAdministration/fetch',
       $argument,
-      ['\Practo\MdsBundle\RPC\RouteOfAdministrationModel', 'decode'],
+      ['\Practo\MDS\RPC\RouteOfAdministrationModel', 'decode'],
       $metadata, $options);
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\FetchAllRequest $argument input argument
+     * @param \Practo\MDS\RPC\FetchAllRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function fetchAll(\Practo\MdsBundle\RPC\FetchAllRequest $argument,
+    public function fetchAll(\Practo\MDS\RPC\FetchAllRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.RouteOfAdministration/fetchAll',
+      return $this->_simpleRequest('/Practo.MDS.RPC.RouteOfAdministration/fetchAll',
       $argument,
-      ['\Practo\MdsBundle\RPC\FetchAllRouteOfAdministrationResponse', 'decode'],
+      ['\Practo\MDS\RPC\FetchAllRouteOfAdministrationResponse', 'decode'],
       $metadata, $options);
     }
 

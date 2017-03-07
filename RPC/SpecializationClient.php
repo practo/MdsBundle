@@ -1,7 +1,7 @@
 <?php
 // GENERATED CODE -- DO NOT EDIT!
 
-namespace Practo\MdsBundle\RPC {
+namespace Practo\MDS\RPC {
 
   class SpecializationClient extends \Grpc\BaseStub {
 
@@ -15,67 +15,67 @@ namespace Practo\MdsBundle\RPC {
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\AddSpecializationRequest $argument input argument
+     * @param \Practo\MDS\RPC\AddSpecializationRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function add(\Practo\MdsBundle\RPC\AddSpecializationRequest $argument,
+    public function add(\Practo\MDS\RPC\AddSpecializationRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.Specialization/add',
+      return $this->_simpleRequest('/Practo.MDS.RPC.Specialization/add',
       $argument,
-      ['\Practo\MdsBundle\RPC\AddResponse', 'decode'],
+      ['\Practo\MDS\RPC\AddResponse', 'decode'],
       $metadata, $options);
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\FetchRequest $argument input argument
+     * @param \Practo\MDS\RPC\FetchRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function fetch(\Practo\MdsBundle\RPC\FetchRequest $argument,
+    public function fetch(\Practo\MDS\RPC\FetchRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.Specialization/fetch',
+      return $this->_simpleRequest('/Practo.MDS.RPC.Specialization/fetch',
       $argument,
-      ['\Practo\MdsBundle\RPC\SpecializationModel', 'decode'],
+      ['\Practo\MDS\RPC\SpecializationModel', 'decode'],
       $metadata, $options);
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\FetchAllRequest $argument input argument
+     * @param \Practo\MDS\RPC\FetchAllRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function fetchAll(\Practo\MdsBundle\RPC\FetchAllRequest $argument,
+    public function fetchAll(\Practo\MDS\RPC\FetchAllRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.Specialization/fetchAll',
+      return $this->_simpleRequest('/Practo.MDS.RPC.Specialization/fetchAll',
       $argument,
-      ['\Practo\MdsBundle\RPC\FetchAllSpecializationResponse', 'decode'],
+      ['\Practo\MDS\RPC\FetchAllSpecializationResponse', 'decode'],
       $metadata, $options);
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\FetchRequest $argument input argument
+     * @param \Practo\MDS\RPC\FetchRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function fetchExtended(\Practo\MdsBundle\RPC\FetchRequest $argument,
+    public function fetchExtended(\Practo\MDS\RPC\FetchRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.Specialization/fetchExtended',
+      return $this->_simpleRequest('/Practo.MDS.RPC.Specialization/fetchExtended',
       $argument,
-      ['\Practo\MdsBundle\RPC\SpecializationExtendedModel', 'decode'],
+      ['\Practo\MDS\RPC\SpecializationExtendedModel', 'decode'],
       $metadata, $options);
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\FetchAllRequest $argument input argument
+     * @param \Practo\MDS\RPC\FetchAllRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function fetchAllExtended(\Practo\MdsBundle\RPC\FetchAllRequest $argument,
+    public function fetchAllExtended(\Practo\MDS\RPC\FetchAllRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.Specialization/fetchAllExtended',
+      return $this->_simpleRequest('/Practo.MDS.RPC.Specialization/fetchAllExtended',
       $argument,
-      ['\Practo\MdsBundle\RPC\FetchAllSpecializationExtendedResponse', 'decode'],
+      ['\Practo\MDS\RPC\FetchAllSpecializationExtendedResponse', 'decode'],
       $metadata, $options);
     }
 

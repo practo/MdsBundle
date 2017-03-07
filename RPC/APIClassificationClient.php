@@ -1,7 +1,7 @@
 <?php
 // GENERATED CODE -- DO NOT EDIT!
 
-namespace Practo\MdsBundle\RPC {
+namespace Practo\MDS\RPC {
 
   class APIClassificationClient extends \Grpc\BaseStub {
 
@@ -15,67 +15,67 @@ namespace Practo\MdsBundle\RPC {
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\AddAPIClassificationRequest $argument input argument
+     * @param \Practo\MDS\RPC\AddAPIClassificationRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function add(\Practo\MdsBundle\RPC\AddAPIClassificationRequest $argument,
+    public function add(\Practo\MDS\RPC\AddAPIClassificationRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.APIClassification/add',
+      return $this->_simpleRequest('/Practo.MDS.RPC.APIClassification/add',
       $argument,
-      ['\Practo\MdsBundle\RPC\AddResponse', 'decode'],
+      ['\Practo\MDS\RPC\AddResponse', 'decode'],
       $metadata, $options);
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\FetchRequest $argument input argument
+     * @param \Practo\MDS\RPC\FetchRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function fetch(\Practo\MdsBundle\RPC\FetchRequest $argument,
+    public function fetch(\Practo\MDS\RPC\FetchRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.APIClassification/fetch',
+      return $this->_simpleRequest('/Practo.MDS.RPC.APIClassification/fetch',
       $argument,
-      ['\Practo\MdsBundle\RPC\APIClassificationModel', 'decode'],
+      ['\Practo\MDS\RPC\APIClassificationModel', 'decode'],
       $metadata, $options);
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\FetchAllRequest $argument input argument
+     * @param \Practo\MDS\RPC\FetchAllRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function fetchAll(\Practo\MdsBundle\RPC\FetchAllRequest $argument,
+    public function fetchAll(\Practo\MDS\RPC\FetchAllRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.APIClassification/fetchAll',
+      return $this->_simpleRequest('/Practo.MDS.RPC.APIClassification/fetchAll',
       $argument,
-      ['\Practo\MdsBundle\RPC\FetchAllAPIClassificationResponse', 'decode'],
+      ['\Practo\MDS\RPC\FetchAllAPIClassificationResponse', 'decode'],
       $metadata, $options);
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\FetchRequest $argument input argument
+     * @param \Practo\MDS\RPC\FetchRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function fetchExtended(\Practo\MdsBundle\RPC\FetchRequest $argument,
+    public function fetchExtended(\Practo\MDS\RPC\FetchRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.APIClassification/fetchExtended',
+      return $this->_simpleRequest('/Practo.MDS.RPC.APIClassification/fetchExtended',
       $argument,
-      ['\Practo\MdsBundle\RPC\APIClassificationExtendedModel', 'decode'],
+      ['\Practo\MDS\RPC\APIClassificationExtendedModel', 'decode'],
       $metadata, $options);
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\FetchAllRequest $argument input argument
+     * @param \Practo\MDS\RPC\FetchAllRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function fetchAllExtended(\Practo\MdsBundle\RPC\FetchAllRequest $argument,
+    public function fetchAllExtended(\Practo\MDS\RPC\FetchAllRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.APIClassification/fetchAllExtended',
+      return $this->_simpleRequest('/Practo.MDS.RPC.APIClassification/fetchAllExtended',
       $argument,
-      ['\Practo\MdsBundle\RPC\FetchAllAPIClassificationExtendedResponse', 'decode'],
+      ['\Practo\MDS\RPC\FetchAllAPIClassificationExtendedResponse', 'decode'],
       $metadata, $options);
     }
 

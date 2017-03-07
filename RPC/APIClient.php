@@ -1,7 +1,7 @@
 <?php
 // GENERATED CODE -- DO NOT EDIT!
 
-namespace Practo\MdsBundle\RPC {
+namespace Practo\MDS\RPC {
 
   class APIClient extends \Grpc\BaseStub {
 
@@ -15,67 +15,67 @@ namespace Practo\MdsBundle\RPC {
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\AddAPIRequest $argument input argument
+     * @param \Practo\MDS\RPC\AddAPIRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function add(\Practo\MdsBundle\RPC\AddAPIRequest $argument,
+    public function add(\Practo\MDS\RPC\AddAPIRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.API/add',
+      return $this->_simpleRequest('/Practo.MDS.RPC.API/add',
       $argument,
-      ['\Practo\MdsBundle\RPC\AddResponse', 'decode'],
+      ['\Practo\MDS\RPC\AddResponse', 'decode'],
       $metadata, $options);
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\FetchRequest $argument input argument
+     * @param \Practo\MDS\RPC\FetchRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function fetch(\Practo\MdsBundle\RPC\FetchRequest $argument,
+    public function fetch(\Practo\MDS\RPC\FetchRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.API/fetch',
+      return $this->_simpleRequest('/Practo.MDS.RPC.API/fetch',
       $argument,
-      ['\Practo\MdsBundle\RPC\APIModel', 'decode'],
+      ['\Practo\MDS\RPC\APIModel', 'decode'],
       $metadata, $options);
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\FetchAllRequest $argument input argument
+     * @param \Practo\MDS\RPC\FetchAllRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function fetchAll(\Practo\MdsBundle\RPC\FetchAllRequest $argument,
+    public function fetchAll(\Practo\MDS\RPC\FetchAllRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.API/fetchAll',
+      return $this->_simpleRequest('/Practo.MDS.RPC.API/fetchAll',
       $argument,
-      ['\Practo\MdsBundle\RPC\FetchAllAPIResponse', 'decode'],
+      ['\Practo\MDS\RPC\FetchAllAPIResponse', 'decode'],
       $metadata, $options);
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\FetchRequest $argument input argument
+     * @param \Practo\MDS\RPC\FetchRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function fetchExtended(\Practo\MdsBundle\RPC\FetchRequest $argument,
+    public function fetchExtended(\Practo\MDS\RPC\FetchRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.API/fetchExtended',
+      return $this->_simpleRequest('/Practo.MDS.RPC.API/fetchExtended',
       $argument,
-      ['\Practo\MdsBundle\RPC\APIExtendedModel', 'decode'],
+      ['\Practo\MDS\RPC\APIExtendedModel', 'decode'],
       $metadata, $options);
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\FetchAllRequest $argument input argument
+     * @param \Practo\MDS\RPC\FetchAllRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function fetchAllExtended(\Practo\MdsBundle\RPC\FetchAllRequest $argument,
+    public function fetchAllExtended(\Practo\MDS\RPC\FetchAllRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.API/fetchAllExtended',
+      return $this->_simpleRequest('/Practo.MDS.RPC.API/fetchAllExtended',
       $argument,
-      ['\Practo\MdsBundle\RPC\FetchAllAPIExtendedResponse', 'decode'],
+      ['\Practo\MDS\RPC\FetchAllAPIExtendedResponse', 'decode'],
       $metadata, $options);
     }
 

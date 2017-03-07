@@ -1,7 +1,7 @@
 <?php
 // GENERATED CODE -- DO NOT EDIT!
 
-namespace Practo\MdsBundle\RPC {
+namespace Practo\MDS\RPC {
 
   class DrugProductClient extends \Grpc\BaseStub {
 
@@ -15,67 +15,67 @@ namespace Practo\MdsBundle\RPC {
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\AddDrugProductRequest $argument input argument
+     * @param \Practo\MDS\RPC\AddDrugProductRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function add(\Practo\MdsBundle\RPC\AddDrugProductRequest $argument,
+    public function add(\Practo\MDS\RPC\AddDrugProductRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.DrugProduct/add',
+      return $this->_simpleRequest('/Practo.MDS.RPC.DrugProduct/add',
       $argument,
-      ['\Practo\MdsBundle\RPC\AddResponse', 'decode'],
+      ['\Practo\MDS\RPC\AddResponse', 'decode'],
       $metadata, $options);
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\FetchRequest $argument input argument
+     * @param \Practo\MDS\RPC\FetchRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function fetch(\Practo\MdsBundle\RPC\FetchRequest $argument,
+    public function fetch(\Practo\MDS\RPC\FetchRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.DrugProduct/fetch',
+      return $this->_simpleRequest('/Practo.MDS.RPC.DrugProduct/fetch',
       $argument,
-      ['\Practo\MdsBundle\RPC\DrugProductModel', 'decode'],
+      ['\Practo\MDS\RPC\DrugProductModel', 'decode'],
       $metadata, $options);
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\FetchAllRequest $argument input argument
+     * @param \Practo\MDS\RPC\FetchAllRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function fetchAll(\Practo\MdsBundle\RPC\FetchAllRequest $argument,
+    public function fetchAll(\Practo\MDS\RPC\FetchAllRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.DrugProduct/fetchAll',
+      return $this->_simpleRequest('/Practo.MDS.RPC.DrugProduct/fetchAll',
       $argument,
-      ['\Practo\MdsBundle\RPC\FetchAllDrugProductResponse', 'decode'],
+      ['\Practo\MDS\RPC\FetchAllDrugProductResponse', 'decode'],
       $metadata, $options);
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\FetchRequest $argument input argument
+     * @param \Practo\MDS\RPC\FetchRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function fetchExtended(\Practo\MdsBundle\RPC\FetchRequest $argument,
+    public function fetchExtended(\Practo\MDS\RPC\FetchRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.DrugProduct/fetchExtended',
+      return $this->_simpleRequest('/Practo.MDS.RPC.DrugProduct/fetchExtended',
       $argument,
-      ['\Practo\MdsBundle\RPC\DrugProductExtendedModel', 'decode'],
+      ['\Practo\MDS\RPC\DrugProductExtendedModel', 'decode'],
       $metadata, $options);
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\FetchAllRequest $argument input argument
+     * @param \Practo\MDS\RPC\FetchAllRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function fetchAllExtended(\Practo\MdsBundle\RPC\FetchAllRequest $argument,
+    public function fetchAllExtended(\Practo\MDS\RPC\FetchAllRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.DrugProduct/fetchAllExtended',
+      return $this->_simpleRequest('/Practo.MDS.RPC.DrugProduct/fetchAllExtended',
       $argument,
-      ['\Practo\MdsBundle\RPC\FetchAllDrugProductExtendedResponse', 'decode'],
+      ['\Practo\MDS\RPC\FetchAllDrugProductExtendedResponse', 'decode'],
       $metadata, $options);
     }
 

@@ -1,7 +1,7 @@
 <?php
 // GENERATED CODE -- DO NOT EDIT!
 
-namespace Practo\MdsBundle\RPC {
+namespace Practo\MDS\RPC {
 
   class CountryClient extends \Grpc\BaseStub {
 
@@ -15,80 +15,80 @@ namespace Practo\MdsBundle\RPC {
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\AddCountryRequest $argument input argument
+     * @param \Practo\MDS\RPC\AddCountryRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function add(\Practo\MdsBundle\RPC\AddCountryRequest $argument,
+    public function add(\Practo\MDS\RPC\AddCountryRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.Country/add',
+      return $this->_simpleRequest('/Practo.MDS.RPC.Country/add',
       $argument,
-      ['\Practo\MdsBundle\RPC\AddResponse', 'decode'],
+      ['\Practo\MDS\RPC\AddResponse', 'decode'],
       $metadata, $options);
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\FetchRequest $argument input argument
+     * @param \Practo\MDS\RPC\FetchRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function fetch(\Practo\MdsBundle\RPC\FetchRequest $argument,
+    public function fetch(\Practo\MDS\RPC\FetchRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.Country/fetch',
+      return $this->_simpleRequest('/Practo.MDS.RPC.Country/fetch',
       $argument,
-      ['\Practo\MdsBundle\RPC\CountryModel', 'decode'],
+      ['\Practo\MDS\RPC\CountryModel', 'decode'],
       $metadata, $options);
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\FetchAllRequest $argument input argument
+     * @param \Practo\MDS\RPC\FetchAllRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function fetchAll(\Practo\MdsBundle\RPC\FetchAllRequest $argument,
+    public function fetchAll(\Practo\MDS\RPC\FetchAllRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.Country/fetchAll',
+      return $this->_simpleRequest('/Practo.MDS.RPC.Country/fetchAll',
       $argument,
-      ['\Practo\MdsBundle\RPC\FetchAllCountryResponse', 'decode'],
+      ['\Practo\MDS\RPC\FetchAllCountryResponse', 'decode'],
       $metadata, $options);
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\FetchRequest $argument input argument
+     * @param \Practo\MDS\RPC\FetchRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function fetchExtended(\Practo\MdsBundle\RPC\FetchRequest $argument,
+    public function fetchExtended(\Practo\MDS\RPC\FetchRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.Country/fetchExtended',
+      return $this->_simpleRequest('/Practo.MDS.RPC.Country/fetchExtended',
       $argument,
-      ['\Practo\MdsBundle\RPC\CountryExtendedModel', 'decode'],
+      ['\Practo\MDS\RPC\CountryExtendedModel', 'decode'],
       $metadata, $options);
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\FetchAllRequest $argument input argument
+     * @param \Practo\MDS\RPC\FetchAllRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function fetchAllExtended(\Practo\MdsBundle\RPC\FetchAllRequest $argument,
+    public function fetchAllExtended(\Practo\MDS\RPC\FetchAllRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.Country/fetchAllExtended',
+      return $this->_simpleRequest('/Practo.MDS.RPC.Country/fetchAllExtended',
       $argument,
-      ['\Practo\MdsBundle\RPC\FetchAllCountryExtendedResponse', 'decode'],
+      ['\Practo\MDS\RPC\FetchAllCountryExtendedResponse', 'decode'],
       $metadata, $options);
     }
 
     /**
-     * @param \Practo\MdsBundle\RPC\SearchRequest $argument input argument
+     * @param \Practo\MDS\RPC\SearchRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function search(\Practo\MdsBundle\RPC\SearchRequest $argument,
+    public function search(\Practo\MDS\RPC\SearchRequest $argument,
       $metadata = [], $options = []) {
-      return $this->_simpleRequest('/Practo.MdsBundle.RPC.Country/search',
+      return $this->_simpleRequest('/Practo.MDS.RPC.Country/search',
       $argument,
-      ['\Practo\MdsBundle\RPC\FetchAllCountryResponse', 'decode'],
+      ['\Practo\MDS\RPC\FetchAllCountryResponse', 'decode'],
       $metadata, $options);
     }
 
