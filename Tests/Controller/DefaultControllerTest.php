@@ -1,6 +1,6 @@
 <?php
 
-namespace Practo\MdsBundle\Tests\Controller;
+namespace Practo\MDS\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

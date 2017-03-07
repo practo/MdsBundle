@@ -1,6 +1,6 @@
 <?php
 
-namespace Practo\MdsBundle\DependencyInjection;
+namespace Practo\MDS\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;

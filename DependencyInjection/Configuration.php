@@ -1,6 +1,6 @@
 <?php
 
-namespace Practo\MdsBundle\DependencyInjection;
+namespace Practo\MDS\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;

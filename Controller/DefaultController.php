@@ -1,6 +1,6 @@
 <?php
 
-namespace Practo\MdsBundle\Controller;
+namespace Practo\MDS\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 

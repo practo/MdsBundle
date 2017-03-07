@@ -1,6 +1,6 @@
 <?php
 
-namespace Practo\MdsBundle;
+namespace Practo\MDS;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

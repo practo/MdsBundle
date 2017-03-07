@@ -17,8 +17,8 @@
     },
     "autoload": {
       "psr-4": {
-        "": "Practo\\MdsBundle\\"
+        "": "Practo\\MDS"
       }
     },
-    "target-dir": "Practo/MdsBundle"
+    "target-dir": "Practo/MDS"
 }
