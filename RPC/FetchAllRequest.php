@@ -21,6 +21,14 @@ class FetchAllRequest extends \Google\Protobuf\Internal\Message
      * <code>int32 limit = 2;</code>
      */
     private $limit = 0;
+    /**
+     * <code>bool allStates = 3;</code>
+     */
+    private $allStates = false;
+    /**
+     * <code>string source = 4;</code>
+     */
+    private $source = '';
 
     public function __construct() {
         \GPBMetadata\Proto\GeolocationStore::initOnce();
@@ -59,6 +67,40 @@ class FetchAllRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->limit = $var;
+    }
+
+    /**
+     * <code>bool allStates = 3;</code>
+     */
+    public function getAllStates()
+    {
+        return $this->allStates;
+    }
+
+    /**
+     * <code>bool allStates = 3;</code>
+     */
+    public function setAllStates($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->allStates = $var;
+    }
+
+    /**
+     * <code>string source = 4;</code>
+     */
+    public function getSource()
+    {
+        return $this->source;
+    }
+
+    /**
+     * <code>string source = 4;</code>
+     */
+    public function setSource($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->source = $var;
     }
 
 }

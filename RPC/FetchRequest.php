@@ -22,9 +22,9 @@ class FetchRequest extends \Google\Protobuf\Internal\Message
      */
     private $version = 0;
     /**
-     * <code>bool all = 3;</code>
+     * <code>bool original = 3;</code>
      */
-    private $all = false;
+    private $original = false;
 
     public function __construct() {
         \GPBMetadata\Proto\GeolocationStore::initOnce();
@@ -66,20 +66,20 @@ class FetchRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bool all = 3;</code>
+     * <code>bool original = 3;</code>
      */
-    public function getAll()
+    public function getOriginal()
     {
-        return $this->all;
+        return $this->original;
     }
 
     /**
-     * <code>bool all = 3;</code>
+     * <code>bool original = 3;</code>
      */
-    public function setAll($var)
+    public function setOriginal($var)
     {
         GPBUtil::checkBool($var);
-        $this->all = $var;
+        $this->original = $var;
     }
 
 }
