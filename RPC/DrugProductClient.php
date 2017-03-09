@@ -36,7 +36,7 @@ namespace Practo\MDS\RPC {
       $metadata = [], $options = []) {
       return $this->_simpleRequest('/Practo.MDS.RPC.DrugProduct/fetch',
       $argument,
-      ['\Practo\MDS\RPC\DrugProductModel', 'decode'],
+      ['\Practo\MDS\RPC\FetchDrugProductResponse', 'decode'],
       $metadata, $options);
     }
 
@@ -62,7 +62,7 @@ namespace Practo\MDS\RPC {
       $metadata = [], $options = []) {
       return $this->_simpleRequest('/Practo.MDS.RPC.DrugProduct/fetchExtended',
       $argument,
-      ['\Practo\MDS\RPC\DrugProductExtendedModel', 'decode'],
+      ['\Practo\MDS\RPC\FetchDrugProductExtendedResponse', 'decode'],
       $metadata, $options);
     }
 
@@ -76,6 +76,19 @@ namespace Practo\MDS\RPC {
       return $this->_simpleRequest('/Practo.MDS.RPC.DrugProduct/fetchAllExtended',
       $argument,
       ['\Practo\MDS\RPC\FetchAllDrugProductExtendedResponse', 'decode'],
+      $metadata, $options);
+    }
+
+    /**
+     * @param \Practo\MDS\RPC\DrugProductSearchRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function search(\Practo\MDS\RPC\DrugProductSearchRequest $argument,
+      $metadata = [], $options = []) {
+      return $this->_simpleRequest('/Practo.MDS.RPC.DrugProduct/search',
+      $argument,
+      ['\Practo\MDS\RPC\FetchAllDrugProductResponse', 'decode'],
       $metadata, $options);
     }
 

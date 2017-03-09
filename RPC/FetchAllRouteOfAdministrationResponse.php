@@ -13,10 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class FetchAllRouteOfAdministrationResponse extends \Google\Protobuf\Internal\Message
 {
-    /**
-     * <code>repeated .Practo.MDS.RPC.RouteOfAdministrationModel routeOfAdministration = 1;</code>
-     */
-    private $routeOfAdministration;
+    protected $fetch_all_route_of_administration_response_type;
 
     public function __construct() {
         \GPBMetadata\Proto\PharmaceuticalStore::initOnce();
@@ -24,20 +21,42 @@ class FetchAllRouteOfAdministrationResponse extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * <code>repeated .Practo.MDS.RPC.RouteOfAdministrationModel routeOfAdministration = 1;</code>
+     * <code>.Practo.MDS.RPC.RouteOfAdministrationModelList routeOfAdministration = 1;</code>
      */
     public function getRouteOfAdministration()
     {
-        return $this->routeOfAdministration;
+        return $this->readOneof(1);
     }
 
     /**
-     * <code>repeated .Practo.MDS.RPC.RouteOfAdministrationModel routeOfAdministration = 1;</code>
+     * <code>.Practo.MDS.RPC.RouteOfAdministrationModelList routeOfAdministration = 1;</code>
      */
     public function setRouteOfAdministration(&$var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Practo\MDS\RPC\RouteOfAdministrationModel::class);
-        $this->routeOfAdministration = $var;
+        GPBUtil::checkMessage($var, \Practo\MDS\RPC\RouteOfAdministrationModelList::class);
+        $this->writeOneof(1, $var);
+    }
+
+    /**
+     * <code>string message = 2;</code>
+     */
+    public function getMessage()
+    {
+        return $this->readOneof(2);
+    }
+
+    /**
+     * <code>string message = 2;</code>
+     */
+    public function setMessage($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(2, $var);
+    }
+
+    public function getFetchAllRouteOfAdministrationResponseType()
+    {
+        return $this->fetch_all_route_of_administration_response_type;
     }
 
 }

@@ -13,10 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class FetchAllDrugManufacturerResponse extends \Google\Protobuf\Internal\Message
 {
-    /**
-     * <code>repeated .Practo.MDS.RPC.DrugManufacturerModel drugManufacturer = 1;</code>
-     */
-    private $drugManufacturer;
+    protected $fetch_all_drug_manufacturer_response_type;
 
     public function __construct() {
         \GPBMetadata\Proto\PharmaceuticalStore::initOnce();
@@ -24,20 +21,42 @@ class FetchAllDrugManufacturerResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>repeated .Practo.MDS.RPC.DrugManufacturerModel drugManufacturer = 1;</code>
+     * <code>.Practo.MDS.RPC.DrugManufacturerModelList drugManufacturer = 1;</code>
      */
     public function getDrugManufacturer()
     {
-        return $this->drugManufacturer;
+        return $this->readOneof(1);
     }
 
     /**
-     * <code>repeated .Practo.MDS.RPC.DrugManufacturerModel drugManufacturer = 1;</code>
+     * <code>.Practo.MDS.RPC.DrugManufacturerModelList drugManufacturer = 1;</code>
      */
     public function setDrugManufacturer(&$var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Practo\MDS\RPC\DrugManufacturerModel::class);
-        $this->drugManufacturer = $var;
+        GPBUtil::checkMessage($var, \Practo\MDS\RPC\DrugManufacturerModelList::class);
+        $this->writeOneof(1, $var);
+    }
+
+    /**
+     * <code>string message = 2;</code>
+     */
+    public function getMessage()
+    {
+        return $this->readOneof(2);
+    }
+
+    /**
+     * <code>string message = 2;</code>
+     */
+    public function setMessage($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(2, $var);
+    }
+
+    public function getFetchAllDrugManufacturerResponseType()
+    {
+        return $this->fetch_all_drug_manufacturer_response_type;
     }
 
 }

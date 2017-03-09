@@ -36,7 +36,7 @@ namespace Practo\MDS\RPC {
       $metadata = [], $options = []) {
       return $this->_simpleRequest('/Practo.MDS.RPC.Country/fetch',
       $argument,
-      ['\Practo\MDS\RPC\CountryModel', 'decode'],
+      ['\Practo\MDS\RPC\FetchCountryResponse', 'decode'],
       $metadata, $options);
     }
 
@@ -62,7 +62,7 @@ namespace Practo\MDS\RPC {
       $metadata = [], $options = []) {
       return $this->_simpleRequest('/Practo.MDS.RPC.Country/fetchExtended',
       $argument,
-      ['\Practo\MDS\RPC\CountryExtendedModel', 'decode'],
+      ['\Practo\MDS\RPC\FetchCountryExtendedResponse', 'decode'],
       $metadata, $options);
     }
 
@@ -80,11 +80,11 @@ namespace Practo\MDS\RPC {
     }
 
     /**
-     * @param \Practo\MDS\RPC\SearchRequest $argument input argument
+     * @param \Practo\MDS\RPC\CountrySearchRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function search(\Practo\MDS\RPC\SearchRequest $argument,
+    public function search(\Practo\MDS\RPC\CountrySearchRequest $argument,
       $metadata = [], $options = []) {
       return $this->_simpleRequest('/Practo.MDS.RPC.Country/search',
       $argument,

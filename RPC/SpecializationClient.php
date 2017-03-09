@@ -36,7 +36,7 @@ namespace Practo\MDS\RPC {
       $metadata = [], $options = []) {
       return $this->_simpleRequest('/Practo.MDS.RPC.Specialization/fetch',
       $argument,
-      ['\Practo\MDS\RPC\SpecializationModel', 'decode'],
+      ['\Practo\MDS\RPC\FetchSpecializationResponse', 'decode'],
       $metadata, $options);
     }
 
@@ -62,7 +62,7 @@ namespace Practo\MDS\RPC {
       $metadata = [], $options = []) {
       return $this->_simpleRequest('/Practo.MDS.RPC.Specialization/fetchExtended',
       $argument,
-      ['\Practo\MDS\RPC\SpecializationExtendedModel', 'decode'],
+      ['\Practo\MDS\RPC\FetchSpecializationExtendedResponse', 'decode'],
       $metadata, $options);
     }
 
@@ -76,6 +76,19 @@ namespace Practo\MDS\RPC {
       return $this->_simpleRequest('/Practo.MDS.RPC.Specialization/fetchAllExtended',
       $argument,
       ['\Practo\MDS\RPC\FetchAllSpecializationExtendedResponse', 'decode'],
+      $metadata, $options);
+    }
+
+    /**
+     * @param \Practo\MDS\RPC\SpecializationSearchRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function search(\Practo\MDS\RPC\SpecializationSearchRequest $argument,
+      $metadata = [], $options = []) {
+      return $this->_simpleRequest('/Practo.MDS.RPC.Specialization/search',
+      $argument,
+      ['\Practo\MDS\RPC\FetchAllSpecializationResponse', 'decode'],
       $metadata, $options);
     }
 

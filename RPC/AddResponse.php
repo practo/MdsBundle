@@ -13,10 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class AddResponse extends \Google\Protobuf\Internal\Message
 {
-    /**
-     * <code>string id = 1;</code>
-     */
-    private $id = '';
+    protected $add_response_type;
 
     public function __construct() {
         \GPBMetadata\Proto\GeolocationStore::initOnce();
@@ -28,7 +25,7 @@ class AddResponse extends \Google\Protobuf\Internal\Message
      */
     public function getId()
     {
-        return $this->id;
+        return $this->readOneof(1);
     }
 
     /**
@@ -37,7 +34,29 @@ class AddResponse extends \Google\Protobuf\Internal\Message
     public function setId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->id = $var;
+        $this->writeOneof(1, $var);
+    }
+
+    /**
+     * <code>string message = 2;</code>
+     */
+    public function getMessage()
+    {
+        return $this->readOneof(2);
+    }
+
+    /**
+     * <code>string message = 2;</code>
+     */
+    public function setMessage($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(2, $var);
+    }
+
+    public function getAddResponseType()
+    {
+        return $this->add_response_type;
     }
 
 }

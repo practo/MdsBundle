@@ -36,7 +36,7 @@ namespace Practo\MDS\RPC {
       $metadata = [], $options = []) {
       return $this->_simpleRequest('/Practo.MDS.RPC.API/fetch',
       $argument,
-      ['\Practo\MDS\RPC\APIModel', 'decode'],
+      ['\Practo\MDS\RPC\FetchAPIResponse', 'decode'],
       $metadata, $options);
     }
 
@@ -62,7 +62,7 @@ namespace Practo\MDS\RPC {
       $metadata = [], $options = []) {
       return $this->_simpleRequest('/Practo.MDS.RPC.API/fetchExtended',
       $argument,
-      ['\Practo\MDS\RPC\APIExtendedModel', 'decode'],
+      ['\Practo\MDS\RPC\FetchAPIExtendedResponse', 'decode'],
       $metadata, $options);
     }
 
@@ -76,6 +76,19 @@ namespace Practo\MDS\RPC {
       return $this->_simpleRequest('/Practo.MDS.RPC.API/fetchAllExtended',
       $argument,
       ['\Practo\MDS\RPC\FetchAllAPIExtendedResponse', 'decode'],
+      $metadata, $options);
+    }
+
+    /**
+     * @param \Practo\MDS\RPC\APISearchRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function search(\Practo\MDS\RPC\APISearchRequest $argument,
+      $metadata = [], $options = []) {
+      return $this->_simpleRequest('/Practo.MDS.RPC.API/search',
+      $argument,
+      ['\Practo\MDS\RPC\FetchAllAPIResponse', 'decode'],
       $metadata, $options);
     }
 

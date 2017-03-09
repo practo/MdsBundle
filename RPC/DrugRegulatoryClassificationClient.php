@@ -36,7 +36,7 @@ namespace Practo\MDS\RPC {
       $metadata = [], $options = []) {
       return $this->_simpleRequest('/Practo.MDS.RPC.DrugRegulatoryClassification/fetch',
       $argument,
-      ['\Practo\MDS\RPC\DrugRegulatoryClassificationModel', 'decode'],
+      ['\Practo\MDS\RPC\FetchDrugRegulatoryClassificationResponse', 'decode'],
       $metadata, $options);
     }
 
@@ -62,7 +62,7 @@ namespace Practo\MDS\RPC {
       $metadata = [], $options = []) {
       return $this->_simpleRequest('/Practo.MDS.RPC.DrugRegulatoryClassification/fetchExtended',
       $argument,
-      ['\Practo\MDS\RPC\DrugRegulatoryClassificationExtendedModel', 'decode'],
+      ['\Practo\MDS\RPC\FetchDrugRegulatoryClassificationExtendedResponse', 'decode'],
       $metadata, $options);
     }
 
@@ -76,6 +76,19 @@ namespace Practo\MDS\RPC {
       return $this->_simpleRequest('/Practo.MDS.RPC.DrugRegulatoryClassification/fetchAllExtended',
       $argument,
       ['\Practo\MDS\RPC\FetchAllDrugRegulatoryClassificationExtendedResponse', 'decode'],
+      $metadata, $options);
+    }
+
+    /**
+     * @param \Practo\MDS\RPC\DrugRegulatoryClassificationSearchRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function search(\Practo\MDS\RPC\DrugRegulatoryClassificationSearchRequest $argument,
+      $metadata = [], $options = []) {
+      return $this->_simpleRequest('/Practo.MDS.RPC.DrugRegulatoryClassification/search',
+      $argument,
+      ['\Practo\MDS\RPC\FetchAllDrugRegulatoryClassificationResponse', 'decode'],
       $metadata, $options);
     }
 

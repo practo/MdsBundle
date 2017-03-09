@@ -36,7 +36,7 @@ namespace Practo\MDS\RPC {
       $metadata = [], $options = []) {
       return $this->_simpleRequest('/Practo.MDS.RPC.RouteOfAdministration/fetch',
       $argument,
-      ['\Practo\MDS\RPC\RouteOfAdministrationModel', 'decode'],
+      ['\Practo\MDS\RPC\FetchRouteOfAdministrationResponse', 'decode'],
       $metadata, $options);
     }
 
@@ -48,6 +48,19 @@ namespace Practo\MDS\RPC {
     public function fetchAll(\Practo\MDS\RPC\FetchAllRequest $argument,
       $metadata = [], $options = []) {
       return $this->_simpleRequest('/Practo.MDS.RPC.RouteOfAdministration/fetchAll',
+      $argument,
+      ['\Practo\MDS\RPC\FetchAllRouteOfAdministrationResponse', 'decode'],
+      $metadata, $options);
+    }
+
+    /**
+     * @param \Practo\MDS\RPC\RouteOfAdministrationSearchRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function search(\Practo\MDS\RPC\RouteOfAdministrationSearchRequest $argument,
+      $metadata = [], $options = []) {
+      return $this->_simpleRequest('/Practo.MDS.RPC.RouteOfAdministration/search',
       $argument,
       ['\Practo\MDS\RPC\FetchAllRouteOfAdministrationResponse', 'decode'],
       $metadata, $options);

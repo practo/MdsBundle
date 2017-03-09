@@ -36,7 +36,7 @@ namespace Practo\MDS\RPC {
       $metadata = [], $options = []) {
       return $this->_simpleRequest('/Practo.MDS.RPC.DosageForm/fetch',
       $argument,
-      ['\Practo\MDS\RPC\DosageFormModel', 'decode'],
+      ['\Practo\MDS\RPC\FetchDosageFormRepsonse', 'decode'],
       $metadata, $options);
     }
 
@@ -62,7 +62,7 @@ namespace Practo\MDS\RPC {
       $metadata = [], $options = []) {
       return $this->_simpleRequest('/Practo.MDS.RPC.DosageForm/fetchExtended',
       $argument,
-      ['\Practo\MDS\RPC\DosageFormExtendedModel', 'decode'],
+      ['\Practo\MDS\RPC\FetchDosageFormExtendedRepsonse', 'decode'],
       $metadata, $options);
     }
 
@@ -76,6 +76,19 @@ namespace Practo\MDS\RPC {
       return $this->_simpleRequest('/Practo.MDS.RPC.DosageForm/fetchAllExtended',
       $argument,
       ['\Practo\MDS\RPC\FetchAllDosageFormExtendedResponse', 'decode'],
+      $metadata, $options);
+    }
+
+    /**
+     * @param \Practo\MDS\RPC\DosageFormSearchRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function search(\Practo\MDS\RPC\DosageFormSearchRequest $argument,
+      $metadata = [], $options = []) {
+      return $this->_simpleRequest('/Practo.MDS.RPC.DosageForm/search',
+      $argument,
+      ['\Practo\MDS\RPC\FetchAllDosageFormResponse', 'decode'],
       $metadata, $options);
     }
 

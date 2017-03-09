@@ -13,10 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class FetchAllDosageFormExtendedResponse extends \Google\Protobuf\Internal\Message
 {
-    /**
-     * <code>repeated .Practo.MDS.RPC.DosageFormExtendedModel dosageForm = 1;</code>
-     */
-    private $dosageForm;
+    protected $fetch_all_dosage_form_extended_response_type;
 
     public function __construct() {
         \GPBMetadata\Proto\PharmaceuticalStore::initOnce();
@@ -24,20 +21,42 @@ class FetchAllDosageFormExtendedResponse extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * <code>repeated .Practo.MDS.RPC.DosageFormExtendedModel dosageForm = 1;</code>
+     * <code>.Practo.MDS.RPC.DosageFormExtendedModelList dosageForm = 1;</code>
      */
     public function getDosageForm()
     {
-        return $this->dosageForm;
+        return $this->readOneof(1);
     }
 
     /**
-     * <code>repeated .Practo.MDS.RPC.DosageFormExtendedModel dosageForm = 1;</code>
+     * <code>.Practo.MDS.RPC.DosageFormExtendedModelList dosageForm = 1;</code>
      */
     public function setDosageForm(&$var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Practo\MDS\RPC\DosageFormExtendedModel::class);
-        $this->dosageForm = $var;
+        GPBUtil::checkMessage($var, \Practo\MDS\RPC\DosageFormExtendedModelList::class);
+        $this->writeOneof(1, $var);
+    }
+
+    /**
+     * <code>string message = 2;</code>
+     */
+    public function getMessage()
+    {
+        return $this->readOneof(2);
+    }
+
+    /**
+     * <code>string message = 2;</code>
+     */
+    public function setMessage($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(2, $var);
+    }
+
+    public function getFetchAllDosageFormExtendedResponseType()
+    {
+        return $this->fetch_all_dosage_form_extended_response_type;
     }
 
 }

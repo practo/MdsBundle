@@ -13,10 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class FetchAllDrugCombinationResponse extends \Google\Protobuf\Internal\Message
 {
-    /**
-     * <code>repeated .Practo.MDS.RPC.DrugCombinationModel drugCombination = 1;</code>
-     */
-    private $drugCombination;
+    protected $fetch_all_drug_combination_response_type;
 
     public function __construct() {
         \GPBMetadata\Proto\PharmaceuticalStore::initOnce();
@@ -24,20 +21,42 @@ class FetchAllDrugCombinationResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>repeated .Practo.MDS.RPC.DrugCombinationModel drugCombination = 1;</code>
+     * <code>.Practo.MDS.RPC.DrugCombinationModelList drugCombination = 1;</code>
      */
     public function getDrugCombination()
     {
-        return $this->drugCombination;
+        return $this->readOneof(1);
     }
 
     /**
-     * <code>repeated .Practo.MDS.RPC.DrugCombinationModel drugCombination = 1;</code>
+     * <code>.Practo.MDS.RPC.DrugCombinationModelList drugCombination = 1;</code>
      */
     public function setDrugCombination(&$var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Practo\MDS\RPC\DrugCombinationModel::class);
-        $this->drugCombination = $var;
+        GPBUtil::checkMessage($var, \Practo\MDS\RPC\DrugCombinationModelList::class);
+        $this->writeOneof(1, $var);
+    }
+
+    /**
+     * <code>string message = 2;</code>
+     */
+    public function getMessage()
+    {
+        return $this->readOneof(2);
+    }
+
+    /**
+     * <code>string message = 2;</code>
+     */
+    public function setMessage($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(2, $var);
+    }
+
+    public function getFetchAllDrugCombinationResponseType()
+    {
+        return $this->fetch_all_drug_combination_response_type;
     }
 
 }

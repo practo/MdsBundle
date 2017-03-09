@@ -13,10 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class FetchAllSpecializationExtendedResponse extends \Google\Protobuf\Internal\Message
 {
-    /**
-     * <code>repeated .Practo.MDS.RPC.SpecializationExtendedModel specialization = 1;</code>
-     */
-    private $specialization;
+    protected $fetch_all_specialization_extended_response_type;
 
     public function __construct() {
         \GPBMetadata\Proto\TaxonomyMedicalStore::initOnce();
@@ -24,20 +21,42 @@ class FetchAllSpecializationExtendedResponse extends \Google\Protobuf\Internal\M
     }
 
     /**
-     * <code>repeated .Practo.MDS.RPC.SpecializationExtendedModel specialization = 1;</code>
+     * <code>.Practo.MDS.RPC.SpecializationExtendedModelList specialization = 1;</code>
      */
     public function getSpecialization()
     {
-        return $this->specialization;
+        return $this->readOneof(1);
     }
 
     /**
-     * <code>repeated .Practo.MDS.RPC.SpecializationExtendedModel specialization = 1;</code>
+     * <code>.Practo.MDS.RPC.SpecializationExtendedModelList specialization = 1;</code>
      */
     public function setSpecialization(&$var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Practo\MDS\RPC\SpecializationExtendedModel::class);
-        $this->specialization = $var;
+        GPBUtil::checkMessage($var, \Practo\MDS\RPC\SpecializationExtendedModelList::class);
+        $this->writeOneof(1, $var);
+    }
+
+    /**
+     * <code>string message = 2;</code>
+     */
+    public function getMessage()
+    {
+        return $this->readOneof(2);
+    }
+
+    /**
+     * <code>string message = 2;</code>
+     */
+    public function setMessage($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(2, $var);
+    }
+
+    public function getFetchAllSpecializationExtendedResponseType()
+    {
+        return $this->fetch_all_specialization_extended_response_type;
     }
 
 }

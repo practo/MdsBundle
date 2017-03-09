@@ -13,10 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class FetchAllSystemOfMedicineExtendedResponse extends \Google\Protobuf\Internal\Message
 {
-    /**
-     * <code>repeated .Practo.MDS.RPC.SystemOfMedicineExtendedModel systemOfMedicine = 1;</code>
-     */
-    private $systemOfMedicine;
+    protected $fetch_all_system_of_medicine_extended_response_type;
 
     public function __construct() {
         \GPBMetadata\Proto\TaxonomyMedicalStore::initOnce();
@@ -24,20 +21,42 @@ class FetchAllSystemOfMedicineExtendedResponse extends \Google\Protobuf\Internal
     }
 
     /**
-     * <code>repeated .Practo.MDS.RPC.SystemOfMedicineExtendedModel systemOfMedicine = 1;</code>
+     * <code>.Practo.MDS.RPC.SystemOfMedicineExtendedModelList systemOfMedicine = 1;</code>
      */
     public function getSystemOfMedicine()
     {
-        return $this->systemOfMedicine;
+        return $this->readOneof(1);
     }
 
     /**
-     * <code>repeated .Practo.MDS.RPC.SystemOfMedicineExtendedModel systemOfMedicine = 1;</code>
+     * <code>.Practo.MDS.RPC.SystemOfMedicineExtendedModelList systemOfMedicine = 1;</code>
      */
     public function setSystemOfMedicine(&$var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Practo\MDS\RPC\SystemOfMedicineExtendedModel::class);
-        $this->systemOfMedicine = $var;
+        GPBUtil::checkMessage($var, \Practo\MDS\RPC\SystemOfMedicineExtendedModelList::class);
+        $this->writeOneof(1, $var);
+    }
+
+    /**
+     * <code>string message = 2;</code>
+     */
+    public function getMessage()
+    {
+        return $this->readOneof(2);
+    }
+
+    /**
+     * <code>string message = 2;</code>
+     */
+    public function setMessage($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(2, $var);
+    }
+
+    public function getFetchAllSystemOfMedicineExtendedResponseType()
+    {
+        return $this->fetch_all_system_of_medicine_extended_response_type;
     }
 
 }

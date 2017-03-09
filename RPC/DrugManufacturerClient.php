@@ -36,7 +36,7 @@ namespace Practo\MDS\RPC {
       $metadata = [], $options = []) {
       return $this->_simpleRequest('/Practo.MDS.RPC.DrugManufacturer/fetch',
       $argument,
-      ['\Practo\MDS\RPC\DrugManufacturerModel', 'decode'],
+      ['\Practo\MDS\RPC\FetchDrugManufacturerResponse', 'decode'],
       $metadata, $options);
     }
 
@@ -62,7 +62,7 @@ namespace Practo\MDS\RPC {
       $metadata = [], $options = []) {
       return $this->_simpleRequest('/Practo.MDS.RPC.DrugManufacturer/fetchExtended',
       $argument,
-      ['\Practo\MDS\RPC\DrugManufacturerExtendedModel', 'decode'],
+      ['\Practo\MDS\RPC\FetchDrugManufacturerExtendedResponse', 'decode'],
       $metadata, $options);
     }
 
@@ -76,6 +76,19 @@ namespace Practo\MDS\RPC {
       return $this->_simpleRequest('/Practo.MDS.RPC.DrugManufacturer/fetchAllExtended',
       $argument,
       ['\Practo\MDS\RPC\FetchAllDrugManufacturerExtendedResponse', 'decode'],
+      $metadata, $options);
+    }
+
+    /**
+     * @param \Practo\MDS\RPC\DrugManufacturerSearchRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function search(\Practo\MDS\RPC\DrugManufacturerSearchRequest $argument,
+      $metadata = [], $options = []) {
+      return $this->_simpleRequest('/Practo.MDS.RPC.DrugManufacturer/search',
+      $argument,
+      ['\Practo\MDS\RPC\FetchAllDrugManufacturerResponse', 'decode'],
       $metadata, $options);
     }
 

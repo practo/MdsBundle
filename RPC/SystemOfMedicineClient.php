@@ -36,7 +36,7 @@ namespace Practo\MDS\RPC {
       $metadata = [], $options = []) {
       return $this->_simpleRequest('/Practo.MDS.RPC.SystemOfMedicine/fetch',
       $argument,
-      ['\Practo\MDS\RPC\SystemOfMedicineModel', 'decode'],
+      ['\Practo\MDS\RPC\FetchSystemOfMedicineResponse', 'decode'],
       $metadata, $options);
     }
 
@@ -62,7 +62,7 @@ namespace Practo\MDS\RPC {
       $metadata = [], $options = []) {
       return $this->_simpleRequest('/Practo.MDS.RPC.SystemOfMedicine/fetchExtended',
       $argument,
-      ['\Practo\MDS\RPC\SystemOfMedicineExtendedModel', 'decode'],
+      ['\Practo\MDS\RPC\FetchSystemOfMedicineExtendedResponse', 'decode'],
       $metadata, $options);
     }
 
@@ -76,6 +76,19 @@ namespace Practo\MDS\RPC {
       return $this->_simpleRequest('/Practo.MDS.RPC.SystemOfMedicine/fetchAllExtended',
       $argument,
       ['\Practo\MDS\RPC\FetchAllSystemOfMedicineExtendedResponse', 'decode'],
+      $metadata, $options);
+    }
+
+    /**
+     * @param \Practo\MDS\RPC\SystemOfMedicineSearchRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function search(\Practo\MDS\RPC\SystemOfMedicineSearchRequest $argument,
+      $metadata = [], $options = []) {
+      return $this->_simpleRequest('/Practo.MDS.RPC.SystemOfMedicine/search',
+      $argument,
+      ['\Practo\MDS\RPC\FetchAllSystemOfMedicineResponse', 'decode'],
       $metadata, $options);
     }
 

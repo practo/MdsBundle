@@ -13,10 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class FetchAllCountryExtendedResponse extends \Google\Protobuf\Internal\Message
 {
-    /**
-     * <code>repeated .Practo.MDS.RPC.CountryExtendedModel country = 1;</code>
-     */
-    private $country;
+    protected $fetch_all_country_extended_response_type;
 
     public function __construct() {
         \GPBMetadata\Proto\GeolocationStore::initOnce();
@@ -24,20 +21,42 @@ class FetchAllCountryExtendedResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>repeated .Practo.MDS.RPC.CountryExtendedModel country = 1;</code>
+     * <code>.Practo.MDS.RPC.CountryExtendedModelList country = 1;</code>
      */
     public function getCountry()
     {
-        return $this->country;
+        return $this->readOneof(1);
     }
 
     /**
-     * <code>repeated .Practo.MDS.RPC.CountryExtendedModel country = 1;</code>
+     * <code>.Practo.MDS.RPC.CountryExtendedModelList country = 1;</code>
      */
     public function setCountry(&$var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Practo\MDS\RPC\CountryExtendedModel::class);
-        $this->country = $var;
+        GPBUtil::checkMessage($var, \Practo\MDS\RPC\CountryExtendedModelList::class);
+        $this->writeOneof(1, $var);
+    }
+
+    /**
+     * <code>string message = 2;</code>
+     */
+    public function getMessage()
+    {
+        return $this->readOneof(2);
+    }
+
+    /**
+     * <code>string message = 2;</code>
+     */
+    public function setMessage($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(2, $var);
+    }
+
+    public function getFetchAllCountryExtendedResponseType()
+    {
+        return $this->fetch_all_country_extended_response_type;
     }
 
 }

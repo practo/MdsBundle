@@ -13,10 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class FetchAllAPIClassificationExtendedResponse extends \Google\Protobuf\Internal\Message
 {
-    /**
-     * <code>repeated .Practo.MDS.RPC.APIClassificationExtendedModel apiClassification = 1;</code>
-     */
-    private $apiClassification;
+    protected $fetch_all_api_classification_extended_response_type;
 
     public function __construct() {
         \GPBMetadata\Proto\PharmaceuticalStore::initOnce();
@@ -24,20 +21,42 @@ class FetchAllAPIClassificationExtendedResponse extends \Google\Protobuf\Interna
     }
 
     /**
-     * <code>repeated .Practo.MDS.RPC.APIClassificationExtendedModel apiClassification = 1;</code>
+     * <code>.Practo.MDS.RPC.APIClassificationExtendedModelList apiClassification = 1;</code>
      */
     public function getApiClassification()
     {
-        return $this->apiClassification;
+        return $this->readOneof(1);
     }
 
     /**
-     * <code>repeated .Practo.MDS.RPC.APIClassificationExtendedModel apiClassification = 1;</code>
+     * <code>.Practo.MDS.RPC.APIClassificationExtendedModelList apiClassification = 1;</code>
      */
     public function setApiClassification(&$var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Practo\MDS\RPC\APIClassificationExtendedModel::class);
-        $this->apiClassification = $var;
+        GPBUtil::checkMessage($var, \Practo\MDS\RPC\APIClassificationExtendedModelList::class);
+        $this->writeOneof(1, $var);
+    }
+
+    /**
+     * <code>string message = 2;</code>
+     */
+    public function getMessage()
+    {
+        return $this->readOneof(2);
+    }
+
+    /**
+     * <code>string message = 2;</code>
+     */
+    public function setMessage($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(2, $var);
+    }
+
+    public function getFetchAllApiClassificationExtendedResponseType()
+    {
+        return $this->fetch_all_api_classification_extended_response_type;
     }
 
 }

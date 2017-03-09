@@ -36,7 +36,7 @@ namespace Practo\MDS\RPC {
       $metadata = [], $options = []) {
       return $this->_simpleRequest('/Practo.MDS.RPC.APIClassification/fetch',
       $argument,
-      ['\Practo\MDS\RPC\APIClassificationModel', 'decode'],
+      ['\Practo\MDS\RPC\FetchAPIClassificationResponse', 'decode'],
       $metadata, $options);
     }
 
@@ -62,7 +62,7 @@ namespace Practo\MDS\RPC {
       $metadata = [], $options = []) {
       return $this->_simpleRequest('/Practo.MDS.RPC.APIClassification/fetchExtended',
       $argument,
-      ['\Practo\MDS\RPC\APIClassificationExtendedModel', 'decode'],
+      ['\Practo\MDS\RPC\FetchAPIClassificationExtendedResponse', 'decode'],
       $metadata, $options);
     }
 
@@ -76,6 +76,19 @@ namespace Practo\MDS\RPC {
       return $this->_simpleRequest('/Practo.MDS.RPC.APIClassification/fetchAllExtended',
       $argument,
       ['\Practo\MDS\RPC\FetchAllAPIClassificationExtendedResponse', 'decode'],
+      $metadata, $options);
+    }
+
+    /**
+     * @param \Practo\MDS\RPC\APIClassificationSearchRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function search(\Practo\MDS\RPC\APIClassificationSearchRequest $argument,
+      $metadata = [], $options = []) {
+      return $this->_simpleRequest('/Practo.MDS.RPC.APIClassification/search',
+      $argument,
+      ['\Practo\MDS\RPC\FetchAllAPIClassificationResponse', 'decode'],
       $metadata, $options);
     }
 
