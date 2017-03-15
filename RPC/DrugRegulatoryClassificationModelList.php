@@ -17,6 +17,10 @@ class DrugRegulatoryClassificationModelList extends \Google\Protobuf\Internal\Me
      * <code>repeated .Practo.MDS.RPC.DrugRegulatoryClassificationModel drugRegulatoryClassification = 1;</code>
      */
     private $drugRegulatoryClassification;
+    /**
+     * <code>int64 count = 2;</code>
+     */
+    private $count = 0;
 
     public function __construct() {
         \GPBMetadata\Proto\PharmaceuticalStore::initOnce();
@@ -38,6 +42,23 @@ class DrugRegulatoryClassificationModelList extends \Google\Protobuf\Internal\Me
     {
         GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Practo\MDS\RPC\DrugRegulatoryClassificationModel::class);
         $this->drugRegulatoryClassification = $var;
+    }
+
+    /**
+     * <code>int64 count = 2;</code>
+     */
+    public function getCount()
+    {
+        return $this->count;
+    }
+
+    /**
+     * <code>int64 count = 2;</code>
+     */
+    public function setCount($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->count = $var;
     }
 
 }

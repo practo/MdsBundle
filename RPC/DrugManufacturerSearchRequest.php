@@ -21,6 +21,10 @@ class DrugManufacturerSearchRequest extends \Google\Protobuf\Internal\Message
      * <code>.Practo.MDS.RPC.DrugManufacturerModel drugManufacturer = 2;</code>
      */
     private $drugManufacturer = null;
+    /**
+     * <code>string locale = 3;</code>
+     */
+    private $locale = '';
 
     public function __construct() {
         \GPBMetadata\Proto\PharmaceuticalStore::initOnce();
@@ -59,6 +63,23 @@ class DrugManufacturerSearchRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Practo\MDS\RPC\DrugManufacturerModel::class);
         $this->drugManufacturer = $var;
+    }
+
+    /**
+     * <code>string locale = 3;</code>
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * <code>string locale = 3;</code>
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
     }
 
 }

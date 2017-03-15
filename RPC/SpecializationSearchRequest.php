@@ -21,6 +21,10 @@ class SpecializationSearchRequest extends \Google\Protobuf\Internal\Message
      * <code>.Practo.MDS.RPC.SpecializationModel specialization = 2;</code>
      */
     private $specialization = null;
+    /**
+     * <code>string locale = 3;</code>
+     */
+    private $locale = '';
 
     public function __construct() {
         \GPBMetadata\Proto\TaxonomyMedicalStore::initOnce();
@@ -59,6 +63,23 @@ class SpecializationSearchRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Practo\MDS\RPC\SpecializationModel::class);
         $this->specialization = $var;
+    }
+
+    /**
+     * <code>string locale = 3;</code>
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * <code>string locale = 3;</code>
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
     }
 
 }

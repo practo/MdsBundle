@@ -29,6 +29,10 @@ class FetchAllRequest extends \Google\Protobuf\Internal\Message
      * <code>string source = 4;</code>
      */
     private $source = '';
+    /**
+     * <code>string locale = 5;</code>
+     */
+    private $locale = '';
 
     public function __construct() {
         \GPBMetadata\Proto\GeolocationStore::initOnce();
@@ -101,6 +105,23 @@ class FetchAllRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->source = $var;
+    }
+
+    /**
+     * <code>string locale = 5;</code>
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * <code>string locale = 5;</code>
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
     }
 
 }

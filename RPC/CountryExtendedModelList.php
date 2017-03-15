@@ -17,6 +17,10 @@ class CountryExtendedModelList extends \Google\Protobuf\Internal\Message
      * <code>repeated .Practo.MDS.RPC.CountryExtendedModel country = 1;</code>
      */
     private $country;
+    /**
+     * <code>int64 count = 2;</code>
+     */
+    private $count = 0;
 
     public function __construct() {
         \GPBMetadata\Proto\GeolocationStore::initOnce();
@@ -38,6 +42,23 @@ class CountryExtendedModelList extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Practo\MDS\RPC\CountryExtendedModel::class);
         $this->country = $var;
+    }
+
+    /**
+     * <code>int64 count = 2;</code>
+     */
+    public function getCount()
+    {
+        return $this->count;
+    }
+
+    /**
+     * <code>int64 count = 2;</code>
+     */
+    public function setCount($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->count = $var;
     }
 
 }

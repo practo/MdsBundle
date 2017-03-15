@@ -21,6 +21,10 @@ class DrugProductSearchRequest extends \Google\Protobuf\Internal\Message
      * <code>.Practo.MDS.RPC.DrugProductModel drugProduct = 2;</code>
      */
     private $drugProduct = null;
+    /**
+     * <code>string locale = 3;</code>
+     */
+    private $locale = '';
 
     public function __construct() {
         \GPBMetadata\Proto\PharmaceuticalStore::initOnce();
@@ -59,6 +63,23 @@ class DrugProductSearchRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Practo\MDS\RPC\DrugProductModel::class);
         $this->drugProduct = $var;
+    }
+
+    /**
+     * <code>string locale = 3;</code>
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * <code>string locale = 3;</code>
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
     }
 
 }

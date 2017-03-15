@@ -17,6 +17,10 @@ class SpecializationModelList extends \Google\Protobuf\Internal\Message
      * <code>repeated .Practo.MDS.RPC.SpecializationModel specialization = 1;</code>
      */
     private $specialization;
+    /**
+     * <code>int64 count = 2;</code>
+     */
+    private $count = 0;
 
     public function __construct() {
         \GPBMetadata\Proto\TaxonomyMedicalStore::initOnce();
@@ -38,6 +42,23 @@ class SpecializationModelList extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Practo\MDS\RPC\SpecializationModel::class);
         $this->specialization = $var;
+    }
+
+    /**
+     * <code>int64 count = 2;</code>
+     */
+    public function getCount()
+    {
+        return $this->count;
+    }
+
+    /**
+     * <code>int64 count = 2;</code>
+     */
+    public function setCount($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->count = $var;
     }
 
 }

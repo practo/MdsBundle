@@ -17,6 +17,10 @@ class DrugCombinationExtendedModelList extends \Google\Protobuf\Internal\Message
      * <code>repeated .Practo.MDS.RPC.DrugCombinationExtendedModel drugCombination = 1;</code>
      */
     private $drugCombination;
+    /**
+     * <code>int64 count = 2;</code>
+     */
+    private $count = 0;
 
     public function __construct() {
         \GPBMetadata\Proto\PharmaceuticalStore::initOnce();
@@ -38,6 +42,23 @@ class DrugCombinationExtendedModelList extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Practo\MDS\RPC\DrugCombinationExtendedModel::class);
         $this->drugCombination = $var;
+    }
+
+    /**
+     * <code>int64 count = 2;</code>
+     */
+    public function getCount()
+    {
+        return $this->count;
+    }
+
+    /**
+     * <code>int64 count = 2;</code>
+     */
+    public function setCount($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->count = $var;
     }
 
 }

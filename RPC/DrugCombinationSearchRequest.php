@@ -21,6 +21,10 @@ class DrugCombinationSearchRequest extends \Google\Protobuf\Internal\Message
      * <code>.Practo.MDS.RPC.DrugCombinationModel drugCombination = 2;</code>
      */
     private $drugCombination = null;
+    /**
+     * <code>string locale = 3;</code>
+     */
+    private $locale = '';
 
     public function __construct() {
         \GPBMetadata\Proto\PharmaceuticalStore::initOnce();
@@ -59,6 +63,23 @@ class DrugCombinationSearchRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Practo\MDS\RPC\DrugCombinationModel::class);
         $this->drugCombination = $var;
+    }
+
+    /**
+     * <code>string locale = 3;</code>
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * <code>string locale = 3;</code>
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
     }
 
 }

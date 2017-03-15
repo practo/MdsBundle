@@ -21,6 +21,10 @@ class CountrySearchRequest extends \Google\Protobuf\Internal\Message
      * <code>.Practo.MDS.RPC.CountryModel country = 2;</code>
      */
     private $country = null;
+    /**
+     * <code>string locale = 3;</code>
+     */
+    private $locale = '';
 
     public function __construct() {
         \GPBMetadata\Proto\GeolocationStore::initOnce();
@@ -59,6 +63,23 @@ class CountrySearchRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Practo\MDS\RPC\CountryModel::class);
         $this->country = $var;
+    }
+
+    /**
+     * <code>string locale = 3;</code>
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * <code>string locale = 3;</code>
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
     }
 
 }

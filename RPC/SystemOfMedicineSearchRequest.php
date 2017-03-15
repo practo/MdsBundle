@@ -21,6 +21,10 @@ class SystemOfMedicineSearchRequest extends \Google\Protobuf\Internal\Message
      * <code>.Practo.MDS.RPC.SystemOfMedicineModel systemOfMedicine = 2;</code>
      */
     private $systemOfMedicine = null;
+    /**
+     * <code>string locale = 4;</code>
+     */
+    private $locale = '';
 
     public function __construct() {
         \GPBMetadata\Proto\TaxonomyMedicalStore::initOnce();
@@ -59,6 +63,23 @@ class SystemOfMedicineSearchRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Practo\MDS\RPC\SystemOfMedicineModel::class);
         $this->systemOfMedicine = $var;
+    }
+
+    /**
+     * <code>string locale = 4;</code>
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * <code>string locale = 4;</code>
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
     }
 
 }

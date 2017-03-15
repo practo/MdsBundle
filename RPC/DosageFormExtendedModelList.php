@@ -17,6 +17,10 @@ class DosageFormExtendedModelList extends \Google\Protobuf\Internal\Message
      * <code>repeated .Practo.MDS.RPC.DosageFormExtendedModel dosageForm = 1;</code>
      */
     private $dosageForm;
+    /**
+     * <code>int64 count = 2;</code>
+     */
+    private $count = 0;
 
     public function __construct() {
         \GPBMetadata\Proto\PharmaceuticalStore::initOnce();
@@ -38,6 +42,23 @@ class DosageFormExtendedModelList extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Practo\MDS\RPC\DosageFormExtendedModel::class);
         $this->dosageForm = $var;
+    }
+
+    /**
+     * <code>int64 count = 2;</code>
+     */
+    public function getCount()
+    {
+        return $this->count;
+    }
+
+    /**
+     * <code>int64 count = 2;</code>
+     */
+    public function setCount($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->count = $var;
     }
 
 }

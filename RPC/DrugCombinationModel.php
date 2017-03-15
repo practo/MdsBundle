@@ -54,13 +54,49 @@ class DrugCombinationModel extends \Google\Protobuf\Internal\Message
      */
     private $drug_regulatory_class;
     /**
-     * <code>.Practo.MDS.RPC.Localizable pt = 11;</code>
+     * <code>string id = 11;</code>
      */
-    private $pt = null;
+    private $id = '';
     /**
-     * <code>.Practo.MDS.RPC.Localizable id = 12;</code>
+     * <code>int64 created = 12;</code>
      */
-    private $id = null;
+    private $created = 0;
+    /**
+     * <code>int64 modified = 13;</code>
+     */
+    private $modified = 0;
+    /**
+     * <code>string merged_to = 14;</code>
+     */
+    private $merged_to = '';
+    /**
+     * <code>string status = 15;</code>
+     */
+    private $status = '';
+    /**
+     * <code>string source = 16;</code>
+     */
+    private $source = '';
+    /**
+     * <code>bool relationship_concept = 17;</code>
+     */
+    private $relationship_concept = false;
+    /**
+     * <code>string creator = 18;</code>
+     */
+    private $creator = '';
+    /**
+     * <code>string comments = 19;</code>
+     */
+    private $comments = '';
+    /**
+     * <code>map&lt;string, string&gt; additional_fields = 20;</code>
+     */
+    private $additional_fields;
+    /**
+     * <code>bool visible = 21;</code>
+     */
+    private $visible = false;
 
     public function __construct() {
         \GPBMetadata\Proto\DrugCombination::initOnce();
@@ -238,24 +274,7 @@ class DrugCombinationModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.Practo.MDS.RPC.Localizable pt = 11;</code>
-     */
-    public function getPt()
-    {
-        return $this->pt;
-    }
-
-    /**
-     * <code>.Practo.MDS.RPC.Localizable pt = 11;</code>
-     */
-    public function setPt(&$var)
-    {
-        GPBUtil::checkMessage($var, \Practo\MDS\RPC\Localizable::class);
-        $this->pt = $var;
-    }
-
-    /**
-     * <code>.Practo.MDS.RPC.Localizable id = 12;</code>
+     * <code>string id = 11;</code>
      */
     public function getId()
     {
@@ -263,12 +282,181 @@ class DrugCombinationModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.Practo.MDS.RPC.Localizable id = 12;</code>
+     * <code>string id = 11;</code>
      */
-    public function setId(&$var)
+    public function setId($var)
     {
-        GPBUtil::checkMessage($var, \Practo\MDS\RPC\Localizable::class);
+        GPBUtil::checkString($var, True);
         $this->id = $var;
+    }
+
+    /**
+     * <code>int64 created = 12;</code>
+     */
+    public function getCreated()
+    {
+        return $this->created;
+    }
+
+    /**
+     * <code>int64 created = 12;</code>
+     */
+    public function setCreated($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->created = $var;
+    }
+
+    /**
+     * <code>int64 modified = 13;</code>
+     */
+    public function getModified()
+    {
+        return $this->modified;
+    }
+
+    /**
+     * <code>int64 modified = 13;</code>
+     */
+    public function setModified($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->modified = $var;
+    }
+
+    /**
+     * <code>string merged_to = 14;</code>
+     */
+    public function getMergedTo()
+    {
+        return $this->merged_to;
+    }
+
+    /**
+     * <code>string merged_to = 14;</code>
+     */
+    public function setMergedTo($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->merged_to = $var;
+    }
+
+    /**
+     * <code>string status = 15;</code>
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * <code>string status = 15;</code>
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->status = $var;
+    }
+
+    /**
+     * <code>string source = 16;</code>
+     */
+    public function getSource()
+    {
+        return $this->source;
+    }
+
+    /**
+     * <code>string source = 16;</code>
+     */
+    public function setSource($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->source = $var;
+    }
+
+    /**
+     * <code>bool relationship_concept = 17;</code>
+     */
+    public function getRelationshipConcept()
+    {
+        return $this->relationship_concept;
+    }
+
+    /**
+     * <code>bool relationship_concept = 17;</code>
+     */
+    public function setRelationshipConcept($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->relationship_concept = $var;
+    }
+
+    /**
+     * <code>string creator = 18;</code>
+     */
+    public function getCreator()
+    {
+        return $this->creator;
+    }
+
+    /**
+     * <code>string creator = 18;</code>
+     */
+    public function setCreator($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->creator = $var;
+    }
+
+    /**
+     * <code>string comments = 19;</code>
+     */
+    public function getComments()
+    {
+        return $this->comments;
+    }
+
+    /**
+     * <code>string comments = 19;</code>
+     */
+    public function setComments($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->comments = $var;
+    }
+
+    /**
+     * <code>map&lt;string, string&gt; additional_fields = 20;</code>
+     */
+    public function getAdditionalFields()
+    {
+        return $this->additional_fields;
+    }
+
+    /**
+     * <code>map&lt;string, string&gt; additional_fields = 20;</code>
+     */
+    public function setAdditionalFields(&$var)
+    {
+        $this->additional_fields = $var;
+    }
+
+    /**
+     * <code>bool visible = 21;</code>
+     */
+    public function getVisible()
+    {
+        return $this->visible;
+    }
+
+    /**
+     * <code>bool visible = 21;</code>
+     */
+    public function setVisible($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->visible = $var;
     }
 
 }

@@ -21,6 +21,10 @@ class RouteOfAdministrationSearchRequest extends \Google\Protobuf\Internal\Messa
      * <code>.Practo.MDS.RPC.RouteOfAdministrationModel routeOfAdministration = 2;</code>
      */
     private $routeOfAdministration = null;
+    /**
+     * <code>string locale = 3;</code>
+     */
+    private $locale = '';
 
     public function __construct() {
         \GPBMetadata\Proto\PharmaceuticalStore::initOnce();
@@ -59,6 +63,23 @@ class RouteOfAdministrationSearchRequest extends \Google\Protobuf\Internal\Messa
     {
         GPBUtil::checkMessage($var, \Practo\MDS\RPC\RouteOfAdministrationModel::class);
         $this->routeOfAdministration = $var;
+    }
+
+    /**
+     * <code>string locale = 3;</code>
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * <code>string locale = 3;</code>
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
     }
 
 }

@@ -29,6 +29,50 @@ class APIClassificationExtendedModel extends \Google\Protobuf\Internal\Message
      * <code>repeated .Practo.MDS.RPC.APIClassificationModel parent_classification_id = 4;</code>
      */
     private $parent_classification_id;
+    /**
+     * <code>string id = 5;</code>
+     */
+    private $id = '';
+    /**
+     * <code>int64 created = 6;</code>
+     */
+    private $created = 0;
+    /**
+     * <code>int64 modified = 7;</code>
+     */
+    private $modified = 0;
+    /**
+     * <code>string merged_to = 8;</code>
+     */
+    private $merged_to = '';
+    /**
+     * <code>string status = 9;</code>
+     */
+    private $status = '';
+    /**
+     * <code>string source = 10;</code>
+     */
+    private $source = '';
+    /**
+     * <code>bool relationship_concept = 11;</code>
+     */
+    private $relationship_concept = false;
+    /**
+     * <code>string creator = 12;</code>
+     */
+    private $creator = '';
+    /**
+     * <code>string comments = 13;</code>
+     */
+    private $comments = '';
+    /**
+     * <code>map&lt;string, string&gt; additional_fields = 14;</code>
+     */
+    private $additional_fields;
+    /**
+     * <code>bool visible = 15;</code>
+     */
+    private $visible = false;
 
     public function __construct() {
         \GPBMetadata\Proto\ApiClassification::initOnce();
@@ -101,6 +145,192 @@ class APIClassificationExtendedModel extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Practo\MDS\RPC\APIClassificationModel::class);
         $this->parent_classification_id = $var;
+    }
+
+    /**
+     * <code>string id = 5;</code>
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * <code>string id = 5;</code>
+     */
+    public function setId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->id = $var;
+    }
+
+    /**
+     * <code>int64 created = 6;</code>
+     */
+    public function getCreated()
+    {
+        return $this->created;
+    }
+
+    /**
+     * <code>int64 created = 6;</code>
+     */
+    public function setCreated($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->created = $var;
+    }
+
+    /**
+     * <code>int64 modified = 7;</code>
+     */
+    public function getModified()
+    {
+        return $this->modified;
+    }
+
+    /**
+     * <code>int64 modified = 7;</code>
+     */
+    public function setModified($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->modified = $var;
+    }
+
+    /**
+     * <code>string merged_to = 8;</code>
+     */
+    public function getMergedTo()
+    {
+        return $this->merged_to;
+    }
+
+    /**
+     * <code>string merged_to = 8;</code>
+     */
+    public function setMergedTo($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->merged_to = $var;
+    }
+
+    /**
+     * <code>string status = 9;</code>
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * <code>string status = 9;</code>
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->status = $var;
+    }
+
+    /**
+     * <code>string source = 10;</code>
+     */
+    public function getSource()
+    {
+        return $this->source;
+    }
+
+    /**
+     * <code>string source = 10;</code>
+     */
+    public function setSource($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->source = $var;
+    }
+
+    /**
+     * <code>bool relationship_concept = 11;</code>
+     */
+    public function getRelationshipConcept()
+    {
+        return $this->relationship_concept;
+    }
+
+    /**
+     * <code>bool relationship_concept = 11;</code>
+     */
+    public function setRelationshipConcept($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->relationship_concept = $var;
+    }
+
+    /**
+     * <code>string creator = 12;</code>
+     */
+    public function getCreator()
+    {
+        return $this->creator;
+    }
+
+    /**
+     * <code>string creator = 12;</code>
+     */
+    public function setCreator($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->creator = $var;
+    }
+
+    /**
+     * <code>string comments = 13;</code>
+     */
+    public function getComments()
+    {
+        return $this->comments;
+    }
+
+    /**
+     * <code>string comments = 13;</code>
+     */
+    public function setComments($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->comments = $var;
+    }
+
+    /**
+     * <code>map&lt;string, string&gt; additional_fields = 14;</code>
+     */
+    public function getAdditionalFields()
+    {
+        return $this->additional_fields;
+    }
+
+    /**
+     * <code>map&lt;string, string&gt; additional_fields = 14;</code>
+     */
+    public function setAdditionalFields(&$var)
+    {
+        $this->additional_fields = $var;
+    }
+
+    /**
+     * <code>bool visible = 15;</code>
+     */
+    public function getVisible()
+    {
+        return $this->visible;
+    }
+
+    /**
+     * <code>bool visible = 15;</code>
+     */
+    public function setVisible($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->visible = $var;
     }
 
 }

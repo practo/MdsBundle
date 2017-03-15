@@ -17,6 +17,10 @@ class SystemOfMedicineExtendedModelList extends \Google\Protobuf\Internal\Messag
      * <code>repeated .Practo.MDS.RPC.SystemOfMedicineExtendedModel systemOfMedicine = 1;</code>
      */
     private $systemOfMedicine;
+    /**
+     * <code>int64 count = 2;</code>
+     */
+    private $count = 0;
 
     public function __construct() {
         \GPBMetadata\Proto\TaxonomyMedicalStore::initOnce();
@@ -38,6 +42,23 @@ class SystemOfMedicineExtendedModelList extends \Google\Protobuf\Internal\Messag
     {
         GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Practo\MDS\RPC\SystemOfMedicineExtendedModel::class);
         $this->systemOfMedicine = $var;
+    }
+
+    /**
+     * <code>int64 count = 2;</code>
+     */
+    public function getCount()
+    {
+        return $this->count;
+    }
+
+    /**
+     * <code>int64 count = 2;</code>
+     */
+    public function setCount($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->count = $var;
     }
 
 }

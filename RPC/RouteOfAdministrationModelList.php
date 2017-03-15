@@ -17,6 +17,10 @@ class RouteOfAdministrationModelList extends \Google\Protobuf\Internal\Message
      * <code>repeated .Practo.MDS.RPC.RouteOfAdministrationModel routeOfAdministration = 1;</code>
      */
     private $routeOfAdministration;
+    /**
+     * <code>int64 count = 2;</code>
+     */
+    private $count = 0;
 
     public function __construct() {
         \GPBMetadata\Proto\PharmaceuticalStore::initOnce();
@@ -38,6 +42,23 @@ class RouteOfAdministrationModelList extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Practo\MDS\RPC\RouteOfAdministrationModel::class);
         $this->routeOfAdministration = $var;
+    }
+
+    /**
+     * <code>int64 count = 2;</code>
+     */
+    public function getCount()
+    {
+        return $this->count;
+    }
+
+    /**
+     * <code>int64 count = 2;</code>
+     */
+    public function setCount($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->count = $var;
     }
 
 }

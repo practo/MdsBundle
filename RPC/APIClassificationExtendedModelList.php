@@ -17,6 +17,10 @@ class APIClassificationExtendedModelList extends \Google\Protobuf\Internal\Messa
      * <code>repeated .Practo.MDS.RPC.APIClassificationExtendedModel apiClassification = 1;</code>
      */
     private $apiClassification;
+    /**
+     * <code>int64 count = 2;</code>
+     */
+    private $count = 0;
 
     public function __construct() {
         \GPBMetadata\Proto\PharmaceuticalStore::initOnce();
@@ -38,6 +42,23 @@ class APIClassificationExtendedModelList extends \Google\Protobuf\Internal\Messa
     {
         GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Practo\MDS\RPC\APIClassificationExtendedModel::class);
         $this->apiClassification = $var;
+    }
+
+    /**
+     * <code>int64 count = 2;</code>
+     */
+    public function getCount()
+    {
+        return $this->count;
+    }
+
+    /**
+     * <code>int64 count = 2;</code>
+     */
+    public function setCount($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->count = $var;
     }
 
 }

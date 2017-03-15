@@ -21,19 +21,19 @@ class AddResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string id = 1;</code>
+     * <code>.Practo.MDS.RPC.AddResponseModel addResponseModel = 1;</code>
      */
-    public function getId()
+    public function getAddResponseModel()
     {
         return $this->readOneof(1);
     }
 
     /**
-     * <code>string id = 1;</code>
+     * <code>.Practo.MDS.RPC.AddResponseModel addResponseModel = 1;</code>
      */
-    public function setId($var)
+    public function setAddResponseModel(&$var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkMessage($var, \Practo\MDS\RPC\AddResponseModel::class);
         $this->writeOneof(1, $var);
     }
 

@@ -17,6 +17,10 @@ class DrugManufacturerExtendedModelList extends \Google\Protobuf\Internal\Messag
      * <code>repeated .Practo.MDS.RPC.DrugManufacturerExtendedModel drugManufacturer = 1;</code>
      */
     private $drugManufacturer;
+    /**
+     * <code>int64 count = 2;</code>
+     */
+    private $count = 0;
 
     public function __construct() {
         \GPBMetadata\Proto\PharmaceuticalStore::initOnce();
@@ -38,6 +42,23 @@ class DrugManufacturerExtendedModelList extends \Google\Protobuf\Internal\Messag
     {
         GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Practo\MDS\RPC\DrugManufacturerExtendedModel::class);
         $this->drugManufacturer = $var;
+    }
+
+    /**
+     * <code>int64 count = 2;</code>
+     */
+    public function getCount()
+    {
+        return $this->count;
+    }
+
+    /**
+     * <code>int64 count = 2;</code>
+     */
+    public function setCount($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->count = $var;
     }
 
 }

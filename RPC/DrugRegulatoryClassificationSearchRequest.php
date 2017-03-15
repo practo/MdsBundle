@@ -21,6 +21,10 @@ class DrugRegulatoryClassificationSearchRequest extends \Google\Protobuf\Interna
      * <code>.Practo.MDS.RPC.DrugRegulatoryClassificationModel drugRegulatoryClassification = 2;</code>
      */
     private $drugRegulatoryClassification = null;
+    /**
+     * <code>string locale = 3;</code>
+     */
+    private $locale = '';
 
     public function __construct() {
         \GPBMetadata\Proto\PharmaceuticalStore::initOnce();
@@ -59,6 +63,23 @@ class DrugRegulatoryClassificationSearchRequest extends \Google\Protobuf\Interna
     {
         GPBUtil::checkMessage($var, \Practo\MDS\RPC\DrugRegulatoryClassificationModel::class);
         $this->drugRegulatoryClassification = $var;
+    }
+
+    /**
+     * <code>string locale = 3;</code>
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * <code>string locale = 3;</code>
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
     }
 
 }
