@@ -21,17 +21,17 @@ class FetchSystemOfMedicineResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.Practo.MDS.RPC.SystemOfMedicineModel systemOfMedicineModel = 1;</code>
+     * <code>.Practo.MDS.RPC.SystemOfMedicineModel systemOfMedicine = 1;</code>
      */
-    public function getSystemOfMedicineModel()
+    public function getSystemOfMedicine()
     {
         return $this->readOneof(1);
     }
 
     /**
-     * <code>.Practo.MDS.RPC.SystemOfMedicineModel systemOfMedicineModel = 1;</code>
+     * <code>.Practo.MDS.RPC.SystemOfMedicineModel systemOfMedicine = 1;</code>
      */
-    public function setSystemOfMedicineModel(&$var)
+    public function setSystemOfMedicine(&$var)
     {
         GPBUtil::checkMessage($var, \Practo\MDS\RPC\SystemOfMedicineModel::class);
         $this->writeOneof(1, $var);

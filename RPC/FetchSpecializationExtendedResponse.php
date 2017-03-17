@@ -21,17 +21,17 @@ class FetchSpecializationExtendedResponse extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * <code>.Practo.MDS.RPC.SpecializationExtendedModel specializationModel = 1;</code>
+     * <code>.Practo.MDS.RPC.SpecializationExtendedModel specialization = 1;</code>
      */
-    public function getSpecializationModel()
+    public function getSpecialization()
     {
         return $this->readOneof(1);
     }
 
     /**
-     * <code>.Practo.MDS.RPC.SpecializationExtendedModel specializationModel = 1;</code>
+     * <code>.Practo.MDS.RPC.SpecializationExtendedModel specialization = 1;</code>
      */
-    public function setSpecializationModel(&$var)
+    public function setSpecialization(&$var)
     {
         GPBUtil::checkMessage($var, \Practo\MDS\RPC\SpecializationExtendedModel::class);
         $this->writeOneof(1, $var);
