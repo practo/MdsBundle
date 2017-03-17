@@ -109,6 +109,10 @@ class SpecializationModel extends \Google\Protobuf\Internal\Message
      * <code>bool visible = 24;</code>
      */
     private $visible = false;
+    /**
+     * <code>int32 version = 25;</code>
+     */
+    private $version = 0;
 
     public function __construct() {
         \GPBMetadata\Proto\Specialization::initOnce();
@@ -520,6 +524,23 @@ class SpecializationModel extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->visible = $var;
+    }
+
+    /**
+     * <code>int32 version = 25;</code>
+     */
+    public function getVersion()
+    {
+        return $this->version;
+    }
+
+    /**
+     * <code>int32 version = 25;</code>
+     */
+    public function setVersion($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->version = $var;
     }
 
 }
