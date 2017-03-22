@@ -19,6 +19,5 @@
       "psr-4": {
         "": "Practo\\MDS"
       }
-    },
-    "target-dir": "Practo/MDS"
+    }
 }
