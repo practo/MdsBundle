@@ -1,9 +1,9 @@
 parameters:
     practo_mds.country_rpc.class: Practo\MDS\RPC\CountryClient
 
-    mds.base_uri: %mds.base_uri%
-    mds.rpc.secret: %mds.rpc.secret%
-    mds.source: %mds.source%
+    practo_mds.base_uri: %mds.base_uri%
+    practo_mds.rpc.secret: %mds.rpc.secret%
+    practo_mds.source: %mds.source%
 
 
 services:
@@ -11,12 +11,12 @@ services:
   practo_mds_grpc.channel:
     class: Grpc\Channel
     arguments:
-      - %mds.base_uri%
+      - %practo_mds.base_uri%
       - {credentials : null }
 
   practo_mds.country_rpc:
     class: %practo_mds.country_rpc.class%
     arguments:
-      - %mds.base_uri%
+      - %practo_mds.base_uri%
       - {key : "call_back"}
       - '@practo_mds_grpc.channel'
