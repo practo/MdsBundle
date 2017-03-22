@@ -10,13 +10,13 @@ services:
 
   practo_mds_grpc.channel:
     class: Grpc\Channel
-    arguments
+    arguments:
       - %mds.base_uri%
       - {credentials : null }
 
   practo_mds.country_rpc:
     class: %practo_mds.country_rpc.class%
-    arguments
+    arguments:
       - %mds.base_uri%
       - {key : "call_back"}
       - '@practo_mds_grpc.channel'
