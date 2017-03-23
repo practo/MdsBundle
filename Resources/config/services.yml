@@ -9,7 +9,7 @@ parameters:
 services:
 
   practo_mds_grpc.channel:
-    class: Channel
+    class: Grpc\Channel
     arguments:
       - %practo_mds.base_uri%
       - {credentials : null }
