@@ -17,8 +17,8 @@
     },
     "autoload": {
       "psr-4": {
-        "Practo\\MDS\\": "",
-        "\\GPBMetadata\\Proto\\": "GPBMetadata/Proto/" 
+        "Practo\\MDS\\": ["PractoMdsBundle.php", "RPC/"],
+        "GPBMetadata\\Proto\\": "GPBMetadata/Proto/" 
       }
     }
 }
