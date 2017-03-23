@@ -16,8 +16,9 @@
         "grpc/grpc": "v1.2.0"
     },
     "autoload": {
+      "classmap": ["PractoMdsBundle.php"], 
       "psr-4": {
-        "Practo\\MDS\\": ["PractoMdsBundle.php", "RPC/"],
+        "Practo\\MDS\\": ["RPC/"],
         "GPBMetadata\\Proto\\": "GPBMetadata/Proto/" 
       }
     }
