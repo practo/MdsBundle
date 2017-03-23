@@ -23,7 +23,7 @@ class AuthUtility {
   		$newMetaData['source'] = AuthUtility::$source;
   		$newMetaData['signature'] = ""; 
 
-  		return $newMetaData
+  		return $newMetaData;
   	}
 
   	static public function getExceptedMethodName($methodName) {
