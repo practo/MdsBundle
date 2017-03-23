@@ -18,7 +18,8 @@
     "autoload": {
       "psr-4": {
         "Practo\\MDS\\": "",
-        "Grpc\\": "src/php/lib/Grpc/" 
+        "Grpc\\": "src/php/lib/Grpc/",
+        "GPBMetadata\\Proto\\": "" 
       }
     }
 }
