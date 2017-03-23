@@ -22,5 +22,9 @@
         "Practo\\MDS\\DependencyInjection\\":"DependencyInjection/",
         "GPBMetadata\\": "GPBMetadata/" 
       }
-    }
+    },
+    "repositories": [{
+        "type": "vcs",
+        "url": "https://github.com:practo/grpc.git"
+    }]
 }
