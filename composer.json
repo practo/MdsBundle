@@ -18,7 +18,7 @@
     "autoload": {
       "psr-4": {
         "Practo\\MDS\\": "",
-        "grpc\\grpc\\": "Channel"
+        "Grpc\\": "src/php/lib/Grpc/" 
       }
     }
 }
