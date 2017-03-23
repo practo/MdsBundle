@@ -17,7 +17,7 @@ class AuthUtility {
 	* @return array
 	*/  
   	static public function attachHeaders($metaData, $methodName, $requestObject) {
-  		$methodName = getExceptedMethodName($methodName);
+  		$methodName = AuthUtility::getExceptedMethodName($methodName);
   		
   		$newMetaData = array();
   		$newMetaData['source'] = AuthUtility::$source;
