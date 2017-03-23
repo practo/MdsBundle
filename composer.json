@@ -18,7 +18,7 @@
     "autoload": {
       "classmap": ["PractoMdsBundle.php"], 
       "psr-4": {
-        "Practo\\MDS\\": ["RPC/"],
+        "Practo\\MDS\\": ["RPC/", "Controller/", "DependencyInjection/"],
         "GPBMetadata\\Proto\\": "GPBMetadata/Proto/" 
       }
     }
