@@ -19,6 +19,8 @@
       "psr-4": {
         "Practo\\MDS\\RPC\\": "RPC/", 
         "Practo\\MDS\\DependencyInjection\\":"DependencyInjection/",
+        "Practo\\MDS\\Utility\\":"Utility",
+        "Practo\\MDS\\Config\\":"Config",
         "GPBMetadata\\": "GPBMetadata/" 
       }
     }
