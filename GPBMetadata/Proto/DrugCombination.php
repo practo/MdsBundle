@@ -14,16 +14,17 @@ class DrugCombination
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Common::initOnce();
-        \GPBMetadata\Country::initOnce();
-        \GPBMetadata\Api::initOnce();
-        \GPBMetadata\UnitOfMeasure::initOnce();
-        \GPBMetadata\SystemOfMedicine::initOnce();
+        \GPBMetadata\Proto\Common::initOnce();
+        \GPBMetadata\Proto\Country::initOnce();
+        \GPBMetadata\Proto\Api::initOnce();
+        \GPBMetadata\Proto\UnitOfMeasure::initOnce();
+        \GPBMetadata\Proto\SystemOfMedicine::initOnce();
         $pool->internalAddGeneratedFile(hex2bin(
-            "0a9e0e0a1c70726f746f2f647275675f636f6d62696e6174696f6e2e7072" .
-            "6f746f120e50726163746f2e4d44532e5250431a0c636f6d6d6f6e2e7072" .
-            "6f746f1a0d636f756e7472792e70726f746f1a096170692e70726f746f1a" .
-            "15756e69745f6f665f6d6561737572652e70726f746f1a1873797374656d" .
+            "0abc0e0a1c70726f746f2f647275675f636f6d62696e6174696f6e2e7072" .
+            "6f746f120e50726163746f2e4d44532e5250431a1270726f746f2f636f6d" .
+            "6d6f6e2e70726f746f1a1370726f746f2f636f756e7472792e70726f746f" .
+            "1a0f70726f746f2f6170692e70726f746f1a1b70726f746f2f756e69745f" .
+            "6f665f6d6561737572652e70726f746f1a1e70726f746f2f73797374656d" .
             "5f6f665f6d65646963696e652e70726f746f22a3050a1444727567436f6d" .
             "62696e6174696f6e4d6f64656c120c0a046e616d6518012001280912100a" .
             "0873796e6f6e796d7318022003280912120a0a7265666572656e63657318" .

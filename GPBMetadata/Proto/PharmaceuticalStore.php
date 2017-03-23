@@ -14,26 +14,28 @@ class PharmaceuticalStore
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Api::initOnce();
-        \GPBMetadata\ApiClassification::initOnce();
-        \GPBMetadata\DosageForm::initOnce();
-        \GPBMetadata\DrugBrand::initOnce();
-        \GPBMetadata\DrugCombination::initOnce();
-        \GPBMetadata\DrugManufacturer::initOnce();
-        \GPBMetadata\DrugProduct::initOnce();
-        \GPBMetadata\DrugRegulatoryClassification::initOnce();
-        \GPBMetadata\RouteOfAdministration::initOnce();
-        \GPBMetadata\Common::initOnce();
+        \GPBMetadata\Proto\Api::initOnce();
+        \GPBMetadata\Proto\ApiClassification::initOnce();
+        \GPBMetadata\Proto\DosageForm::initOnce();
+        \GPBMetadata\Proto\DrugBrand::initOnce();
+        \GPBMetadata\Proto\DrugCombination::initOnce();
+        \GPBMetadata\Proto\DrugManufacturer::initOnce();
+        \GPBMetadata\Proto\DrugProduct::initOnce();
+        \GPBMetadata\Proto\DrugRegulatoryClassification::initOnce();
+        \GPBMetadata\Proto\RouteOfAdministration::initOnce();
+        \GPBMetadata\Proto\Common::initOnce();
         $pool->internalAddGeneratedFile(hex2bin(
-            "0ad5770a2070726f746f2f706861726d61636575746963616c5f73746f72" .
-            "652e70726f746f120e50726163746f2e4d44532e5250431a096170692e70" .
-            "726f746f1a186170695f636c617373696669636174696f6e2e70726f746f" .
-            "1a11646f736167655f666f726d2e70726f746f1a10647275675f6272616e" .
-            "642e70726f746f1a16647275675f636f6d62696e6174696f6e2e70726f74" .
-            "6f1a17647275675f6d616e7566616374757265722e70726f746f1a126472" .
-            "75675f70726f647563742e70726f746f1a24647275675f726567756c6174" .
-            "6f72795f636c617373696669636174696f6e2e70726f746f1a1d726f7574" .
-            "655f6f665f61646d696e697374726174696f6e2e70726f746f1a0c636f6d" .
+            "0a91780a2070726f746f2f706861726d61636575746963616c5f73746f72" .
+            "652e70726f746f120e50726163746f2e4d44532e5250431a0f70726f746f" .
+            "2f6170692e70726f746f1a1e70726f746f2f6170695f636c617373696669" .
+            "636174696f6e2e70726f746f1a1770726f746f2f646f736167655f666f72" .
+            "6d2e70726f746f1a1670726f746f2f647275675f6272616e642e70726f74" .
+            "6f1a1c70726f746f2f647275675f636f6d62696e6174696f6e2e70726f74" .
+            "6f1a1d70726f746f2f647275675f6d616e7566616374757265722e70726f" .
+            "746f1a1870726f746f2f647275675f70726f647563742e70726f746f1a2a" .
+            "70726f746f2f647275675f726567756c61746f72795f636c617373696669" .
+            "636174696f6e2e70726f746f1a2370726f746f2f726f7574655f6f665f61" .
+            "646d696e697374726174696f6e2e70726f746f1a1270726f746f2f636f6d" .
             "6d6f6e2e70726f746f2286010a174665746368446f73616765466f726d52" .
             "6570736f6e736512350a0a646f73616765466f726d18012001280b321f2e" .
             "50726163746f2e4d44532e5250432e446f73616765466f726d4d6f64656c" .
