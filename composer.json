@@ -18,7 +18,7 @@
     "autoload": {
       "psr-4": {
         "Practo\\MDS\\": "",
-        "grpc\\grpc\\": ""
+        "grpc\\grpc\\": "Channel"
       }
     }
 }
