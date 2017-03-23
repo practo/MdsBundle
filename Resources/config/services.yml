@@ -38,7 +38,7 @@ services:
     class: %practo_mds.country_rpc.class%
     arguments:
       - %practo_mds.base_uri%
-      - {update_metadata : "Practo\MDS\Utility\AuthUtility::attachHeaders", credentials : null}
+      - {update_metadata : 'Practo\MDS\Utility\AuthUtility::attachHeaders', credentials : null}
       - '@practo_mds_grpc.channel'
 
   practo_mds.unitofmeasure_rpc:
