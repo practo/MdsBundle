@@ -21,7 +21,7 @@ class AuthUtility {
   		
   		$newMetaData = array();
   		$newMetaData['source'] = AuthUtility::$source;
-  		$newMetaData['signature'] = ""; 
+  		$newMetaData['signature'] = AuthUtility::$secret;
 
   		return $newMetaData;
   	}

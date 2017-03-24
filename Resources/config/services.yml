@@ -1,5 +1,5 @@
 parameters:
-    practo_mds.constant_rpc.class: Practo\MDS\Utility\Constant
+    practo_mds.constant_rpc.class: Practo\MDS\Config\Constant
     practo_mds.country_rpc.class: Practo\MDS\RPC\CountryClient
     practo_mds.unitofmeasure_rpc.class: Practo\MDS\RPC\UnitOfMeasureClient
     practo_mds.systemofmedicine_rpc.class: Practo\MDS\RPC\SystemOfMedicineClient
@@ -20,6 +20,9 @@ parameters:
     practo_mds.source: %mds.source%
 
 
+    practo_mds.metadata_call_back: { update_metadata : 'Practo\MDS\Utility\AuthUtility::attachHeaders', credentials : null }
+
+
 services:
 
   practo_mds_grpc.constant:
@@ -38,7 +41,7 @@ services:
     class: %practo_mds.country_rpc.class%
     arguments:
       - %practo_mds.base_uri%
-      - {update_metadata : 'Practo\MDS\Utility\AuthUtility::attachHeaders', credentials : null}
+      - %practo_mds.metadata_call_back%
       - '@practo_mds_grpc.channel'
 
   practo_mds.unitofmeasure_rpc:
