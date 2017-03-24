@@ -63,4 +63,12 @@ class AuthUtility {
   	static public function convertObjectToArray() {
 
   	}
+
+    static public function setSource($source) {
+      AuthUtility::$source = $source;
+    }
+
+    static public function setSecret($secret) {
+      AuthUtility::$secret = $secret;
+    }
 }

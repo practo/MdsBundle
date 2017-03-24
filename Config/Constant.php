@@ -8,8 +8,8 @@ class Constant {
 
 	public function __construct($source, $secret) {
 
-		AuthUtility::$source = $source;
+        AuthUtility::setSource($source);
 
-		AuthUtility::$secret = $secret;
+        AuthUtility::setSecret($secret);
     }
 }
