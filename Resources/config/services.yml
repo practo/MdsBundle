@@ -28,8 +28,8 @@ services:
   practo_mds_grpc.constant:
     class: %practo_mds.constant_rpc.class%
     arguments:
-      - %mds.source%
-      - %mds.rpc.secret%
+      - %practo_mds.source%
+      - %practo_mds.rpc.secret%
 
   practo_mds_grpc.channel:
     class: Grpc\Channel
@@ -48,56 +48,56 @@ services:
     class: %practo_mds.unitofmeasure_rpc.class%
     arguments:
       - %practo_mds.base_uri%
-      - {update_metadata : 'Practo\MDS\Utility\AuthUtility::attachHeaders', credentials : null}
+      - %practo_mds.metadata_call_back%
       - '@practo_mds_grpc.channel'
 
   practo_mds.systemofmedicine_rpc:
     class: %practo_mds.systemofmedicine_rpc.class%
     arguments:
       - %practo_mds.base_uri%
-      - {update_metadata : 'Practo\MDS\Utility\AuthUtility::attachHeaders', credentials : null}
+      - %practo_mds.metadata_call_back%
       - '@practo_mds_grpc.channel'
 
   practo_mds.specialization_rpc:
     class: %practo_mds.specialization_rpc.class%
     arguments:
       - %practo_mds.base_uri%
-      - {update_metadata : 'Practo\MDS\Utility\AuthUtility::attachHeaders', credentials : null}
+      - %practo_mds.metadata_call_back%
       - '@practo_mds_grpc.channel'
 
   practo_mds.routeofadministration_rpc:
     class: %practo_mds.routeofadministration_rpc.class%
     arguments:
       - %practo_mds.base_uri%
-      - {update_metadata : 'Practo\MDS\Utility\AuthUtility::attachHeaders', credentials : null}
+      - %practo_mds.metadata_call_back%
       - '@practo_mds_grpc.channel'
 
   practo_mds.drugregulatoryclassification_rpc:
     class: %practo_mds.drugregulatoryclassification_rpc.class%
     arguments:
       - %practo_mds.base_uri%
-      - {update_metadata : 'Practo\MDS\Utility\AuthUtility::attachHeaders', credentials : null}
+      - %practo_mds.metadata_call_back%
       - '@practo_mds_grpc.channel'
 
   practo_mds.drugproduct_rpc:
     class: %practo_mds.drugproduct_rpc.class%
     arguments:
       - %practo_mds.base_uri%
-      - {update_metadata : 'Practo\MDS\Utility\AuthUtility::attachHeaders', credentials : null}
+      - %practo_mds.metadata_call_back%
       - '@practo_mds_grpc.channel'
 
   practo_mds.drugmanufacturer_rpc:
     class: %practo_mds.drugmanufacturer_rpc.class%
     arguments:
       - %practo_mds.base_uri%
-      - {update_metadata : 'Practo\MDS\Utility\AuthUtility::attachHeaders', credentials : null}
+      - %practo_mds.metadata_call_back%
       - '@practo_mds_grpc.channel'
 
   practo_mds.drugcombination_rpc:
     class: %practo_mds.drugcombination_rpc.class%
     arguments:
       - %practo_mds.base_uri%
-      - {update_metadata : 'Practo\MDS\Utility\AuthUtility::attachHeaders', credentials : null}
+      - %practo_mds.metadata_call_back%
       - '@practo_mds_grpc.channel'
 
 
@@ -105,7 +105,7 @@ services:
     class: %practo_mds.drugbrand_rpc.class%
     arguments:
       - %practo_mds.base_uri%
-      - {update_metadata : 'Practo\MDS\Utility\AuthUtility::attachHeaders', credentials : null}
+      - %practo_mds.metadata_call_back%
       - '@practo_mds_grpc.channel'
 
 
@@ -113,20 +113,20 @@ services:
     class: %practo_mds.dosageform_rpc.class%
     arguments:
       - %practo_mds.base_uri%
-      - {update_metadata : 'Practo\MDS\Utility\AuthUtility::attachHeaders', credentials : null}
+      - %practo_mds.metadata_call_back%
       - '@practo_mds_grpc.channel'
 
   practo_mds.api_rpc:
     class: %practo_mds.api_rpc.class%
     arguments:
       - %practo_mds.base_uri%
-      - {update_metadata : 'Practo\MDS\Utility\AuthUtility::attachHeaders', credentials : null}
+      - %practo_mds.metadata_call_back%
       - '@practo_mds_grpc.channel'
 
   practo_mds.apiclassification_rpc:
     class: %practo_mds.apiclassification_rpc.class%
     arguments:
       - %practo_mds.base_uri%
-      - {update_metadata : 'Practo\MDS\Utility\AuthUtility::attachHeaders', credentials : null}
+      - %practo_mds.metadata_call_back%
       - '@practo_mds_grpc.channel'
 
