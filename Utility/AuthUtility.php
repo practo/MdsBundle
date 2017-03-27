@@ -60,7 +60,7 @@ class AuthUtility {
     * @return string
     */
   	static public function generateSignature($payLoad) {
-      $shaDigest = sha1($payload);
+      $shaDigest = sha1($payLoad);
 
       return base64_encode($shaDigest);
   	}
