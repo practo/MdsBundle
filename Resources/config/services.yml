@@ -1,5 +1,5 @@
 parameters:
-    practo_mds.constant_rpc.class: Practo\MDS\Config\Constant
+    practo_mds.auth_rpc.class: Practo\MDS\Utility\AuthUtility
     practo_mds.country_rpc.class: Practo\MDS\RPC\CountryClient
     practo_mds.unitofmeasure_rpc.class: Practo\MDS\RPC\UnitOfMeasureClient
     practo_mds.systemofmedicine_rpc.class: Practo\MDS\RPC\SystemOfMedicineClient
@@ -26,10 +26,10 @@ parameters:
 services:
 
   practo_mds_grpc.constant:
-    class: %practo_mds.constant_rpc.class%
-    arguments:
-      - %practo_mds.source%
-      - %practo_mds.rpc.secret%
+    class: %practo_mds.auth_rpc.class%
+    calls:
+      - [setSource, [%practo_mds.source%]]
+      - [setSecret, [%practo_mds.rpc.secret%]]
 
   practo_mds_grpc.channel:
     class: Grpc\Channel

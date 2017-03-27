@@ -42,12 +42,6 @@ class AuthUtility {
   	}
 
 
-  	static public function sortArray() {
-
-
-  	}
-
-
   	static public function generateSignature() {
 
 
@@ -56,11 +50,6 @@ class AuthUtility {
 
   	static public function convertObjectToString() {
 
-
-  	}
-
-
-  	static public function convertObjectToArray() {
 
   	}
 
