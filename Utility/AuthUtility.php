@@ -21,7 +21,7 @@ class AuthUtility {
       $request = AuthUtility::convertObjectToString($requestObject);
 
       $payLoad = $methodName . $request . AuthUtility::$source;
-      $payLoadWithSecret = $payLoad . $AuthUtility::$secret;
+      $payLoadWithSecret = $payLoad . AuthUtility::$secret;
 
       $signature = AuthUtility::generateSignature($payload);
   		
