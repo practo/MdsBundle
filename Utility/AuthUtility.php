@@ -18,14 +18,26 @@ class AuthUtility {
 	*/  
   	static public function attachHeaders($metaData, $methodName, $requestObject) {
   		$methodName = AuthUtility::getExceptedMethodName($methodName);
+      $request = AuthUtility::convertObjectToString($requestObject);
+
+      $payLoad = $methodName . $request . AuthUtility::$source;
+      $payLoadWithSecret = $payLoad . $AuthUtility::$secret;
+
+      $signature = AuthUtility::generateSignature($payload);
   		
   		$newMetaData = array();
   		$newMetaData['source'] = AuthUtility::$source;
-  		$newMetaData['signature'] = AuthUtility::$secret;
+  		$newMetaData['signature'] = $signature;
 
   		return $newMetaData;
   	}
 
+
+    /**
+    * @param $methodName fully qualified mehthod name with additional slaches
+    *
+    * @return string
+    */
   	static public function getExceptedMethodName($methodName) {
   		$last_slash_idx = strrpos($methodName, '/');
         if ($last_slash_idx == false) {
@@ -42,15 +54,26 @@ class AuthUtility {
   	}
 
 
-  	static public function generateSignature() {
+    /**
+    * @param $payLoad payLoad with secret attached
+    * 
+    * @return string
+    */
+  	static public function generateSignature($payLoad) {
+      $shaDigest = sha1($payload);
 
-
+      return base64_encode($shaDigest);
   	}
 
 
-  	static public function convertObjectToString() {
+    /**
+    * @param $requestObject incoming request payload
+    *
+    * @return string 
+    */
+  	static public function convertObjectToString($requestObject) {
 
-
+      return $requestObject->encode();
   	}
 
     static public function setSource($source) {
