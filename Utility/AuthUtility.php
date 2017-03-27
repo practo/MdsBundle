@@ -50,7 +50,7 @@ class AuthUtility {
         $service_name = str_replace('/', '', $service_name);
         $name = str_replace('/', '', $name);
         
-        return $service_name.'.'.$name;
+        return $service_name.'/'.$name;
   	}
 
 
