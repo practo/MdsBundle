@@ -23,7 +23,7 @@ class AuthUtility {
       $payLoad = $methodName . $request . AuthUtility::$source;
       $payLoadWithSecret = $payLoad . AuthUtility::$secret;
 
-      $signature = AuthUtility::generateSignature($payload);
+      $signature = AuthUtility::generateSignature($payLoadWithSecret);
   		
   		$newMetaData = array();
   		$newMetaData['source'] = AuthUtility::$source;
