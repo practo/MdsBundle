@@ -1,0 +1,97 @@
+<?php
+// GENERATED CODE -- DO NOT EDIT!
+
+namespace Practo\MDS\RPC {
+
+  class APIClient extends \Grpc\BaseStub {
+
+    /**
+     * @param string $hostname hostname
+     * @param array $opts channel options
+     * @param Grpc\Channel $channel (optional) re-use channel object
+     */
+    public function __construct($hostname, $opts, $channel = null) {
+      parent::__construct($hostname, $opts, $channel);
+    }
+
+    /**
+     * @param \Practo\MDS\RPC\AddAPIRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function add(\Practo\MDS\RPC\AddAPIRequest $argument,
+      $metadata = [], $options = []) {
+      return $this->_simpleRequest('/Practo.MDS.RPC.API/add',
+      $argument,
+      ['\Practo\MDS\RPC\AddResponse', 'decode'],
+      $metadata, $options);
+    }
+
+    /**
+     * @param \Practo\MDS\RPC\FetchRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function fetch(\Practo\MDS\RPC\FetchRequest $argument,
+      $metadata = [], $options = []) {
+      return $this->_simpleRequest('/Practo.MDS.RPC.API/fetch',
+      $argument,
+      ['\Practo\MDS\RPC\FetchAPIResponse', 'decode'],
+      $metadata, $options);
+    }
+
+    /**
+     * @param \Practo\MDS\RPC\FetchAllRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function fetchAll(\Practo\MDS\RPC\FetchAllRequest $argument,
+      $metadata = [], $options = []) {
+      return $this->_simpleRequest('/Practo.MDS.RPC.API/fetchAll',
+      $argument,
+      ['\Practo\MDS\RPC\FetchAllAPIResponse', 'decode'],
+      $metadata, $options);
+    }
+
+    /**
+     * @param \Practo\MDS\RPC\FetchRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function fetchExtended(\Practo\MDS\RPC\FetchRequest $argument,
+      $metadata = [], $options = []) {
+      return $this->_simpleRequest('/Practo.MDS.RPC.API/fetchExtended',
+      $argument,
+      ['\Practo\MDS\RPC\FetchAPIExtendedResponse', 'decode'],
+      $metadata, $options);
+    }
+
+    /**
+     * @param \Practo\MDS\RPC\FetchAllRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function fetchAllExtended(\Practo\MDS\RPC\FetchAllRequest $argument,
+      $metadata = [], $options = []) {
+      return $this->_simpleRequest('/Practo.MDS.RPC.API/fetchAllExtended',
+      $argument,
+      ['\Practo\MDS\RPC\FetchAllAPIExtendedResponse', 'decode'],
+      $metadata, $options);
+    }
+
+    /**
+     * @param \Practo\MDS\RPC\APISearchRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function search(\Practo\MDS\RPC\APISearchRequest $argument,
+      $metadata = [], $options = []) {
+      return $this->_simpleRequest('/Practo.MDS.RPC.API/search',
+      $argument,
+      ['\Practo\MDS\RPC\FetchAllAPIResponse', 'decode'],
+      $metadata, $options);
+    }
+
+  }
+
+}
