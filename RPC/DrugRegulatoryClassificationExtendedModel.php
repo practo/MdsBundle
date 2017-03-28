@@ -34,11 +34,11 @@ class DrugRegulatoryClassificationExtendedModel extends \Google\Protobuf\Interna
      */
     private $id = '';
     /**
-     * <code>int64 created = 6;</code>
+     * <code>sfixed64 created = 6;</code>
      */
     private $created = 0;
     /**
-     * <code>int64 modified = 7;</code>
+     * <code>sfixed64 modified = 7;</code>
      */
     private $modified = 0;
     /**
@@ -74,7 +74,7 @@ class DrugRegulatoryClassificationExtendedModel extends \Google\Protobuf\Interna
      */
     private $visible = false;
     /**
-     * <code>int32 version = 16;</code>
+     * <code>sfixed32 version = 16;</code>
      */
     private $version = 0;
 
@@ -169,7 +169,7 @@ class DrugRegulatoryClassificationExtendedModel extends \Google\Protobuf\Interna
     }
 
     /**
-     * <code>int64 created = 6;</code>
+     * <code>sfixed64 created = 6;</code>
      */
     public function getCreated()
     {
@@ -177,7 +177,7 @@ class DrugRegulatoryClassificationExtendedModel extends \Google\Protobuf\Interna
     }
 
     /**
-     * <code>int64 created = 6;</code>
+     * <code>sfixed64 created = 6;</code>
      */
     public function setCreated($var)
     {
@@ -186,7 +186,7 @@ class DrugRegulatoryClassificationExtendedModel extends \Google\Protobuf\Interna
     }
 
     /**
-     * <code>int64 modified = 7;</code>
+     * <code>sfixed64 modified = 7;</code>
      */
     public function getModified()
     {
@@ -194,7 +194,7 @@ class DrugRegulatoryClassificationExtendedModel extends \Google\Protobuf\Interna
     }
 
     /**
-     * <code>int64 modified = 7;</code>
+     * <code>sfixed64 modified = 7;</code>
      */
     public function setModified($var)
     {
@@ -338,7 +338,7 @@ class DrugRegulatoryClassificationExtendedModel extends \Google\Protobuf\Interna
     }
 
     /**
-     * <code>int32 version = 16;</code>
+     * <code>sfixed32 version = 16;</code>
      */
     public function getVersion()
     {
@@ -346,7 +346,7 @@ class DrugRegulatoryClassificationExtendedModel extends \Google\Protobuf\Interna
     }
 
     /**
-     * <code>int32 version = 16;</code>
+     * <code>sfixed32 version = 16;</code>
      */
     public function setVersion($var)
     {

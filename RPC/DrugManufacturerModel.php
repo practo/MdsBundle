@@ -38,11 +38,11 @@ class DrugManufacturerModel extends \Google\Protobuf\Internal\Message
      */
     private $id = '';
     /**
-     * <code>int64 created = 7;</code>
+     * <code>sfixed64 created = 7;</code>
      */
     private $created = 0;
     /**
-     * <code>int64 modified = 8;</code>
+     * <code>sfixed64 modified = 8;</code>
      */
     private $modified = 0;
     /**
@@ -78,7 +78,7 @@ class DrugManufacturerModel extends \Google\Protobuf\Internal\Message
      */
     private $visible = false;
     /**
-     * <code>int32 version = 17;</code>
+     * <code>sfixed32 version = 17;</code>
      */
     private $version = 0;
 
@@ -190,7 +190,7 @@ class DrugManufacturerModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>int64 created = 7;</code>
+     * <code>sfixed64 created = 7;</code>
      */
     public function getCreated()
     {
@@ -198,7 +198,7 @@ class DrugManufacturerModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>int64 created = 7;</code>
+     * <code>sfixed64 created = 7;</code>
      */
     public function setCreated($var)
     {
@@ -207,7 +207,7 @@ class DrugManufacturerModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>int64 modified = 8;</code>
+     * <code>sfixed64 modified = 8;</code>
      */
     public function getModified()
     {
@@ -215,7 +215,7 @@ class DrugManufacturerModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>int64 modified = 8;</code>
+     * <code>sfixed64 modified = 8;</code>
      */
     public function setModified($var)
     {
@@ -359,7 +359,7 @@ class DrugManufacturerModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>int32 version = 17;</code>
+     * <code>sfixed32 version = 17;</code>
      */
     public function getVersion()
     {
@@ -367,7 +367,7 @@ class DrugManufacturerModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>int32 version = 17;</code>
+     * <code>sfixed32 version = 17;</code>
      */
     public function setVersion($var)
     {

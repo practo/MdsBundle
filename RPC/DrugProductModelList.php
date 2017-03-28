@@ -18,7 +18,7 @@ class DrugProductModelList extends \Google\Protobuf\Internal\Message
      */
     private $drugProduct;
     /**
-     * <code>int64 count = 2;</code>
+     * <code>sfixed64 count = 2;</code>
      */
     private $count = 0;
 
@@ -45,7 +45,7 @@ class DrugProductModelList extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>int64 count = 2;</code>
+     * <code>sfixed64 count = 2;</code>
      */
     public function getCount()
     {
@@ -53,7 +53,7 @@ class DrugProductModelList extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>int64 count = 2;</code>
+     * <code>sfixed64 count = 2;</code>
      */
     public function setCount($var)
     {

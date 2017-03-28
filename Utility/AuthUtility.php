@@ -4,33 +4,38 @@ namespace Practo\MDS\Utility;
 
 class AuthUtility {
 
-	static private $source;
+  static private $source;
 
-	static private $secret;
+  static private $secret;
 
 
-	/**
-	* @param $metaData user provided metaData to rpc call
-	* @param $methodName invoked method name
-	* @param $requestObject request object of rpc call
-	*
-	* @return array
-	*/  
-  	static public function attachHeaders($metaData, $methodName, $requestObject) {
-  		$methodName = AuthUtility::getExceptedMethodName($methodName);
+    /**
+    * @param $metaData user provided metaData to rpc call
+    * @param $methodName invoked method name
+    * @param $requestObject request object of rpc call
+    *
+    * @return array
+    */  
+    static public function attachHeaders($metaData, $methodName, $requestObject) {
+      $methodName = AuthUtility::getExceptedMethodName($methodName);
       $request = AuthUtility::convertObjectToString($requestObject);
 
-      $payLoad = $methodName . $request . AuthUtility::$source;
+      $callFunc = function($entry) {
+        return sprintf("%02X",$entry);
+      };
+
+      $hexPayLoad = implode("", array_map($callFunc, unpack("C*", $request)));
+
+      $payLoad = $methodName . $hexPayLoad . AuthUtility::$source;
       $payLoadWithSecret = $payLoad . AuthUtility::$secret;
-
       $signature = AuthUtility::generateSignature($payLoadWithSecret);
-  		
-  		$newMetaData = array();
-  		$newMetaData['source'] = AuthUtility::$source;
-  		$newMetaData['signature'] = $signature;
 
-  		return $newMetaData;
-  	}
+      $newMetaData = array();
+      $newMetaData['source'] = AuthUtility::$source;
+      $newMetaData['signature'] = $signature;
+
+      return $newMetaData;
+    }
 
 
     /**
@@ -38,20 +43,20 @@ class AuthUtility {
     *
     * @return string
     */
-  	static public function getExceptedMethodName($methodName) {
-  		$last_slash_idx = strrpos($methodName, '/');
-        if ($last_slash_idx == false) {
-            throw new \InvalidArgumentException(
-                'service name must have a slash');
-        }
+    static public function getExceptedMethodName($methodName) {
+      $last_slash_idx = strrpos($methodName, '/');
+      if ($last_slash_idx == false) {
+          throw new \InvalidArgumentException(
+            'service name must have a slash');
+      }
 
-        $name = substr($methodName, $last_slash_idx, strlen($methodName));
-        $service_name = substr($methodName, 0, $last_slash_idx);
-        $service_name = str_replace('/', '', $service_name);
-        $name = str_replace('/', '', $name);
+      $name = substr($methodName, $last_slash_idx, strlen($methodName));
+      $service_name = substr($methodName, 0, $last_slash_idx);
+      $service_name = str_replace('/', '', $service_name);
+      $name = str_replace('/', '', $name);
         
-        return $service_name.'/'.$name;
-  	}
+      return $service_name.'/'.$name;
+    }
 
 
     /**
@@ -59,11 +64,11 @@ class AuthUtility {
     * 
     * @return string
     */
-  	static public function generateSignature($payLoad) {
+    static public function generateSignature($payLoad) {
       $shaDigest = sha1($payLoad);
 
       return base64_encode($shaDigest);
-  	}
+    }
 
 
     /**
@@ -71,10 +76,10 @@ class AuthUtility {
     *
     * @return string 
     */
-  	static public function convertObjectToString($requestObject) {
+    static public function convertObjectToString($requestObject) {
 
       return $requestObject->encode();
-  	}
+    }
 
     static public function setSource($source) {
       AuthUtility::$source = $source;

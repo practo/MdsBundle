@@ -18,7 +18,7 @@ class DrugRegulatoryClassificationModelList extends \Google\Protobuf\Internal\Me
      */
     private $drugRegulatoryClassification;
     /**
-     * <code>int64 count = 2;</code>
+     * <code>sfixed64 count = 2;</code>
      */
     private $count = 0;
 
@@ -45,7 +45,7 @@ class DrugRegulatoryClassificationModelList extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * <code>int64 count = 2;</code>
+     * <code>sfixed64 count = 2;</code>
      */
     public function getCount()
     {
@@ -53,7 +53,7 @@ class DrugRegulatoryClassificationModelList extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * <code>int64 count = 2;</code>
+     * <code>sfixed64 count = 2;</code>
      */
     public function setCount($var)
     {

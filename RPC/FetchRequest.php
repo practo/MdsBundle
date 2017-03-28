@@ -18,7 +18,7 @@ class FetchRequest extends \Google\Protobuf\Internal\Message
      */
     private $conceptId = '';
     /**
-     * <code>int32 version = 2;</code>
+     * <code>sfixed32 version = 2;</code>
      */
     private $version = 0;
     /**
@@ -53,7 +53,7 @@ class FetchRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>int32 version = 2;</code>
+     * <code>sfixed32 version = 2;</code>
      */
     public function getVersion()
     {
@@ -61,7 +61,7 @@ class FetchRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>int32 version = 2;</code>
+     * <code>sfixed32 version = 2;</code>
      */
     public function setVersion($var)
     {

@@ -70,11 +70,11 @@ class SpecializationExtendedModel extends \Google\Protobuf\Internal\Message
      */
     private $id = '';
     /**
-     * <code>int64 created = 15;</code>
+     * <code>sfixed64 created = 15;</code>
      */
     private $created = 0;
     /**
-     * <code>int64 modified = 16;</code>
+     * <code>sfixed64 modified = 16;</code>
      */
     private $modified = 0;
     /**
@@ -110,7 +110,7 @@ class SpecializationExtendedModel extends \Google\Protobuf\Internal\Message
      */
     private $visible = false;
     /**
-     * <code>int32 version = 25;</code>
+     * <code>sfixed32 version = 25;</code>
      */
     private $version = 0;
 
@@ -358,7 +358,7 @@ class SpecializationExtendedModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>int64 created = 15;</code>
+     * <code>sfixed64 created = 15;</code>
      */
     public function getCreated()
     {
@@ -366,7 +366,7 @@ class SpecializationExtendedModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>int64 created = 15;</code>
+     * <code>sfixed64 created = 15;</code>
      */
     public function setCreated($var)
     {
@@ -375,7 +375,7 @@ class SpecializationExtendedModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>int64 modified = 16;</code>
+     * <code>sfixed64 modified = 16;</code>
      */
     public function getModified()
     {
@@ -383,7 +383,7 @@ class SpecializationExtendedModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>int64 modified = 16;</code>
+     * <code>sfixed64 modified = 16;</code>
      */
     public function setModified($var)
     {
@@ -527,7 +527,7 @@ class SpecializationExtendedModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>int32 version = 25;</code>
+     * <code>sfixed32 version = 25;</code>
      */
     public function getVersion()
     {
@@ -535,7 +535,7 @@ class SpecializationExtendedModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>int32 version = 25;</code>
+     * <code>sfixed32 version = 25;</code>
      */
     public function setVersion($var)
     {

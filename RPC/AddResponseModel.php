@@ -18,7 +18,7 @@ class AddResponseModel extends \Google\Protobuf\Internal\Message
      */
     private $id = '';
     /**
-     * <code>int32 version = 2;</code>
+     * <code>sfixed32 version = 2;</code>
      */
     private $version = 0;
 
@@ -45,7 +45,7 @@ class AddResponseModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>int32 version = 2;</code>
+     * <code>sfixed32 version = 2;</code>
      */
     public function getVersion()
     {
@@ -53,7 +53,7 @@ class AddResponseModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>int32 version = 2;</code>
+     * <code>sfixed32 version = 2;</code>
      */
     public function setVersion($var)
     {

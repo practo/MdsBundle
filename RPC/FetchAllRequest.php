@@ -14,11 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class FetchAllRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>int32 page = 1;</code>
+     * <code>sfixed32 page = 1;</code>
      */
     private $page = 0;
     /**
-     * <code>int32 limit = 2;</code>
+     * <code>sfixed32 limit = 2;</code>
      */
     private $limit = 0;
     /**
@@ -40,7 +40,7 @@ class FetchAllRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>int32 page = 1;</code>
+     * <code>sfixed32 page = 1;</code>
      */
     public function getPage()
     {
@@ -48,7 +48,7 @@ class FetchAllRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>int32 page = 1;</code>
+     * <code>sfixed32 page = 1;</code>
      */
     public function setPage($var)
     {
@@ -57,7 +57,7 @@ class FetchAllRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>int32 limit = 2;</code>
+     * <code>sfixed32 limit = 2;</code>
      */
     public function getLimit()
     {
@@ -65,7 +65,7 @@ class FetchAllRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>int32 limit = 2;</code>
+     * <code>sfixed32 limit = 2;</code>
      */
     public function setLimit($var)
     {

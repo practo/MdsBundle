@@ -34,7 +34,7 @@ class CountryModel extends \Google\Protobuf\Internal\Message
      */
     private $iso_3166_1_alpha3_code = '';
     /**
-     * <code>int32 iso_3166_1_numeric_code = 6;</code>
+     * <code>sfixed32 iso_3166_1_numeric_code = 6;</code>
      */
     private $iso_3166_1_numeric_code = 0;
     /**
@@ -78,11 +78,11 @@ class CountryModel extends \Google\Protobuf\Internal\Message
      */
     private $id = '';
     /**
-     * <code>int64 created = 17;</code>
+     * <code>sfixed64 created = 17;</code>
      */
     private $created = 0;
     /**
-     * <code>int64 modified = 18;</code>
+     * <code>sfixed64 modified = 18;</code>
      */
     private $modified = 0;
     /**
@@ -118,7 +118,7 @@ class CountryModel extends \Google\Protobuf\Internal\Message
      */
     private $visible = false;
     /**
-     * <code>int32 version = 27;</code>
+     * <code>sfixed32 version = 27;</code>
      */
     private $version = 0;
 
@@ -213,7 +213,7 @@ class CountryModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>int32 iso_3166_1_numeric_code = 6;</code>
+     * <code>sfixed32 iso_3166_1_numeric_code = 6;</code>
      */
     public function getIso31661NumericCode()
     {
@@ -221,7 +221,7 @@ class CountryModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>int32 iso_3166_1_numeric_code = 6;</code>
+     * <code>sfixed32 iso_3166_1_numeric_code = 6;</code>
      */
     public function setIso31661NumericCode($var)
     {
@@ -400,7 +400,7 @@ class CountryModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>int64 created = 17;</code>
+     * <code>sfixed64 created = 17;</code>
      */
     public function getCreated()
     {
@@ -408,7 +408,7 @@ class CountryModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>int64 created = 17;</code>
+     * <code>sfixed64 created = 17;</code>
      */
     public function setCreated($var)
     {
@@ -417,7 +417,7 @@ class CountryModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>int64 modified = 18;</code>
+     * <code>sfixed64 modified = 18;</code>
      */
     public function getModified()
     {
@@ -425,7 +425,7 @@ class CountryModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>int64 modified = 18;</code>
+     * <code>sfixed64 modified = 18;</code>
      */
     public function setModified($var)
     {
@@ -569,7 +569,7 @@ class CountryModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>int32 version = 27;</code>
+     * <code>sfixed32 version = 27;</code>
      */
     public function getVersion()
     {
@@ -577,7 +577,7 @@ class CountryModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>int32 version = 27;</code>
+     * <code>sfixed32 version = 27;</code>
      */
     public function setVersion($var)
     {
