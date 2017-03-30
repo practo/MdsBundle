@@ -11,12 +11,13 @@ class AuthUtility {
 
     /**
     * @param $metaData user provided metaData to rpc call
+    * @param $jwtAudUri the auth uri for the jwt
     * @param $methodName invoked method name
     * @param $requestObject request object of rpc call
     *
     * @return array
     */  
-    static public function attachHeaders($metaData, $methodName, $requestObject) {
+    static public function attachHeaders($metaData, $jwtAudUri, $methodName, $requestObject) {
       $methodName = AuthUtility::getExceptedMethodName($methodName);
       $request = AuthUtility::convertObjectToString($requestObject);
 
@@ -30,11 +31,12 @@ class AuthUtility {
       $payLoadWithSecret = $payLoad . AuthUtility::$secret;
       $signature = AuthUtility::generateSignature($payLoadWithSecret);
 
-      $newMetaData = array();
-      $newMetaData['source'] = [AuthUtility::$source];
-      $newMetaData['signature'] = [$signature];
+      $metaData['source'] = [AuthUtility::$source];
+      $metaData['client_ip'] = [gethostbyname(gethostname())];
+      $metaData['client_name'] = [gethostname()];
+      $metaData['signature'] = [$signature];
 
-      return $newMetaData;
+      return $metaData;
     }
 
 
