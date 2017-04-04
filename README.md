@@ -58,3 +58,14 @@ You need to add this to your project's `composer.json` file.
 ```
 composer update
 ```
+
+
+**Configure MDS Client via parameters.yml***
+To set connection parameters you can add following properties in your application's parameter.yml
+
+```yml
+mds:
+  source: 'source name provided for your app by mds'
+  secret: 'secret key provided for your app by mds'
+  base_uri: 'mds host name and port, usually this is http://localhost:50051'
+```
