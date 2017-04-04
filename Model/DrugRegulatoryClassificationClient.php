@@ -1,0 +1,97 @@
+<?php
+// GENERATED CODE -- DO NOT EDIT!
+
+namespace Practo\MDS\Model {
+
+  class DrugRegulatoryClassificationClient extends \Grpc\BaseStub {
+
+    /**
+     * @param string $hostname hostname
+     * @param array $opts channel options
+     * @param Grpc\Channel $channel (optional) re-use channel object
+     */
+    public function __construct($hostname, $opts, $channel = null) {
+      parent::__construct($hostname, $opts, $channel);
+    }
+
+    /**
+     * @param \Practo\MDS\Model\AddDrugRegulatoryClassificationRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function add(\Practo\MDS\Model\AddDrugRegulatoryClassificationRequest $argument,
+      $metadata = [], $options = []) {
+      return $this->_simpleRequest('/Practo.MDS.Model.DrugRegulatoryClassification/add',
+      $argument,
+      ['\Practo\MDS\Model\AddResponse', 'decode'],
+      $metadata, $options);
+    }
+
+    /**
+     * @param \Practo\MDS\Model\FetchRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function fetch(\Practo\MDS\Model\FetchRequest $argument,
+      $metadata = [], $options = []) {
+      return $this->_simpleRequest('/Practo.MDS.Model.DrugRegulatoryClassification/fetch',
+      $argument,
+      ['\Practo\MDS\Model\FetchDrugRegulatoryClassificationResponse', 'decode'],
+      $metadata, $options);
+    }
+
+    /**
+     * @param \Practo\MDS\Model\FetchAllRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function fetchAll(\Practo\MDS\Model\FetchAllRequest $argument,
+      $metadata = [], $options = []) {
+      return $this->_simpleRequest('/Practo.MDS.Model.DrugRegulatoryClassification/fetchAll',
+      $argument,
+      ['\Practo\MDS\Model\FetchAllDrugRegulatoryClassificationResponse', 'decode'],
+      $metadata, $options);
+    }
+
+    /**
+     * @param \Practo\MDS\Model\FetchRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function fetchExtended(\Practo\MDS\Model\FetchRequest $argument,
+      $metadata = [], $options = []) {
+      return $this->_simpleRequest('/Practo.MDS.Model.DrugRegulatoryClassification/fetchExtended',
+      $argument,
+      ['\Practo\MDS\Model\FetchDrugRegulatoryClassificationExtendedResponse', 'decode'],
+      $metadata, $options);
+    }
+
+    /**
+     * @param \Practo\MDS\Model\FetchAllRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function fetchAllExtended(\Practo\MDS\Model\FetchAllRequest $argument,
+      $metadata = [], $options = []) {
+      return $this->_simpleRequest('/Practo.MDS.Model.DrugRegulatoryClassification/fetchAllExtended',
+      $argument,
+      ['\Practo\MDS\Model\FetchAllDrugRegulatoryClassificationExtendedResponse', 'decode'],
+      $metadata, $options);
+    }
+
+    /**
+     * @param \Practo\MDS\Model\DrugRegulatoryClassificationSearchRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function search(\Practo\MDS\Model\DrugRegulatoryClassificationSearchRequest $argument,
+      $metadata = [], $options = []) {
+      return $this->_simpleRequest('/Practo.MDS.Model.DrugRegulatoryClassification/search',
+      $argument,
+      ['\Practo\MDS\Model\FetchAllDrugRegulatoryClassificationResponse', 'decode'],
+      $metadata, $options);
+    }
+
+  }
+
+}

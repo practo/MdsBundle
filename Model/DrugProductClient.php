@@ -1,0 +1,97 @@
+<?php
+// GENERATED CODE -- DO NOT EDIT!
+
+namespace Practo\MDS\Model {
+
+  class DrugProductClient extends \Grpc\BaseStub {
+
+    /**
+     * @param string $hostname hostname
+     * @param array $opts channel options
+     * @param Grpc\Channel $channel (optional) re-use channel object
+     */
+    public function __construct($hostname, $opts, $channel = null) {
+      parent::__construct($hostname, $opts, $channel);
+    }
+
+    /**
+     * @param \Practo\MDS\Model\AddDrugProductRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function add(\Practo\MDS\Model\AddDrugProductRequest $argument,
+      $metadata = [], $options = []) {
+      return $this->_simpleRequest('/Practo.MDS.Model.DrugProduct/add',
+      $argument,
+      ['\Practo\MDS\Model\AddResponse', 'decode'],
+      $metadata, $options);
+    }
+
+    /**
+     * @param \Practo\MDS\Model\FetchRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function fetch(\Practo\MDS\Model\FetchRequest $argument,
+      $metadata = [], $options = []) {
+      return $this->_simpleRequest('/Practo.MDS.Model.DrugProduct/fetch',
+      $argument,
+      ['\Practo\MDS\Model\FetchDrugProductResponse', 'decode'],
+      $metadata, $options);
+    }
+
+    /**
+     * @param \Practo\MDS\Model\FetchAllRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function fetchAll(\Practo\MDS\Model\FetchAllRequest $argument,
+      $metadata = [], $options = []) {
+      return $this->_simpleRequest('/Practo.MDS.Model.DrugProduct/fetchAll',
+      $argument,
+      ['\Practo\MDS\Model\FetchAllDrugProductResponse', 'decode'],
+      $metadata, $options);
+    }
+
+    /**
+     * @param \Practo\MDS\Model\FetchRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function fetchExtended(\Practo\MDS\Model\FetchRequest $argument,
+      $metadata = [], $options = []) {
+      return $this->_simpleRequest('/Practo.MDS.Model.DrugProduct/fetchExtended',
+      $argument,
+      ['\Practo\MDS\Model\FetchDrugProductExtendedResponse', 'decode'],
+      $metadata, $options);
+    }
+
+    /**
+     * @param \Practo\MDS\Model\FetchAllRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function fetchAllExtended(\Practo\MDS\Model\FetchAllRequest $argument,
+      $metadata = [], $options = []) {
+      return $this->_simpleRequest('/Practo.MDS.Model.DrugProduct/fetchAllExtended',
+      $argument,
+      ['\Practo\MDS\Model\FetchAllDrugProductExtendedResponse', 'decode'],
+      $metadata, $options);
+    }
+
+    /**
+     * @param \Practo\MDS\Model\DrugProductSearchRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function search(\Practo\MDS\Model\DrugProductSearchRequest $argument,
+      $metadata = [], $options = []) {
+      return $this->_simpleRequest('/Practo.MDS.Model.DrugProduct/search',
+      $argument,
+      ['\Practo\MDS\Model\FetchAllDrugProductResponse', 'decode'],
+      $metadata, $options);
+    }
+
+  }
+
+}
