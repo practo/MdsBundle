@@ -66,6 +66,19 @@ namespace Practo\MDS\Model {
       $metadata, $options);
     }
 
+    /**
+     * @param \Practo\MDS\Model\FetchByIdsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function fetchByIds(\Practo\MDS\Model\FetchByIdsRequest $argument,
+      $metadata = [], $options = []) {
+      return $this->_simpleRequest('/Practo.MDS.Model.UnitOfMeasure/fetchByIds',
+      $argument,
+      ['\Practo\MDS\Model\FetchAllUnitOfMeasureResponse', 'decode'],
+      $metadata, $options);
+    }
+
   }
 
 }
