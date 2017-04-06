@@ -13,7 +13,10 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class FetchSpecializationResponse extends \Google\Protobuf\Internal\Message
 {
-    protected $fetch_specialization_response_type;
+    /**
+     * <code>.Practo.MDS.Model.SpecializationModel specialization = 1;</code>
+     */
+    private $specialization = null;
 
     public function __construct() {
         \GPBMetadata\TaxonomyMedicalStore::initOnce();
@@ -25,7 +28,7 @@ class FetchSpecializationResponse extends \Google\Protobuf\Internal\Message
      */
     public function getSpecialization()
     {
-        return $this->readOneof(1);
+        return $this->specialization;
     }
 
     /**
@@ -34,29 +37,7 @@ class FetchSpecializationResponse extends \Google\Protobuf\Internal\Message
     public function setSpecialization(&$var)
     {
         GPBUtil::checkMessage($var, \Practo\MDS\Model\SpecializationModel::class);
-        $this->writeOneof(1, $var);
-    }
-
-    /**
-     * <code>string message = 2;</code>
-     */
-    public function getMessage()
-    {
-        return $this->readOneof(2);
-    }
-
-    /**
-     * <code>string message = 2;</code>
-     */
-    public function setMessage($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->writeOneof(2, $var);
-    }
-
-    public function getFetchSpecializationResponseType()
-    {
-        return $this->fetch_specialization_response_type;
+        $this->specialization = $var;
     }
 
 }

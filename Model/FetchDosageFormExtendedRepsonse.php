@@ -13,7 +13,10 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class FetchDosageFormExtendedRepsonse extends \Google\Protobuf\Internal\Message
 {
-    protected $fetch_dosage_form_extended_repsonse_type;
+    /**
+     * <code>.Practo.MDS.Model.DosageFormExtendedModel dosageForm = 1;</code>
+     */
+    private $dosageForm = null;
 
     public function __construct() {
         \GPBMetadata\PharmaceuticalStore::initOnce();
@@ -25,7 +28,7 @@ class FetchDosageFormExtendedRepsonse extends \Google\Protobuf\Internal\Message
      */
     public function getDosageForm()
     {
-        return $this->readOneof(1);
+        return $this->dosageForm;
     }
 
     /**
@@ -34,29 +37,7 @@ class FetchDosageFormExtendedRepsonse extends \Google\Protobuf\Internal\Message
     public function setDosageForm(&$var)
     {
         GPBUtil::checkMessage($var, \Practo\MDS\Model\DosageFormExtendedModel::class);
-        $this->writeOneof(1, $var);
-    }
-
-    /**
-     * <code>string message = 2;</code>
-     */
-    public function getMessage()
-    {
-        return $this->readOneof(2);
-    }
-
-    /**
-     * <code>string message = 2;</code>
-     */
-    public function setMessage($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->writeOneof(2, $var);
-    }
-
-    public function getFetchDosageFormExtendedRepsonseType()
-    {
-        return $this->fetch_dosage_form_extended_repsonse_type;
+        $this->dosageForm = $var;
     }
 
 }

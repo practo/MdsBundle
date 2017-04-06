@@ -13,7 +13,10 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class FetchDrugCombinationExtendedResponse extends \Google\Protobuf\Internal\Message
 {
-    protected $fetch_drug_combination_extended_response_type;
+    /**
+     * <code>.Practo.MDS.Model.DrugCombinationExtendedModel drugCombination = 1;</code>
+     */
+    private $drugCombination = null;
 
     public function __construct() {
         \GPBMetadata\PharmaceuticalStore::initOnce();
@@ -25,7 +28,7 @@ class FetchDrugCombinationExtendedResponse extends \Google\Protobuf\Internal\Mes
      */
     public function getDrugCombination()
     {
-        return $this->readOneof(1);
+        return $this->drugCombination;
     }
 
     /**
@@ -34,29 +37,7 @@ class FetchDrugCombinationExtendedResponse extends \Google\Protobuf\Internal\Mes
     public function setDrugCombination(&$var)
     {
         GPBUtil::checkMessage($var, \Practo\MDS\Model\DrugCombinationExtendedModel::class);
-        $this->writeOneof(1, $var);
-    }
-
-    /**
-     * <code>string message = 2;</code>
-     */
-    public function getMessage()
-    {
-        return $this->readOneof(2);
-    }
-
-    /**
-     * <code>string message = 2;</code>
-     */
-    public function setMessage($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->writeOneof(2, $var);
-    }
-
-    public function getFetchDrugCombinationExtendedResponseType()
-    {
-        return $this->fetch_drug_combination_extended_response_type;
+        $this->drugCombination = $var;
     }
 
 }

@@ -13,7 +13,10 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class FetchAllSystemOfMedicineExtendedResponse extends \Google\Protobuf\Internal\Message
 {
-    protected $fetch_all_system_of_medicine_extended_response_type;
+    /**
+     * <code>.Practo.MDS.Model.SystemOfMedicineExtendedModelList systemOfMedicine = 1;</code>
+     */
+    private $systemOfMedicine = null;
 
     public function __construct() {
         \GPBMetadata\TaxonomyMedicalStore::initOnce();
@@ -25,7 +28,7 @@ class FetchAllSystemOfMedicineExtendedResponse extends \Google\Protobuf\Internal
      */
     public function getSystemOfMedicine()
     {
-        return $this->readOneof(1);
+        return $this->systemOfMedicine;
     }
 
     /**
@@ -34,29 +37,7 @@ class FetchAllSystemOfMedicineExtendedResponse extends \Google\Protobuf\Internal
     public function setSystemOfMedicine(&$var)
     {
         GPBUtil::checkMessage($var, \Practo\MDS\Model\SystemOfMedicineExtendedModelList::class);
-        $this->writeOneof(1, $var);
-    }
-
-    /**
-     * <code>string message = 2;</code>
-     */
-    public function getMessage()
-    {
-        return $this->readOneof(2);
-    }
-
-    /**
-     * <code>string message = 2;</code>
-     */
-    public function setMessage($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->writeOneof(2, $var);
-    }
-
-    public function getFetchAllSystemOfMedicineExtendedResponseType()
-    {
-        return $this->fetch_all_system_of_medicine_extended_response_type;
+        $this->systemOfMedicine = $var;
     }
 
 }

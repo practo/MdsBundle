@@ -13,7 +13,10 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class FetchDrugRegulatoryClassificationExtendedResponse extends \Google\Protobuf\Internal\Message
 {
-    protected $fetch_drug_regulatory_classification_extended_response_type;
+    /**
+     * <code>.Practo.MDS.Model.DrugRegulatoryClassificationExtendedModel drugRegulatoryClassification = 1;</code>
+     */
+    private $drugRegulatoryClassification = null;
 
     public function __construct() {
         \GPBMetadata\PharmaceuticalStore::initOnce();
@@ -25,7 +28,7 @@ class FetchDrugRegulatoryClassificationExtendedResponse extends \Google\Protobuf
      */
     public function getDrugRegulatoryClassification()
     {
-        return $this->readOneof(1);
+        return $this->drugRegulatoryClassification;
     }
 
     /**
@@ -34,29 +37,7 @@ class FetchDrugRegulatoryClassificationExtendedResponse extends \Google\Protobuf
     public function setDrugRegulatoryClassification(&$var)
     {
         GPBUtil::checkMessage($var, \Practo\MDS\Model\DrugRegulatoryClassificationExtendedModel::class);
-        $this->writeOneof(1, $var);
-    }
-
-    /**
-     * <code>string message = 2;</code>
-     */
-    public function getMessage()
-    {
-        return $this->readOneof(2);
-    }
-
-    /**
-     * <code>string message = 2;</code>
-     */
-    public function setMessage($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->writeOneof(2, $var);
-    }
-
-    public function getFetchDrugRegulatoryClassificationExtendedResponseType()
-    {
-        return $this->fetch_drug_regulatory_classification_extended_response_type;
+        $this->drugRegulatoryClassification = $var;
     }
 
 }

@@ -13,7 +13,10 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class FetchApiClassificationResponse extends \Google\Protobuf\Internal\Message
 {
-    protected $fetch_api_classification_response_type;
+    /**
+     * <code>.Practo.MDS.Model.ApiClassificationModel apiClassification = 1;</code>
+     */
+    private $apiClassification = null;
 
     public function __construct() {
         \GPBMetadata\PharmaceuticalStore::initOnce();
@@ -25,7 +28,7 @@ class FetchApiClassificationResponse extends \Google\Protobuf\Internal\Message
      */
     public function getApiClassification()
     {
-        return $this->readOneof(1);
+        return $this->apiClassification;
     }
 
     /**
@@ -34,29 +37,7 @@ class FetchApiClassificationResponse extends \Google\Protobuf\Internal\Message
     public function setApiClassification(&$var)
     {
         GPBUtil::checkMessage($var, \Practo\MDS\Model\ApiClassificationModel::class);
-        $this->writeOneof(1, $var);
-    }
-
-    /**
-     * <code>string message = 2;</code>
-     */
-    public function getMessage()
-    {
-        return $this->readOneof(2);
-    }
-
-    /**
-     * <code>string message = 2;</code>
-     */
-    public function setMessage($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->writeOneof(2, $var);
-    }
-
-    public function getFetchApiClassificationResponseType()
-    {
-        return $this->fetch_api_classification_response_type;
+        $this->apiClassification = $var;
     }
 
 }

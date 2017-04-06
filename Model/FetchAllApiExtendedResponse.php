@@ -13,7 +13,10 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class FetchAllApiExtendedResponse extends \Google\Protobuf\Internal\Message
 {
-    protected $fetch_all_api_response_extended_type;
+    /**
+     * <code>.Practo.MDS.Model.ApiModelExtendedList api = 1;</code>
+     */
+    private $api = null;
 
     public function __construct() {
         \GPBMetadata\PharmaceuticalStore::initOnce();
@@ -25,7 +28,7 @@ class FetchAllApiExtendedResponse extends \Google\Protobuf\Internal\Message
      */
     public function getApi()
     {
-        return $this->readOneof(1);
+        return $this->api;
     }
 
     /**
@@ -34,29 +37,7 @@ class FetchAllApiExtendedResponse extends \Google\Protobuf\Internal\Message
     public function setApi(&$var)
     {
         GPBUtil::checkMessage($var, \Practo\MDS\Model\ApiModelExtendedList::class);
-        $this->writeOneof(1, $var);
-    }
-
-    /**
-     * <code>string message = 2;</code>
-     */
-    public function getMessage()
-    {
-        return $this->readOneof(2);
-    }
-
-    /**
-     * <code>string message = 2;</code>
-     */
-    public function setMessage($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->writeOneof(2, $var);
-    }
-
-    public function getFetchAllApiResponseExtendedType()
-    {
-        return $this->fetch_all_api_response_extended_type;
+        $this->api = $var;
     }
 
 }

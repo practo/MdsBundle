@@ -13,7 +13,10 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class AddResponse extends \Google\Protobuf\Internal\Message
 {
-    protected $add_repsose_type;
+    /**
+     * <code>.Practo.MDS.Model.AddResponseModel addResponseModel = 1;</code>
+     */
+    private $addResponseModel = null;
 
     public function __construct() {
         \GPBMetadata\Common::initOnce();
@@ -25,7 +28,7 @@ class AddResponse extends \Google\Protobuf\Internal\Message
      */
     public function getAddResponseModel()
     {
-        return $this->readOneof(1);
+        return $this->addResponseModel;
     }
 
     /**
@@ -34,29 +37,7 @@ class AddResponse extends \Google\Protobuf\Internal\Message
     public function setAddResponseModel(&$var)
     {
         GPBUtil::checkMessage($var, \Practo\MDS\Model\AddResponseModel::class);
-        $this->writeOneof(1, $var);
-    }
-
-    /**
-     * <code>string message = 2;</code>
-     */
-    public function getMessage()
-    {
-        return $this->readOneof(2);
-    }
-
-    /**
-     * <code>string message = 2;</code>
-     */
-    public function setMessage($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->writeOneof(2, $var);
-    }
-
-    public function getAddRepsoseType()
-    {
-        return $this->add_repsose_type;
+        $this->addResponseModel = $var;
     }
 
 }

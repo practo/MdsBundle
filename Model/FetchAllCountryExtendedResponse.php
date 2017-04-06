@@ -13,7 +13,10 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class FetchAllCountryExtendedResponse extends \Google\Protobuf\Internal\Message
 {
-    protected $fetch_all_country_extended_response_type;
+    /**
+     * <code>.Practo.MDS.Model.CountryExtendedModelList country = 1;</code>
+     */
+    private $country = null;
 
     public function __construct() {
         \GPBMetadata\GeolocationStore::initOnce();
@@ -25,7 +28,7 @@ class FetchAllCountryExtendedResponse extends \Google\Protobuf\Internal\Message
      */
     public function getCountry()
     {
-        return $this->readOneof(1);
+        return $this->country;
     }
 
     /**
@@ -34,29 +37,7 @@ class FetchAllCountryExtendedResponse extends \Google\Protobuf\Internal\Message
     public function setCountry(&$var)
     {
         GPBUtil::checkMessage($var, \Practo\MDS\Model\CountryExtendedModelList::class);
-        $this->writeOneof(1, $var);
-    }
-
-    /**
-     * <code>string message = 2;</code>
-     */
-    public function getMessage()
-    {
-        return $this->readOneof(2);
-    }
-
-    /**
-     * <code>string message = 2;</code>
-     */
-    public function setMessage($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->writeOneof(2, $var);
-    }
-
-    public function getFetchAllCountryExtendedResponseType()
-    {
-        return $this->fetch_all_country_extended_response_type;
+        $this->country = $var;
     }
 
 }

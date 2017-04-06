@@ -13,7 +13,10 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class FetchAllRouteOfAdministrationResponse extends \Google\Protobuf\Internal\Message
 {
-    protected $fetch_all_route_of_administration_response_type;
+    /**
+     * <code>.Practo.MDS.Model.RouteOfAdministrationModelList routeOfAdministration = 1;</code>
+     */
+    private $routeOfAdministration = null;
 
     public function __construct() {
         \GPBMetadata\PharmaceuticalStore::initOnce();
@@ -25,7 +28,7 @@ class FetchAllRouteOfAdministrationResponse extends \Google\Protobuf\Internal\Me
      */
     public function getRouteOfAdministration()
     {
-        return $this->readOneof(1);
+        return $this->routeOfAdministration;
     }
 
     /**
@@ -34,29 +37,7 @@ class FetchAllRouteOfAdministrationResponse extends \Google\Protobuf\Internal\Me
     public function setRouteOfAdministration(&$var)
     {
         GPBUtil::checkMessage($var, \Practo\MDS\Model\RouteOfAdministrationModelList::class);
-        $this->writeOneof(1, $var);
-    }
-
-    /**
-     * <code>string message = 2;</code>
-     */
-    public function getMessage()
-    {
-        return $this->readOneof(2);
-    }
-
-    /**
-     * <code>string message = 2;</code>
-     */
-    public function setMessage($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->writeOneof(2, $var);
-    }
-
-    public function getFetchAllRouteOfAdministrationResponseType()
-    {
-        return $this->fetch_all_route_of_administration_response_type;
+        $this->routeOfAdministration = $var;
     }
 
 }

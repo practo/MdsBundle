@@ -13,7 +13,10 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class FetchDrugManufacturerExtendedResponse extends \Google\Protobuf\Internal\Message
 {
-    protected $fetch_drug_manufacturer_extended_response_type;
+    /**
+     * <code>.Practo.MDS.Model.DrugManufacturerExtendedModel drugManufacturer = 1;</code>
+     */
+    private $drugManufacturer = null;
 
     public function __construct() {
         \GPBMetadata\PharmaceuticalStore::initOnce();
@@ -25,7 +28,7 @@ class FetchDrugManufacturerExtendedResponse extends \Google\Protobuf\Internal\Me
      */
     public function getDrugManufacturer()
     {
-        return $this->readOneof(1);
+        return $this->drugManufacturer;
     }
 
     /**
@@ -34,29 +37,7 @@ class FetchDrugManufacturerExtendedResponse extends \Google\Protobuf\Internal\Me
     public function setDrugManufacturer(&$var)
     {
         GPBUtil::checkMessage($var, \Practo\MDS\Model\DrugManufacturerExtendedModel::class);
-        $this->writeOneof(1, $var);
-    }
-
-    /**
-     * <code>string message = 2;</code>
-     */
-    public function getMessage()
-    {
-        return $this->readOneof(2);
-    }
-
-    /**
-     * <code>string message = 2;</code>
-     */
-    public function setMessage($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->writeOneof(2, $var);
-    }
-
-    public function getFetchDrugManufacturerExtendedResponseType()
-    {
-        return $this->fetch_drug_manufacturer_extended_response_type;
+        $this->drugManufacturer = $var;
     }
 
 }

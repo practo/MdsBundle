@@ -13,7 +13,10 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class FetchAllDrugProductExtendedResponse extends \Google\Protobuf\Internal\Message
 {
-    protected $fetch_all_drug_product_extended_response_type;
+    /**
+     * <code>.Practo.MDS.Model.DrugProductExtendedModelList drugProduct = 1;</code>
+     */
+    private $drugProduct = null;
 
     public function __construct() {
         \GPBMetadata\PharmaceuticalStore::initOnce();
@@ -25,7 +28,7 @@ class FetchAllDrugProductExtendedResponse extends \Google\Protobuf\Internal\Mess
      */
     public function getDrugProduct()
     {
-        return $this->readOneof(1);
+        return $this->drugProduct;
     }
 
     /**
@@ -34,29 +37,7 @@ class FetchAllDrugProductExtendedResponse extends \Google\Protobuf\Internal\Mess
     public function setDrugProduct(&$var)
     {
         GPBUtil::checkMessage($var, \Practo\MDS\Model\DrugProductExtendedModelList::class);
-        $this->writeOneof(1, $var);
-    }
-
-    /**
-     * <code>string message = 2;</code>
-     */
-    public function getMessage()
-    {
-        return $this->readOneof(2);
-    }
-
-    /**
-     * <code>string message = 2;</code>
-     */
-    public function setMessage($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->writeOneof(2, $var);
-    }
-
-    public function getFetchAllDrugProductExtendedResponseType()
-    {
-        return $this->fetch_all_drug_product_extended_response_type;
+        $this->drugProduct = $var;
     }
 
 }

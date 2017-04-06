@@ -13,7 +13,10 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class FetchUnitOfMeasureResponse extends \Google\Protobuf\Internal\Message
 {
-    protected $fetch_unit_of_measure_response_type;
+    /**
+     * <code>.Practo.MDS.Model.UnitOfMeasureModel unitOfMeasure = 1;</code>
+     */
+    private $unitOfMeasure = null;
 
     public function __construct() {
         \GPBMetadata\GeneralStore::initOnce();
@@ -25,7 +28,7 @@ class FetchUnitOfMeasureResponse extends \Google\Protobuf\Internal\Message
      */
     public function getUnitOfMeasure()
     {
-        return $this->readOneof(1);
+        return $this->unitOfMeasure;
     }
 
     /**
@@ -34,29 +37,7 @@ class FetchUnitOfMeasureResponse extends \Google\Protobuf\Internal\Message
     public function setUnitOfMeasure(&$var)
     {
         GPBUtil::checkMessage($var, \Practo\MDS\Model\UnitOfMeasureModel::class);
-        $this->writeOneof(1, $var);
-    }
-
-    /**
-     * <code>string message = 2;</code>
-     */
-    public function getMessage()
-    {
-        return $this->readOneof(2);
-    }
-
-    /**
-     * <code>string message = 2;</code>
-     */
-    public function setMessage($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->writeOneof(2, $var);
-    }
-
-    public function getFetchUnitOfMeasureResponseType()
-    {
-        return $this->fetch_unit_of_measure_response_type;
+        $this->unitOfMeasure = $var;
     }
 
 }

@@ -1,3 +1,0 @@
-practo_mds_homepage:
-    path:     /
-    defaults: { _controller: PractoMdsBundle:Default:index }

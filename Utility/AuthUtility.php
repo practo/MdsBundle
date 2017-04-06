@@ -31,7 +31,7 @@ class AuthUtility {
       $payLoadWithSecret = $payLoad . AuthUtility::$secret;
       $signature = AuthUtility::generateSignature($payLoadWithSecret);
 
-      $metaData['source'] = [AuthUtility::$source];
+      $metaData['domain'] = [AuthUtility::$source];
       $metaData['client_ip'] = [gethostbyname(gethostname())];
       $metaData['client_name'] = [gethostname()];
       $metaData['signature'] = [$signature];
