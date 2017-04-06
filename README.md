@@ -35,7 +35,7 @@ extension=grpc.so
 
 You need to add this to your project's `composer.json` file.
 
-```
+```json
 {
     "require": {
         "practo/grpc": "dev-master"
@@ -55,7 +55,7 @@ You need to add this to your project's `composer.json` file.
 ```
 **Update Vendors using composer**
 
-```
+```sh
 composer update
 ```
 
