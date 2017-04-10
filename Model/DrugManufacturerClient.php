@@ -21,6 +21,12 @@ namespace Practo\MDS\Model {
      */
     public function add(\Practo\MDS\Model\AddDrugManufacturerRequest $argument,
       $metadata = [], $options = []) {
+      $request = $argument->encode();
+      $callFunc = function($entry) {
+        return sprintf("%02X",$entry);
+      };
+      $hexPayLoad = implode("", array_map($callFunc, unpack("C*", $request)));
+      $metadata["_auth_payload"] = "Practo.MDS.Model.DrugManufacturer/add" . $hexPayLoad;
       return $this->_simpleRequest('/Practo.MDS.Model.DrugManufacturer/add',
       $argument,
       ['\Practo\MDS\Model\AddResponse', 'decode'],
@@ -34,6 +40,12 @@ namespace Practo\MDS\Model {
      */
     public function fetch(\Practo\MDS\Model\FetchRequest $argument,
       $metadata = [], $options = []) {
+      $request = $argument->encode();
+      $callFunc = function($entry) {
+        return sprintf("%02X",$entry);
+      };
+      $hexPayLoad = implode("", array_map($callFunc, unpack("C*", $request)));
+      $metadata["_auth_payload"] = "Practo.MDS.Model.DrugManufacturer/fetch" . $hexPayLoad;
       return $this->_simpleRequest('/Practo.MDS.Model.DrugManufacturer/fetch',
       $argument,
       ['\Practo\MDS\Model\FetchDrugManufacturerResponse', 'decode'],
@@ -47,6 +59,12 @@ namespace Practo\MDS\Model {
      */
     public function fetchAll(\Practo\MDS\Model\FetchAllRequest $argument,
       $metadata = [], $options = []) {
+      $request = $argument->encode();
+      $callFunc = function($entry) {
+        return sprintf("%02X",$entry);
+      };
+      $hexPayLoad = implode("", array_map($callFunc, unpack("C*", $request)));
+      $metadata["_auth_payload"] = "Practo.MDS.Model.DrugManufacturer/fetchAll" . $hexPayLoad;
       return $this->_simpleRequest('/Practo.MDS.Model.DrugManufacturer/fetchAll',
       $argument,
       ['\Practo\MDS\Model\FetchAllDrugManufacturerResponse', 'decode'],
@@ -60,6 +78,12 @@ namespace Practo\MDS\Model {
      */
     public function fetchExtended(\Practo\MDS\Model\FetchRequest $argument,
       $metadata = [], $options = []) {
+      $request = $argument->encode();
+      $callFunc = function($entry) {
+        return sprintf("%02X",$entry);
+      };
+      $hexPayLoad = implode("", array_map($callFunc, unpack("C*", $request)));
+      $metadata["_auth_payload"] = "Practo.MDS.Model.DrugManufacturer/fetchExtended" . $hexPayLoad;
       return $this->_simpleRequest('/Practo.MDS.Model.DrugManufacturer/fetchExtended',
       $argument,
       ['\Practo\MDS\Model\FetchDrugManufacturerExtendedResponse', 'decode'],
@@ -73,6 +97,12 @@ namespace Practo\MDS\Model {
      */
     public function fetchAllExtended(\Practo\MDS\Model\FetchAllRequest $argument,
       $metadata = [], $options = []) {
+      $request = $argument->encode();
+      $callFunc = function($entry) {
+        return sprintf("%02X",$entry);
+      };
+      $hexPayLoad = implode("", array_map($callFunc, unpack("C*", $request)));
+      $metadata["_auth_payload"] = "Practo.MDS.Model.DrugManufacturer/fetchAllExtended" . $hexPayLoad;
       return $this->_simpleRequest('/Practo.MDS.Model.DrugManufacturer/fetchAllExtended',
       $argument,
       ['\Practo\MDS\Model\FetchAllDrugManufacturerExtendedResponse', 'decode'],
@@ -86,6 +116,12 @@ namespace Practo\MDS\Model {
      */
     public function search(\Practo\MDS\Model\DrugManufacturerSearchRequest $argument,
       $metadata = [], $options = []) {
+      $request = $argument->encode();
+      $callFunc = function($entry) {
+        return sprintf("%02X",$entry);
+      };
+      $hexPayLoad = implode("", array_map($callFunc, unpack("C*", $request)));
+      $metadata["_auth_payload"] = "Practo.MDS.Model.DrugManufacturer/search" . $hexPayLoad;
       return $this->_simpleRequest('/Practo.MDS.Model.DrugManufacturer/search',
       $argument,
       ['\Practo\MDS\Model\FetchAllDrugManufacturerResponse', 'decode'],

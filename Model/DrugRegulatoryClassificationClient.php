@@ -21,6 +21,12 @@ namespace Practo\MDS\Model {
      */
     public function add(\Practo\MDS\Model\AddDrugRegulatoryClassificationRequest $argument,
       $metadata = [], $options = []) {
+      $request = $argument->encode();
+      $callFunc = function($entry) {
+        return sprintf("%02X",$entry);
+      };
+      $hexPayLoad = implode("", array_map($callFunc, unpack("C*", $request)));
+      $metadata["_auth_payload"] = "Practo.MDS.Model.DrugRegulatoryClassification/add" . $hexPayLoad;
       return $this->_simpleRequest('/Practo.MDS.Model.DrugRegulatoryClassification/add',
       $argument,
       ['\Practo\MDS\Model\AddResponse', 'decode'],
@@ -34,6 +40,12 @@ namespace Practo\MDS\Model {
      */
     public function fetch(\Practo\MDS\Model\FetchRequest $argument,
       $metadata = [], $options = []) {
+      $request = $argument->encode();
+      $callFunc = function($entry) {
+        return sprintf("%02X",$entry);
+      };
+      $hexPayLoad = implode("", array_map($callFunc, unpack("C*", $request)));
+      $metadata["_auth_payload"] = "Practo.MDS.Model.DrugRegulatoryClassification/fetch" . $hexPayLoad;
       return $this->_simpleRequest('/Practo.MDS.Model.DrugRegulatoryClassification/fetch',
       $argument,
       ['\Practo\MDS\Model\FetchDrugRegulatoryClassificationResponse', 'decode'],
@@ -47,6 +59,12 @@ namespace Practo\MDS\Model {
      */
     public function fetchAll(\Practo\MDS\Model\FetchAllRequest $argument,
       $metadata = [], $options = []) {
+      $request = $argument->encode();
+      $callFunc = function($entry) {
+        return sprintf("%02X",$entry);
+      };
+      $hexPayLoad = implode("", array_map($callFunc, unpack("C*", $request)));
+      $metadata["_auth_payload"] = "Practo.MDS.Model.DrugRegulatoryClassification/fetchAll" . $hexPayLoad;
       return $this->_simpleRequest('/Practo.MDS.Model.DrugRegulatoryClassification/fetchAll',
       $argument,
       ['\Practo\MDS\Model\FetchAllDrugRegulatoryClassificationResponse', 'decode'],
@@ -60,6 +78,12 @@ namespace Practo\MDS\Model {
      */
     public function fetchExtended(\Practo\MDS\Model\FetchRequest $argument,
       $metadata = [], $options = []) {
+      $request = $argument->encode();
+      $callFunc = function($entry) {
+        return sprintf("%02X",$entry);
+      };
+      $hexPayLoad = implode("", array_map($callFunc, unpack("C*", $request)));
+      $metadata["_auth_payload"] = "Practo.MDS.Model.DrugRegulatoryClassification/fetchExtended" . $hexPayLoad;
       return $this->_simpleRequest('/Practo.MDS.Model.DrugRegulatoryClassification/fetchExtended',
       $argument,
       ['\Practo\MDS\Model\FetchDrugRegulatoryClassificationExtendedResponse', 'decode'],
@@ -73,6 +97,12 @@ namespace Practo\MDS\Model {
      */
     public function fetchAllExtended(\Practo\MDS\Model\FetchAllRequest $argument,
       $metadata = [], $options = []) {
+      $request = $argument->encode();
+      $callFunc = function($entry) {
+        return sprintf("%02X",$entry);
+      };
+      $hexPayLoad = implode("", array_map($callFunc, unpack("C*", $request)));
+      $metadata["_auth_payload"] = "Practo.MDS.Model.DrugRegulatoryClassification/fetchAllExtended" . $hexPayLoad;
       return $this->_simpleRequest('/Practo.MDS.Model.DrugRegulatoryClassification/fetchAllExtended',
       $argument,
       ['\Practo\MDS\Model\FetchAllDrugRegulatoryClassificationExtendedResponse', 'decode'],
@@ -86,6 +116,12 @@ namespace Practo\MDS\Model {
      */
     public function search(\Practo\MDS\Model\DrugRegulatoryClassificationSearchRequest $argument,
       $metadata = [], $options = []) {
+      $request = $argument->encode();
+      $callFunc = function($entry) {
+        return sprintf("%02X",$entry);
+      };
+      $hexPayLoad = implode("", array_map($callFunc, unpack("C*", $request)));
+      $metadata["_auth_payload"] = "Practo.MDS.Model.DrugRegulatoryClassification/search" . $hexPayLoad;
       return $this->_simpleRequest('/Practo.MDS.Model.DrugRegulatoryClassification/search',
       $argument,
       ['\Practo\MDS\Model\FetchAllDrugRegulatoryClassificationResponse', 'decode'],

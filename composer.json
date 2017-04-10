@@ -12,7 +12,8 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "symfony/framework-bundle": ">=2.0"
+        "symfony/framework-bundle": ">=2.0",
+        "grpc/grpc": "~1.2"
     },
     "autoload": {
       "classmap": ["PractoMdsBundle.php"], 

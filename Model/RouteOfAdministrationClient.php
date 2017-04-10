@@ -21,6 +21,12 @@ namespace Practo\MDS\Model {
      */
     public function add(\Practo\MDS\Model\AddRouteOfAdministrationRequest $argument,
       $metadata = [], $options = []) {
+      $request = $argument->encode();
+      $callFunc = function($entry) {
+        return sprintf("%02X",$entry);
+      };
+      $hexPayLoad = implode("", array_map($callFunc, unpack("C*", $request)));
+      $metadata["_auth_payload"] = "Practo.MDS.Model.RouteOfAdministration/add" . $hexPayLoad;
       return $this->_simpleRequest('/Practo.MDS.Model.RouteOfAdministration/add',
       $argument,
       ['\Practo\MDS\Model\AddResponse', 'decode'],
@@ -34,6 +40,12 @@ namespace Practo\MDS\Model {
      */
     public function fetch(\Practo\MDS\Model\FetchRequest $argument,
       $metadata = [], $options = []) {
+      $request = $argument->encode();
+      $callFunc = function($entry) {
+        return sprintf("%02X",$entry);
+      };
+      $hexPayLoad = implode("", array_map($callFunc, unpack("C*", $request)));
+      $metadata["_auth_payload"] = "Practo.MDS.Model.RouteOfAdministration/fetch" . $hexPayLoad;
       return $this->_simpleRequest('/Practo.MDS.Model.RouteOfAdministration/fetch',
       $argument,
       ['\Practo\MDS\Model\FetchRouteOfAdministrationResponse', 'decode'],
@@ -47,6 +59,12 @@ namespace Practo\MDS\Model {
      */
     public function fetchAll(\Practo\MDS\Model\FetchAllRequest $argument,
       $metadata = [], $options = []) {
+      $request = $argument->encode();
+      $callFunc = function($entry) {
+        return sprintf("%02X",$entry);
+      };
+      $hexPayLoad = implode("", array_map($callFunc, unpack("C*", $request)));
+      $metadata["_auth_payload"] = "Practo.MDS.Model.RouteOfAdministration/fetchAll" . $hexPayLoad;
       return $this->_simpleRequest('/Practo.MDS.Model.RouteOfAdministration/fetchAll',
       $argument,
       ['\Practo\MDS\Model\FetchAllRouteOfAdministrationResponse', 'decode'],
@@ -60,6 +78,12 @@ namespace Practo\MDS\Model {
      */
     public function search(\Practo\MDS\Model\RouteOfAdministrationSearchRequest $argument,
       $metadata = [], $options = []) {
+      $request = $argument->encode();
+      $callFunc = function($entry) {
+        return sprintf("%02X",$entry);
+      };
+      $hexPayLoad = implode("", array_map($callFunc, unpack("C*", $request)));
+      $metadata["_auth_payload"] = "Practo.MDS.Model.RouteOfAdministration/search" . $hexPayLoad;
       return $this->_simpleRequest('/Practo.MDS.Model.RouteOfAdministration/search',
       $argument,
       ['\Practo\MDS\Model\FetchAllRouteOfAdministrationResponse', 'decode'],
