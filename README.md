@@ -38,7 +38,7 @@ You need to add this to your project's `composer.json` file.
 ```json
 {
     "require": {
-        "practo/grpc": "dev-php_basestub_channel_fix",
+        "practo/grpc": "dev-master",
         "practo/mds-bundle": "dev-master"
     },
     "repositories": [
