@@ -18,13 +18,21 @@ class UnitOfMeasureSearchRequest extends \Google\Protobuf\Internal\Message
      */
     private $q = '';
     /**
-     * <code>.Practo.MDS.Model.UnitOfMeasureModel unitOfMeasure = 2;</code>
+     * <code>.Practo.MDS.Model.UnitOfMeasureSearchModel unitOfMeasure = 2;</code>
      */
     private $unitOfMeasure = null;
     /**
      * <code>string locale = 3;</code>
      */
     private $locale = '';
+    /**
+     * <code>string source = 4;</code>
+     */
+    private $source = '';
+    /**
+     * <code>sfixed32 limit = 5;</code>
+     */
+    private $limit = 0;
 
     public function __construct() {
         \GPBMetadata\GeneralStore::initOnce();
@@ -49,7 +57,7 @@ class UnitOfMeasureSearchRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.Practo.MDS.Model.UnitOfMeasureModel unitOfMeasure = 2;</code>
+     * <code>.Practo.MDS.Model.UnitOfMeasureSearchModel unitOfMeasure = 2;</code>
      */
     public function getUnitOfMeasure()
     {
@@ -57,11 +65,11 @@ class UnitOfMeasureSearchRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.Practo.MDS.Model.UnitOfMeasureModel unitOfMeasure = 2;</code>
+     * <code>.Practo.MDS.Model.UnitOfMeasureSearchModel unitOfMeasure = 2;</code>
      */
     public function setUnitOfMeasure(&$var)
     {
-        GPBUtil::checkMessage($var, \Practo\MDS\Model\UnitOfMeasureModel::class);
+        GPBUtil::checkMessage($var, \Practo\MDS\Model\UnitOfMeasureSearchModel::class);
         $this->unitOfMeasure = $var;
     }
 
@@ -80,6 +88,40 @@ class UnitOfMeasureSearchRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->locale = $var;
+    }
+
+    /**
+     * <code>string source = 4;</code>
+     */
+    public function getSource()
+    {
+        return $this->source;
+    }
+
+    /**
+     * <code>string source = 4;</code>
+     */
+    public function setSource($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->source = $var;
+    }
+
+    /**
+     * <code>sfixed32 limit = 5;</code>
+     */
+    public function getLimit()
+    {
+        return $this->limit;
+    }
+
+    /**
+     * <code>sfixed32 limit = 5;</code>
+     */
+    public function setLimit($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->limit = $var;
     }
 
 }

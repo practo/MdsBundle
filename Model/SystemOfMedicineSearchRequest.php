@@ -18,13 +18,21 @@ class SystemOfMedicineSearchRequest extends \Google\Protobuf\Internal\Message
      */
     private $q = '';
     /**
-     * <code>.Practo.MDS.Model.SystemOfMedicineModel systemOfMedicine = 2;</code>
+     * <code>.Practo.MDS.Model.SystemOfMedicineSearchModel systemOfMedicine = 2;</code>
      */
     private $systemOfMedicine = null;
     /**
-     * <code>string locale = 4;</code>
+     * <code>string locale = 3;</code>
      */
     private $locale = '';
+    /**
+     * <code>string source = 4;</code>
+     */
+    private $source = '';
+    /**
+     * <code>sfixed32 limit = 5;</code>
+     */
+    private $limit = 0;
 
     public function __construct() {
         \GPBMetadata\TaxonomyMedicalStore::initOnce();
@@ -49,7 +57,7 @@ class SystemOfMedicineSearchRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.Practo.MDS.Model.SystemOfMedicineModel systemOfMedicine = 2;</code>
+     * <code>.Practo.MDS.Model.SystemOfMedicineSearchModel systemOfMedicine = 2;</code>
      */
     public function getSystemOfMedicine()
     {
@@ -57,16 +65,16 @@ class SystemOfMedicineSearchRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.Practo.MDS.Model.SystemOfMedicineModel systemOfMedicine = 2;</code>
+     * <code>.Practo.MDS.Model.SystemOfMedicineSearchModel systemOfMedicine = 2;</code>
      */
     public function setSystemOfMedicine(&$var)
     {
-        GPBUtil::checkMessage($var, \Practo\MDS\Model\SystemOfMedicineModel::class);
+        GPBUtil::checkMessage($var, \Practo\MDS\Model\SystemOfMedicineSearchModel::class);
         $this->systemOfMedicine = $var;
     }
 
     /**
-     * <code>string locale = 4;</code>
+     * <code>string locale = 3;</code>
      */
     public function getLocale()
     {
@@ -74,12 +82,46 @@ class SystemOfMedicineSearchRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string locale = 4;</code>
+     * <code>string locale = 3;</code>
      */
     public function setLocale($var)
     {
         GPBUtil::checkString($var, True);
         $this->locale = $var;
+    }
+
+    /**
+     * <code>string source = 4;</code>
+     */
+    public function getSource()
+    {
+        return $this->source;
+    }
+
+    /**
+     * <code>string source = 4;</code>
+     */
+    public function setSource($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->source = $var;
+    }
+
+    /**
+     * <code>sfixed32 limit = 5;</code>
+     */
+    public function getLimit()
+    {
+        return $this->limit;
+    }
+
+    /**
+     * <code>sfixed32 limit = 5;</code>
+     */
+    public function setLimit($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->limit = $var;
     }
 
 }

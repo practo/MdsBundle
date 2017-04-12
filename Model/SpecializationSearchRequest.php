@@ -18,13 +18,21 @@ class SpecializationSearchRequest extends \Google\Protobuf\Internal\Message
      */
     private $q = '';
     /**
-     * <code>.Practo.MDS.Model.SpecializationModel specialization = 2;</code>
+     * <code>.Practo.MDS.Model.SpecializationSearchModel specialization = 2;</code>
      */
     private $specialization = null;
     /**
      * <code>string locale = 3;</code>
      */
     private $locale = '';
+    /**
+     * <code>string source = 4;</code>
+     */
+    private $source = '';
+    /**
+     * <code>sfixed32 limit = 5;</code>
+     */
+    private $limit = 0;
 
     public function __construct() {
         \GPBMetadata\TaxonomyMedicalStore::initOnce();
@@ -49,7 +57,7 @@ class SpecializationSearchRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.Practo.MDS.Model.SpecializationModel specialization = 2;</code>
+     * <code>.Practo.MDS.Model.SpecializationSearchModel specialization = 2;</code>
      */
     public function getSpecialization()
     {
@@ -57,11 +65,11 @@ class SpecializationSearchRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.Practo.MDS.Model.SpecializationModel specialization = 2;</code>
+     * <code>.Practo.MDS.Model.SpecializationSearchModel specialization = 2;</code>
      */
     public function setSpecialization(&$var)
     {
-        GPBUtil::checkMessage($var, \Practo\MDS\Model\SpecializationModel::class);
+        GPBUtil::checkMessage($var, \Practo\MDS\Model\SpecializationSearchModel::class);
         $this->specialization = $var;
     }
 
@@ -80,6 +88,40 @@ class SpecializationSearchRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->locale = $var;
+    }
+
+    /**
+     * <code>string source = 4;</code>
+     */
+    public function getSource()
+    {
+        return $this->source;
+    }
+
+    /**
+     * <code>string source = 4;</code>
+     */
+    public function setSource($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->source = $var;
+    }
+
+    /**
+     * <code>sfixed32 limit = 5;</code>
+     */
+    public function getLimit()
+    {
+        return $this->limit;
+    }
+
+    /**
+     * <code>sfixed32 limit = 5;</code>
+     */
+    public function setLimit($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->limit = $var;
     }
 
 }

@@ -110,11 +110,11 @@ namespace Practo\MDS\Model {
     }
 
     /**
-     * @param \Practo\MDS\Model\DosageFormSearchRequest $argument input argument
+     * @param \Practo\MDS\Model\DrugBrandSearchRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function search(\Practo\MDS\Model\DosageFormSearchRequest $argument,
+    public function search(\Practo\MDS\Model\DrugBrandSearchRequest $argument,
       $metadata = [], $options = []) {
       $request = $argument->encode();
       $callFunc = function($entry) {
@@ -125,6 +125,44 @@ namespace Practo\MDS\Model {
       return $this->_simpleRequest('/Practo.MDS.Model.DrugBrand/search',
       $argument,
       ['\Practo\MDS\Model\FetchAllDrugBrandResponse', 'decode'],
+      $metadata, $options);
+    }
+
+    /**
+     * @param \Practo\MDS\Model\FetchByIdsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function fetchByIds(\Practo\MDS\Model\FetchByIdsRequest $argument,
+      $metadata = [], $options = []) {
+      $request = $argument->encode();
+      $callFunc = function($entry) {
+        return sprintf("%02X",$entry);
+      };
+      $hexPayLoad = implode("", array_map($callFunc, unpack("C*", $request)));
+      $metadata["_auth_payload"] = "Practo.MDS.Model.DrugBrand/fetchByIds" . $hexPayLoad;
+      return $this->_simpleRequest('/Practo.MDS.Model.DrugBrand/fetchByIds',
+      $argument,
+      ['\Practo\MDS\Model\FetchAllDrugBrandResponse', 'decode'],
+      $metadata, $options);
+    }
+
+    /**
+     * @param \Practo\MDS\Model\VisibilityChangeRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function visiblityChange(\Practo\MDS\Model\VisibilityChangeRequest $argument,
+      $metadata = [], $options = []) {
+      $request = $argument->encode();
+      $callFunc = function($entry) {
+        return sprintf("%02X",$entry);
+      };
+      $hexPayLoad = implode("", array_map($callFunc, unpack("C*", $request)));
+      $metadata["_auth_payload"] = "Practo.MDS.Model.DrugBrand/visiblityChange" . $hexPayLoad;
+      return $this->_simpleRequest('/Practo.MDS.Model.DrugBrand/visiblityChange',
+      $argument,
+      ['\Practo\MDS\Model\VisibilityChangeResponse', 'decode'],
       $metadata, $options);
     }
 

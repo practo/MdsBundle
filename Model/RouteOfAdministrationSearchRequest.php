@@ -18,13 +18,21 @@ class RouteOfAdministrationSearchRequest extends \Google\Protobuf\Internal\Messa
      */
     private $q = '';
     /**
-     * <code>.Practo.MDS.Model.RouteOfAdministrationModel routeOfAdministration = 2;</code>
+     * <code>.Practo.MDS.Model.RouteOfAdministrationSearchModel routeOfAdministration = 2;</code>
      */
     private $routeOfAdministration = null;
     /**
      * <code>string locale = 3;</code>
      */
     private $locale = '';
+    /**
+     * <code>string source = 4;</code>
+     */
+    private $source = '';
+    /**
+     * <code>sfixed32 limit = 5;</code>
+     */
+    private $limit = 0;
 
     public function __construct() {
         \GPBMetadata\PharmaceuticalStore::initOnce();
@@ -49,7 +57,7 @@ class RouteOfAdministrationSearchRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * <code>.Practo.MDS.Model.RouteOfAdministrationModel routeOfAdministration = 2;</code>
+     * <code>.Practo.MDS.Model.RouteOfAdministrationSearchModel routeOfAdministration = 2;</code>
      */
     public function getRouteOfAdministration()
     {
@@ -57,11 +65,11 @@ class RouteOfAdministrationSearchRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * <code>.Practo.MDS.Model.RouteOfAdministrationModel routeOfAdministration = 2;</code>
+     * <code>.Practo.MDS.Model.RouteOfAdministrationSearchModel routeOfAdministration = 2;</code>
      */
     public function setRouteOfAdministration(&$var)
     {
-        GPBUtil::checkMessage($var, \Practo\MDS\Model\RouteOfAdministrationModel::class);
+        GPBUtil::checkMessage($var, \Practo\MDS\Model\RouteOfAdministrationSearchModel::class);
         $this->routeOfAdministration = $var;
     }
 
@@ -80,6 +88,40 @@ class RouteOfAdministrationSearchRequest extends \Google\Protobuf\Internal\Messa
     {
         GPBUtil::checkString($var, True);
         $this->locale = $var;
+    }
+
+    /**
+     * <code>string source = 4;</code>
+     */
+    public function getSource()
+    {
+        return $this->source;
+    }
+
+    /**
+     * <code>string source = 4;</code>
+     */
+    public function setSource($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->source = $var;
+    }
+
+    /**
+     * <code>sfixed32 limit = 5;</code>
+     */
+    public function getLimit()
+    {
+        return $this->limit;
+    }
+
+    /**
+     * <code>sfixed32 limit = 5;</code>
+     */
+    public function setLimit($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->limit = $var;
     }
 
 }

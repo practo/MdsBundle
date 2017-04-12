@@ -22,7 +22,7 @@ class AddApiClassificationRequest extends \Google\Protobuf\Internal\Message
      */
     private $creator = '';
     /**
-     * <code>.Practo.MDS.Model.ApiClassificationModel apiClassification = 3;</code>
+     * <code>.Practo.MDS.Model.ApiClassificationSearchModel apiClassification = 3;</code>
      */
     private $apiClassification = null;
 
@@ -66,7 +66,7 @@ class AddApiClassificationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.Practo.MDS.Model.ApiClassificationModel apiClassification = 3;</code>
+     * <code>.Practo.MDS.Model.ApiClassificationSearchModel apiClassification = 3;</code>
      */
     public function getApiClassification()
     {
@@ -74,11 +74,11 @@ class AddApiClassificationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.Practo.MDS.Model.ApiClassificationModel apiClassification = 3;</code>
+     * <code>.Practo.MDS.Model.ApiClassificationSearchModel apiClassification = 3;</code>
      */
     public function setApiClassification(&$var)
     {
-        GPBUtil::checkMessage($var, \Practo\MDS\Model\ApiClassificationModel::class);
+        GPBUtil::checkMessage($var, \Practo\MDS\Model\ApiClassificationSearchModel::class);
         $this->apiClassification = $var;
     }
 

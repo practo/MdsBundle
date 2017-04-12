@@ -90,6 +90,44 @@ namespace Practo\MDS\Model {
       $metadata, $options);
     }
 
+    /**
+     * @param \Practo\MDS\Model\FetchByIdsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function fetchByIds(\Practo\MDS\Model\FetchByIdsRequest $argument,
+      $metadata = [], $options = []) {
+      $request = $argument->encode();
+      $callFunc = function($entry) {
+        return sprintf("%02X",$entry);
+      };
+      $hexPayLoad = implode("", array_map($callFunc, unpack("C*", $request)));
+      $metadata["_auth_payload"] = "Practo.MDS.Model.UnitOfMeasure/fetchByIds" . $hexPayLoad;
+      return $this->_simpleRequest('/Practo.MDS.Model.UnitOfMeasure/fetchByIds',
+      $argument,
+      ['\Practo\MDS\Model\FetchAllUnitOfMeasureResponse', 'decode'],
+      $metadata, $options);
+    }
+
+    /**
+     * @param \Practo\MDS\Model\VisibilityChangeRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function visiblityChange(\Practo\MDS\Model\VisibilityChangeRequest $argument,
+      $metadata = [], $options = []) {
+      $request = $argument->encode();
+      $callFunc = function($entry) {
+        return sprintf("%02X",$entry);
+      };
+      $hexPayLoad = implode("", array_map($callFunc, unpack("C*", $request)));
+      $metadata["_auth_payload"] = "Practo.MDS.Model.UnitOfMeasure/visiblityChange" . $hexPayLoad;
+      return $this->_simpleRequest('/Practo.MDS.Model.UnitOfMeasure/visiblityChange',
+      $argument,
+      ['\Practo\MDS\Model\VisibilityChangeResponse', 'decode'],
+      $metadata, $options);
+    }
+
   }
 
 }

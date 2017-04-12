@@ -18,13 +18,21 @@ class DrugProductSearchRequest extends \Google\Protobuf\Internal\Message
      */
     private $q = '';
     /**
-     * <code>.Practo.MDS.Model.DrugProductModel drugProduct = 2;</code>
+     * <code>.Practo.MDS.Model.DrugProductSearchModel drugProduct = 2;</code>
      */
     private $drugProduct = null;
     /**
      * <code>string locale = 3;</code>
      */
     private $locale = '';
+    /**
+     * <code>string source = 4;</code>
+     */
+    private $source = '';
+    /**
+     * <code>sfixed32 limit = 5;</code>
+     */
+    private $limit = 0;
 
     public function __construct() {
         \GPBMetadata\PharmaceuticalStore::initOnce();
@@ -49,7 +57,7 @@ class DrugProductSearchRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.Practo.MDS.Model.DrugProductModel drugProduct = 2;</code>
+     * <code>.Practo.MDS.Model.DrugProductSearchModel drugProduct = 2;</code>
      */
     public function getDrugProduct()
     {
@@ -57,11 +65,11 @@ class DrugProductSearchRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.Practo.MDS.Model.DrugProductModel drugProduct = 2;</code>
+     * <code>.Practo.MDS.Model.DrugProductSearchModel drugProduct = 2;</code>
      */
     public function setDrugProduct(&$var)
     {
-        GPBUtil::checkMessage($var, \Practo\MDS\Model\DrugProductModel::class);
+        GPBUtil::checkMessage($var, \Practo\MDS\Model\DrugProductSearchModel::class);
         $this->drugProduct = $var;
     }
 
@@ -80,6 +88,40 @@ class DrugProductSearchRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->locale = $var;
+    }
+
+    /**
+     * <code>string source = 4;</code>
+     */
+    public function getSource()
+    {
+        return $this->source;
+    }
+
+    /**
+     * <code>string source = 4;</code>
+     */
+    public function setSource($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->source = $var;
+    }
+
+    /**
+     * <code>sfixed32 limit = 5;</code>
+     */
+    public function getLimit()
+    {
+        return $this->limit;
+    }
+
+    /**
+     * <code>sfixed32 limit = 5;</code>
+     */
+    public function setLimit($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->limit = $var;
     }
 
 }
