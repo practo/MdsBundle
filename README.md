@@ -38,14 +38,9 @@ You need to add this to your project's `composer.json` file.
 ```json
 {
     "require": {
-        "practo/grpc": "dev-master",
         "practo/mds-bundle": "dev-master"
     },
     "repositories": [
-        {
-            "type": "vcs",
-            "url":  "https://github.com/practo/grpc.git"
-        },
         {
             "type": "vcs",
             "url":  "https://github.com/practo/MdsBundle.git"
