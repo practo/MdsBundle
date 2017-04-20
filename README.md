@@ -55,7 +55,7 @@ composer update
 ```
 
 
-**Configure MDS Client via parameters.yml***
+**Configure MDS Client via parameters.yml**
 To set connection parameters you can add following properties in your application's parameter.yml
 
 ```yml
