@@ -27,11 +27,37 @@ use \Practo\Mds\Utility\RestUtility;
       $searchParams = array(
         'q' => $argument->getQ()
       );
-      $route = '/search/drug_product';
-      $drugProductSearchJsonResponse =  $this->restUtility->get($route, $searchParams);
-      $drugProductModel = new DrugProductModel($unserialize($jsonResponse))
+      
+      $drugProductModel = new DrugProductModel(unserialize($jsonResponse))
 
       return $drugProductModel
+
+      $this->restUtility->setPath('/search/drug_product');
+      $this->restUtility->setMethod('GET');
+      $this->restUtility->setDefaultHeaders();
+      $this->restUtility->setQuery($searchParams);
+      $this->restUtility->setResponseType('\Practo\MDS\Model\DrugProductModel');
+      $this->restUtility->setResponseClass('\Practo\MDS\Model\FetchAllApiResponse');
+      $this->restUtility->setResponseMethod('setApi')
+
+      return $this->restUtility;
     }
 
+   /**
+    * @param \Practo\MDS\Model\AddDrugProductRequest $argument input argument
+    * @param array $metadata metadata
+    * @param array $options call options
+    */
+   public function add(\Practo\MDS\Model\AddDrugProductRequest $argument,
+     $metadata = [], $options = []) {
+       $this->restUtility->setPath('/concept/drug_product');
+       $this->restUtility->setMethod('POST');
+       $this->restUtility->setDefaultHeaders();
+       $this->restUtility->setData($argument->encode());
+       $this->restUtility->setResponseType('\Practo\MDS\Model\DrugProductModel');
+       $this->restUtility->setResponseClass('\Practo\MDS\Model\AddResponse');
+       $this->restUtility->setResponseMethod('setAddResponseModel')
+ 
+       return $this->restUtility;
+   }
 }
