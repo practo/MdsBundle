@@ -109,7 +109,7 @@ class RestUtility {
         }
 
         $queryParams = RestUtility::toQueryParts("", $queryParams);
-        $signature = this->getSignature($this->path, $queryParams,
+        $signature = $this->getSignature($this->path, $queryParams,
             $this->source, $this->secret);
 
         // Add all request headers
