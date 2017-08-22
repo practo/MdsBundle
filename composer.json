@@ -13,8 +13,13 @@
     "require": {
         "php": ">=5.4.0",
         "symfony/framework-bundle": ">=2.0",
-        "grpc/grpc": "dev-master#7b692ca67b69eb322c774845d639686bbcceb959"
+        "grpc/grpc": "dev-master#7b692ca67b69eb322c774845d639686bbcceb959",
+        "practo/buzz-bundle": "^1.0"
     },
+     "repositories": [{
+        "type": "git",
+        "url": "https://github.com/practo/SensioBuzzBundle.git"
+    }],
     "autoload": {
       "classmap": ["PractoMdsBundle.php"], 
       "psr-4": {
