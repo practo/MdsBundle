@@ -1,16 +1,16 @@
 <?php
 //Rest client for mds
-namespace Practo\MDS\Utility {
+namespace Practo\MDS\Utility;
 
 use Buzz\Message\Response;
 
 
 class RestUtility {
 
-	public RestUtility() {
+	public function __construct($source, $secret, $baseUrl) {
 		$this->source = $source;
 		$this->secret = $secret;
-		$this->baseUrl = $baseUrl
+		$this->baseUrl = $baseUrl;
 		
 		$this->client = new \Buzz\Client\Curl();
         $this->client->setTimeout(20);
@@ -19,12 +19,13 @@ class RestUtility {
 
 	public function get($route, $params) {
 		try {
+			$signArr = $this->getSignature($route, $params, $this->source, $this->secret);
 			$headers = array(
-				'domain' => $this->source,
-				'signature' => $this->getSignature($route, $params, $this->domain, $this->secret),
+				'domain' => $this->source[0],
+				'signature' => $signArr['signature'],
 				'Content-type' => 'application/json'
 			);
-			$url = $baseUrl.$route
+			$url = $this->baseUrl[0].$signArr["routeString"];
 			$response = $this->buzz->get($url, $headers, $params);
 
 			return $response;
@@ -33,20 +34,24 @@ class RestUtility {
         }
     }
 
-    public funtion getSignature($route, $params, $domain, $secret) {
+    public function getSignature($route, $params, $domain, $secret) {
     	$authString = '';
-    	for ($param in $params) {
+    	foreach ($params as $key => $value) {    	 
     		if ($authString === '') {
-    			$authString = $param.'='.$params[$param];
+    			$authString = $key.'='.$value;
     		} else {
-    			$authString = $authString.'&'.$param.'='.$params[$param];
+    			$authString = $authString.'&'.$key.'='.$value;
     		}
     	}
-    	$authString = $route.$authString.$domain.$secret;
+    	$routeString = $route.'?'.$authString; 
+    	$authString = $route.$authString.$domain[0].$secret[0];
     	$shaDigest = sha1($authString);
-    	$signature = base64_encode($shaDigest)
+    	$signature = base64_encode($shaDigest);
 
-    	return $signature
+    	return array(
+    		'routeString' => $routeString,
+    		'signature' => $signature
+    	);
     }
 
 }

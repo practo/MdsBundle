@@ -79,9 +79,7 @@ services:
   practo_mds.drug_product:
     class: Practo\MDS\Model\DrugProductClient
     arguments:
-      - %practo_mds.base_uri%
-      - { update_metadata : ['@practo_mds.auth_utility', attachHeaders], credentials : null }
-      - '@practo_mds.grpc_channel'
+      - '@practo_mds.rest_utility'
 
   practo_mds.drug_regulatory_classification:
     class: Practo\MDS\Model\DrugRegulatoryClassificationClient
