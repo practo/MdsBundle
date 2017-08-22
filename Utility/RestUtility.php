@@ -86,7 +86,7 @@ class RestUtility {
                 if (is_int($key)) {
                     params[] = $value;
                 } else {
-                    params[] = Client::toQueryParts($key, $value);
+                    params[] = RestUtility::toQueryParts($key, $value);
                 }
             }
         } else {
