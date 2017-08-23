@@ -40,7 +40,7 @@ class DrugProductModelList extends \Google\Protobuf\Internal\Message
      */
     public function setDrugProduct(&$var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Practo\MDS\Model\DrugProductModel::class);
+        // GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Practo\MDS\Model\DrugProductModel::class);
         $this->drugProduct = $var;
     }
 
