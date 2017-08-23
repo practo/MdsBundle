@@ -6,6 +6,8 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\BadResponseException;
 use Practo\MDS\Utility\AuthUtility as AuthUtility;
+use Google\Protobuf\Internal\RepeatedField;
+use Google\Protobuf\Internal\GPBType;
 
 class RestUtility {
 
@@ -73,27 +75,23 @@ class RestUtility {
     }
 
     public function getSignature($route, $params, $domain, $secret) {
-        $authString = $route.$params.$domain[0].$secret[0];
+        $authString = $route.$params.$domain.$secret;
         $shaDigest = sha1($authString);
         
         return base64_encode($shaDigest);
     }
 
-    public static function toQueryParts($key, $obj) {
+    public function toQueryParts($key, $obj) {
         $params = array();
         if (is_array($obj)){
             foreach ($obj as $key => $value) {
-                if (is_int($key)) {
-                    $params[] = $value;
-                } else {
-                    $params[] = $this->toQueryParts($key, $value);
-                }
+                $params[] = $this->toQueryParts($key, $value);
             }
         } else {
             $params[] = $key . "=" . (string) $obj;
         }
-
-        return $params;
+        sort($params);
+        return implode("&", $params);
     }
 
     public function getRequestURL() {
@@ -101,23 +99,13 @@ class RestUtility {
     }
 
     public function prepareParams() {
-        $queryParams = [];
         if ($this->method == "GET") {
-            $query = '';
-            foreach ($this->query as $key => $value) {
-            	if ($query == '') {
-            		$query = $key.'='.$value;
-            	} else {
-            		$query = '&'.$key.'='.$value;
-            	}
-            }
-            $queryParams['query'] = $query;
+            $queryParams['query'] = $this->query;
         } else {
             $queryParams['body'] = $this->body;
         }
-        // need to figure this out
-        //$queryParams = $this->toQueryParts("", $queryParams);
-        $signature = $this->getSignature($this->path, $queryParams['query'],
+        $strQuery = $this->toQueryParts("", $queryParams);
+        $signature = $this->getSignature($this->path, $strQuery,
             $this->source[0], $this->secret[0]);
 
         // Add all request headers
@@ -128,13 +116,16 @@ class RestUtility {
     }
 
     public function deSerializeData($response){
-        $serializer = JMS\Serializer\SerializerBuilder::create()->build();
-        $object = $serializer->deserialize($response,
-            $this->responseType, 'json');
-
+        $serializer = \JMS\Serializer\SerializerBuilder::create()->build();
+        $jsonData = json_decode($response->getBody(), false);
+        $data = new RepeatedField($this->responseType);
+        foreach ($jsonData as $key => $value) {
+            $object = $serializer->deserialize(json_encode($value),
+                $this->responseType, 'json');
+            $data[] = $object;
+        }
         $responseObject = new $this->responseClass();
-
-        call_user_func(array($responseObject, $this->responseMethod, $object));
+        call_user_func_array(array($responseObject, $this->responseMethod), array(&$data));
 
         return $responseObject;
     }
@@ -151,12 +142,14 @@ class RestUtility {
                 $e->getResponse()->getBody()->getContents(),
                 true
             );
+            var_dump($status);
         } catch (BadResponseException $e)     {
             $status["http_status"] = $e->getResponse()->getStatusCode();
             $status["result"]      = json_decode(
                 $e->getResponse()->getBody()->getContents(),
                 true
             );
+            var_dump($status);
         }
     }
 }

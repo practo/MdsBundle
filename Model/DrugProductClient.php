@@ -32,8 +32,8 @@ class DrugProductClient extends \Grpc\BaseStub {
       $this->restUtility->setMethod('GET');
       $this->restUtility->setDefaultHeaders();
       $this->restUtility->setQuery($searchParams);
-      $this->restUtility->setResponseType('\Practo\MDS\Model\DrugProductModel');
-      $this->restUtility->setResponseClass('\Practo\MDS\Model\FetchAllApiResponse');
+      $this->restUtility->setResponseType('Practo\MDS\Model\DrugProductModel');
+      $this->restUtility->setResponseClass('Practo\MDS\Model\DrugProductModelList');
       $this->restUtility->setResponseMethod('setDrugProduct');
 
       return $this->restUtility;
