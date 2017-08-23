@@ -28,6 +28,8 @@ class RestUtility {
 
     private $responseMethod;
 
+    private $fetchAllResponseClass;
+
     public function __construct($source, $secret, $baseUrl) {
         $this->source = $source;
         $this->secret = $secret;
@@ -75,6 +77,10 @@ class RestUtility {
         $this->responseMethod = $responseMethod;
     }
 
+    public function setFetchAllResponseClass($responseClass) {
+        $this->fetchAllResponseClass = $responseClass;
+    }
+
     public function getSignature($route, $params, $domain, $secret) {
         $authString = $route.$params.$domain.$secret;
         $shaDigest = sha1($authString);
@@ -119,16 +125,28 @@ class RestUtility {
     public function deSerializeData($response){
         $serializer = \JMS\Serializer\SerializerBuilder::create()->build();
         $jsonData = json_decode($response->getBody(), false);
-        $data = new RepeatedField($this->responseType);
-        foreach ($jsonData as $key => $value) {
-            $object = $serializer->deserialize(json_encode($value),
-                $this->responseType, 'json');
-            $data[] = $object;
-        }
-        $responseObject = new $this->responseClass();
-        call_user_func_array(array($responseObject, $this->responseMethod), array(&$data));
+        //case when a list is returned.
+        if ($this->fetchAllResponseClass != '') {
+            $data = new RepeatedField($this->responseType);
+            foreach ($jsonData as $key => $value) {
+                $object = $serializer->deserialize(json_encode($value),
+                    $this->responseType, 'json');
+                $data[] = $object;
+            }
+            $resObjList = new $this->responseClass();
+            $resFetchAllResObj = new $this->fetchAllResponseClass();
+            call_user_func_array(array($resObjList, $this->responseMethod), array(&$data));
+            call_user_func_array(array($resFetchAllResObj, $this->responseMethod), array(&$resObjList));
 
-        return $responseObject;
+            return $resFetchAllResObj;
+        } else {
+            $data = $serializer->deserialize(json_encode($value),
+                $this->responseType, 'json');
+            $responseObject = new $this->responseClass();
+            call_user_func_array(array($responseObject, $this->responseMethod), array(&$data));
+
+            return $responseObject;
+        }
     }
 
     public function wait(){
