@@ -8,6 +8,7 @@ use GuzzleHttp\Exception\BadResponseException;
 use Practo\MDS\Utility\AuthUtility as AuthUtility;
 use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBType;
+use Practo\MDS\Utility\Status as Status;
 
 class RestUtility {
 
@@ -131,25 +132,30 @@ class RestUtility {
     }
 
     public function wait(){
-        $status = [];
+        $status = new Status();
         try {
             $response = $this->client->request($this->method,
                 $this->getRequestURL(), $this->prepareParams());
+
+            // Set success status and details
+            $status->code = $response->getStatusCode();
+            $status->details = "";
+
             return [$this->deSerializeData($response), $status];
         } catch (ClientException $e) {
-            $status["http_status"] = $e->getResponse()->getStatusCode();
-            $status["result"]      = json_decode(
+            $status->code = $e->getResponse()->getStatusCode();
+            $status->details = json_decode(
                 $e->getResponse()->getBody()->getContents(),
                 true
             );
-            var_dump($status);
         } catch (BadResponseException $e)     {
-            $status["http_status"] = $e->getResponse()->getStatusCode();
-            $status["result"]      = json_decode(
+            $status->code = $e->getResponse()->getStatusCode();
+            $status->details = json_decode(
                 $e->getResponse()->getBody()->getContents(),
                 true
             );
-            var_dump($status);
         }
+
+        return [array(), $status];
     }
 }
