@@ -21,10 +21,6 @@
         "guzzlehttp/guzzle": "^6.2",
         "jms/serializer": "master"
     },
-     "repositories": [{
-        "type": "git",
-        "url": "https://github.com/practo/SensioBuzzBundle.git"
-    }],
     "autoload": {
       "classmap": ["PractoMdsBundle.php"], 
       "psr-4": {

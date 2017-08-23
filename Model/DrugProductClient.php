@@ -1,11 +1,11 @@
 <?php
 // GENERATED CODE -- DO NOT EDIT!
 
-namespace Practo\MDS\Model {
+namespace Practo\MDS\Model;
 
 use \Practo\Mds\Utility\RestUtility;
 
-  class DrugProductClient extends \Grpc\BaseStub {
+class DrugProductClient extends \Grpc\BaseStub {
 
     /**
      * @param string $hostname hostname
@@ -28,17 +28,13 @@ use \Practo\Mds\Utility\RestUtility;
         'q' => $argument->getQ()
       );
       
-      $drugProductModel = new DrugProductModel(unserialize($jsonResponse))
-
-      return $drugProductModel
-
       $this->restUtility->setPath('/search/drug_product');
       $this->restUtility->setMethod('GET');
       $this->restUtility->setDefaultHeaders();
       $this->restUtility->setQuery($searchParams);
       $this->restUtility->setResponseType('\Practo\MDS\Model\DrugProductModel');
       $this->restUtility->setResponseClass('\Practo\MDS\Model\FetchAllApiResponse');
-      $this->restUtility->setResponseMethod('setApi')
+      $this->restUtility->setResponseMethod('setDrugProduct');
 
       return $this->restUtility;
     }
@@ -56,7 +52,7 @@ use \Practo\Mds\Utility\RestUtility;
        $this->restUtility->setData($argument->encode());
        $this->restUtility->setResponseType('\Practo\MDS\Model\DrugProductModel');
        $this->restUtility->setResponseClass('\Practo\MDS\Model\AddResponse');
-       $this->restUtility->setResponseMethod('setAddResponseModel')
+       $this->restUtility->setResponseMethod('setAddResponseModel');
  
        return $this->restUtility;
    }

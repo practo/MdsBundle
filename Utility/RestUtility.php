@@ -5,7 +5,7 @@ namespace Practo\MDS\Utility;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\BadResponseException;
-use Practo\MDS\Utility\AuthUtility as AuthUtility
+use Practo\MDS\Utility\AuthUtility as AuthUtility;
 
 class RestUtility {
 
@@ -45,7 +45,7 @@ class RestUtility {
         $this->headers = [
             'domain' => $this->source[0],
             'Content-Type' => 'application/json'
-        ]
+        ];
     }
 
     public function setHeaders($headers){
@@ -79,38 +79,46 @@ class RestUtility {
         return base64_encode($shaDigest);
     }
 
-    public static function toQueryParts(key, obj) {
-        params = [];
+    public static function toQueryParts($key, $obj) {
+        $params = array();
         if (is_array($obj)){
             foreach ($obj as $key => $value) {
                 if (is_int($key)) {
-                    params[] = $value;
+                    $params[] = $value;
                 } else {
-                    params[] = RestUtility::toQueryParts($key, $value);
+                    $params[] = $this->toQueryParts($key, $value);
                 }
             }
         } else {
-            params[] = key . "=" . (string) obj;
+            $params[] = $key . "=" . (string) $obj;
         }
 
-        return params;
+        return $params;
     }
 
     public function getRequestURL() {
-        return $this->baseUrl . $this->path;
+        return $this->baseUrl[0] . $this->path;
     }
 
     public function prepareParams() {
         $queryParams = [];
         if ($this->method == "GET") {
-            $queryParams['query'] = $this->query;
+            $query = '';
+            foreach ($this->query as $key => $value) {
+            	if ($query == '') {
+            		$query = $key.'='.$value;
+            	} else {
+            		$query = '&'.$key.'='.$value;
+            	}
+            }
+            $queryParams['query'] = $query;
         } else {
             $queryParams['body'] = $this->body;
         }
-
-        $queryParams = RestUtility::toQueryParts("", $queryParams);
-        $signature = $this->getSignature($this->path, $queryParams,
-            $this->source, $this->secret);
+        // need to figure this out
+        //$queryParams = $this->toQueryParts("", $queryParams);
+        $signature = $this->getSignature($this->path, $queryParams['query'],
+            $this->source[0], $this->secret[0]);
 
         // Add all request headers
         $queryParams['headers'] = $this->headers;
@@ -134,8 +142,9 @@ class RestUtility {
     public function wait(){
         $status = [];
         try {
-            $response = $client->request($this->method,
-                $this->getRequestURL, $this->prepareParams());
+            $response = $this->client->request($this->method,
+                $this->getRequestURL(), $this->prepareParams());
+            return [$this->deSerializeData($response), $status];
         } catch (ClientException $e) {
             $status["http_status"] = $e->getResponse()->getStatusCode();
             $status["result"]      = json_decode(
@@ -149,7 +158,5 @@ class RestUtility {
                 true
             );
         }
-
-        return [$this->deSerializeData($response), $status];
     }
 }
