@@ -122,7 +122,7 @@ class RestUtility {
     public function prepareParams() {
         if ($this->method == "GET") {
             $queryParams['query'] = $this->query;
-            $strQuery = $this->toQueryParts("", json_decode($queryParams['query'], true));
+            $strQuery = $this->toQueryParts("", $queryParams['query']);
         } else {
             $queryParams['body'] = $this->data;
             $strQuery = $this->toQueryParts("", json_decode($queryParams['body'], true));
