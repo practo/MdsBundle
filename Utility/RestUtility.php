@@ -88,11 +88,19 @@ class RestUtility {
         return base64_encode($shaDigest);
     }
 
+    public function getKey($prefix, $key) {
+        if ($prefix != "") {
+            return $prefix . "[" . $key . "]"
+        }
+        return $key;
+    }
+
     public function toQueryParts($key, $obj) {
         $params = array();
         if (is_array($obj)){
-            foreach ($obj as $key => $value) {
-                $params[] = $this->toQueryParts($key, $value);
+            foreach ($obj as $entry => $value) {
+                $params[] = $this->toQueryParts(
+                    $this->getKey($key, $entry), $value);
             }
         } else {
             $params[] = $key . "=" . (string) $obj;
