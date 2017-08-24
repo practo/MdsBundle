@@ -7,7 +7,7 @@ namespace Practo\MDS\Model;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
-
+use JMS\Serializer\Annotation\Type;
 /**
  * Protobuf type <code>Practo.MDS.Model.DrugProductModel</code>
  */
@@ -15,92 +15,116 @@ class DrugProductModel extends \Google\Protobuf\Internal\Message
 {
     /**
      * <code>string name = 1;</code>
+     * @Type("string")
      */
     private $name = '';
     /**
      * <code>repeated string synonyms = 2;</code>
+     * @Type("array")
      */
     private $synonyms;
     /**
      * <code>repeated string references = 3;</code>
+     * @Type("array")
      */
     private $references;
     /**
      * <code>string drug_combination = 4;</code>
+     * @Type("int")
      */
     private $drug_combination = '';
     /**
      * <code>string dosage_form = 5;</code>
+     * @Type("int")
      */
     private $dosage_form = '';
     /**
      * <code>string system_of_medicine = 6;</code>
+     * @Type("int")
      */
     private $system_of_medicine = '';
     /**
      * <code>repeated string snomed_ids = 7;</code>
+     * @Type("array")
      */
     private $snomed_ids;
     /**
      * <code>repeated string rxnorm_ids = 8;</code>
+     * @Type("array")
      */
     private $rxnorm_ids;
     /**
      * <code>repeated .Practo.MDS.Model.GeoValidity geo_validity = 9;</code>
+     * @Type("Practo\MDS\Model\GeoValidity")
      */
     private $geo_validity;
     /**
      * <code>string id = 10;</code>
+     * @Type("string")
      */
     private $id = '';
     /**
      * <code>sfixed64 created = 11;</code>
+     * @Type("int")
      */
     private $created = 0;
     /**
      * <code>sfixed64 modified = 12;</code>
+     * @Type("int")
      */
     private $modified = 0;
     /**
      * <code>string merged_to = 13;</code>
+     * @Type("string")
      */
     private $merged_to = '';
     /**
      * <code>string status = 14;</code>
+     * @Type("string")
      */
     private $status = '';
     /**
      * <code>string source = 15;</code>
+     * @Type("string")
      */
     private $source = '';
     /**
      * <code>bool relationship_concept = 16;</code>
+     * @Type("boolean")
      */
     private $relationship_concept = false;
     /**
      * <code>string creator = 17;</code>
+     * @Type("string")
      */
     private $creator = '';
     /**
      * <code>string comments = 18;</code>
+     * @Type("string")
      */
     private $comments = '';
     /**
      * <code>map&lt;string, string&gt; additional_fields = 19;</code>
+     * @Type("array")
      */
     private $additional_fields;
     /**
      * <code>bool visible = 20;</code>
+     * @Type("boolean")
      */
     private $visible = false;
     /**
      * <code>sfixed32 version = 21;</code>
+     * @Type("int")
      */
     private $version = 0;
+    /**
+     * <code>repeated .Practo.MDS.Model.DrugRegulatoryClassificationReference drug_regulatory_class = 10;</code>
+     */
+    private $drug_regulatory_class;
 
     public function __construct() {
-        \GPBMetadata\DrugProduct::initOnce();
-        parent::__construct();
+ 
     }
 
     /**
@@ -252,7 +276,6 @@ class DrugProductModel extends \Google\Protobuf\Internal\Message
      */
     public function setGeoValidity(&$var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Practo\MDS\Model\GeoValidity::class);
         $this->geo_validity = $var;
     }
 
@@ -457,6 +480,22 @@ class DrugProductModel extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->version = $var;
+    }
+
+    /**
+     * <code>repeated .Practo.MDS.Model.DrugRegulatoryClassificationReference drug_regulatory_class = 10;</code>
+     */
+    public function getDrugRegulatoryClass()
+    {
+        return $this->drug_regulatory_class;
+    }
+
+    /**
+     * <code>repeated .Practo.MDS.Model.DrugRegulatoryClassificationReference drug_regulatory_class = 10;</code>
+     */
+    public function setDrugRegulatoryClass(&$var)
+    {
+        $this->drug_regulatory_class = $var;
     }
 
 }
