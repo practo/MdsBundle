@@ -171,8 +171,8 @@ class RestUtility {
                 $this->getRequestURL(), $this->prepareParams());
 
             // Set success status and details
-            $status->code = $response->getStatusCode();
-            $status->details = "";
+            $status->code = 0;
+            $status->details = "success";
 
             return [$this->deSerializeData($response), $status];
         } catch (ClientException $e) {

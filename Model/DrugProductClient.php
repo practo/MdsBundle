@@ -55,7 +55,7 @@ class DrugProductClient extends \Grpc\BaseStub {
        $context = new SerializationContext();
        $context->setSerializeNull(false);
        $this->restUtility->setData($serializer->serialize($argument->getDrugProduct(), 'json', $context));
-       $this->restUtility->setResponseType('Practo\MDS\Model\DrugProductModel');
+       $this->restUtility->setResponseType('Practo\MDS\Model\AddResponseModel');
        $this->restUtility->setResponseClass('Practo\MDS\Model\AddResponse');
        $this->restUtility->setResponseMethod('setAddResponseModel');
  
