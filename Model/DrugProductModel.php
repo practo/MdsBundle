@@ -8,6 +8,7 @@ use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 use JMS\Serializer\Annotation\Type;
+
 /**
  * Protobuf type <code>Practo.MDS.Model.DrugProductModel</code>
  */
@@ -17,7 +18,7 @@ class DrugProductModel extends \Google\Protobuf\Internal\Message
      * <code>string name = 1;</code>
      * @Type("string")
      */
-    private $name = '';
+    private $name;
     /**
      * <code>repeated string synonyms = 2;</code>
      * @Type("array")
@@ -30,19 +31,19 @@ class DrugProductModel extends \Google\Protobuf\Internal\Message
     private $references;
     /**
      * <code>string drug_combination = 4;</code>
-     * @Type("int")
+     * @Type("string")
      */
-    private $drug_combination = '';
+    private $drug_combination;
     /**
      * <code>string dosage_form = 5;</code>
-     * @Type("int")
+     * @Type("string")
      */
-    private $dosage_form = '';
+    private $dosage_form;
     /**
      * <code>string system_of_medicine = 6;</code>
-     * @Type("int")
+     * @Type("string")
      */
-    private $system_of_medicine = '';
+    private $system_of_medicine;
     /**
      * <code>repeated string snomed_ids = 7;</code>
      * @Type("array")
@@ -62,47 +63,47 @@ class DrugProductModel extends \Google\Protobuf\Internal\Message
      * <code>string id = 10;</code>
      * @Type("string")
      */
-    private $id = '';
+    private $id;
     /**
      * <code>sfixed64 created = 11;</code>
      * @Type("int")
      */
-    private $created = 0;
+    private $created;
     /**
      * <code>sfixed64 modified = 12;</code>
      * @Type("int")
      */
-    private $modified = 0;
+    private $modified;
     /**
      * <code>string merged_to = 13;</code>
      * @Type("string")
      */
-    private $merged_to = '';
+    private $merged_to;
     /**
      * <code>string status = 14;</code>
      * @Type("string")
      */
-    private $status = '';
+    private $status;
     /**
      * <code>string source = 15;</code>
      * @Type("string")
      */
-    private $source = '';
+    private $source;
     /**
      * <code>bool relationship_concept = 16;</code>
      * @Type("boolean")
      */
-    private $relationship_concept = false;
+    private $relationship_concept;
     /**
      * <code>string creator = 17;</code>
      * @Type("string")
      */
-    private $creator = '';
+    private $creator;
     /**
      * <code>string comments = 18;</code>
      * @Type("string")
      */
-    private $comments = '';
+    private $comments;
     /**
      * <code>map&lt;string, string&gt; additional_fields = 19;</code>
      * @Type("array")
@@ -112,12 +113,12 @@ class DrugProductModel extends \Google\Protobuf\Internal\Message
      * <code>bool visible = 20;</code>
      * @Type("boolean")
      */
-    private $visible = false;
+    private $visible;
     /**
      * <code>sfixed32 version = 21;</code>
      * @Type("int")
      */
-    private $version = 0;
+    private $version;
     /**
      * <code>repeated .Practo.MDS.Model.DrugRegulatoryClassificationReference drug_regulatory_class = 10;</code>
      * @Type("array")
@@ -190,7 +191,6 @@ class DrugProductModel extends \Google\Protobuf\Internal\Message
      */
     public function setDrugCombination($var)
     {
-        GPBUtil::checkString($var, True);
         $this->drug_combination = $var;
     }
 

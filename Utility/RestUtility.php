@@ -103,7 +103,13 @@ class RestUtility {
                     $this->getKey($key, $entry), $value);
             }
         } else {
-            $params[] = $key . "=" . (string) $obj;
+            if ($obj === true) {
+                $obj = 'true';
+            } else if ($obj === false) {
+                $obj = 'false';
+            }
+
+            $params[] = $key . "=" .$obj;
         }
         sort($params);
         return implode("&", $params);
@@ -119,7 +125,7 @@ class RestUtility {
         } else {
             $queryParams['body'] = $this->data;
         }
-        $strQuery = $this->toQueryParts("", $queryParams);
+        $strQuery = $this->toQueryParts("", json_decode($queryParams['body'], true));
         $signature = $this->getSignature($this->path, $strQuery,
             $this->source[0], $this->secret[0]);
 
@@ -148,7 +154,7 @@ class RestUtility {
 
             return $resFetchAllResObj;
         } else {
-            $data = $serializer->deserialize(json_encode($value),
+            $data = $serializer->deserialize(json_encode($jsonData),
                 $this->responseType, 'json');
             $responseObject = new $this->responseClass();
             call_user_func_array(array($responseObject, $this->responseMethod), array(&$data));
@@ -181,7 +187,6 @@ class RestUtility {
                 true
             );
         }
-
         return [array(), $status];
     }
 }

@@ -4,6 +4,7 @@
 namespace Practo\MDS\Model;
 
 use \Practo\Mds\Utility\RestUtility;
+use \JMS\Serializer\SerializationContext;
 
 class DrugProductClient extends \Grpc\BaseStub {
 
@@ -51,7 +52,9 @@ class DrugProductClient extends \Grpc\BaseStub {
        $this->restUtility->setMethod('POST');
        $this->restUtility->setDefaultHeaders();
        $serializer = \JMS\Serializer\SerializerBuilder::create()->build();
-       $this->restUtility->setData($serializer->serialize($argument->getDrugProduct(), 'json'));
+       $context = new SerializationContext();
+       $context->setSerializeNull(false);
+       $this->restUtility->setData($serializer->serialize($argument->getDrugProduct(), 'json', $context));
        $this->restUtility->setResponseType('Practo\MDS\Model\DrugProductModel');
        $this->restUtility->setResponseClass('Practo\MDS\Model\AddResponse');
        $this->restUtility->setResponseMethod('setAddResponseModel');
