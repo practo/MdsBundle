@@ -35,6 +35,7 @@ class DrugProductClient extends \Grpc\BaseStub {
       $this->restUtility->setResponseType('Practo\MDS\Model\DrugProductModel');
       $this->restUtility->setResponseClass('Practo\MDS\Model\DrugProductModelList');
       $this->restUtility->setResponseMethod('setDrugProduct');
+      $this->restUtility->setFetchAllResponseClass('Practo\MDS\Model\FetchAllDrugProductResponse');
 
       return $this->restUtility;
     }
@@ -49,11 +50,13 @@ class DrugProductClient extends \Grpc\BaseStub {
        $this->restUtility->setPath('/concept/drug_product');
        $this->restUtility->setMethod('POST');
        $this->restUtility->setDefaultHeaders();
-       $this->restUtility->setData($argument->encode());
-       $this->restUtility->setResponseType('\Practo\MDS\Model\DrugProductModel');
-       $this->restUtility->setResponseClass('\Practo\MDS\Model\AddResponse');
+       $serializer = \JMS\Serializer\SerializerBuilder::create()->build();
+       $this->restUtility->setData($serializer->serialize($argument->getDrugProduct(), 'json'));
+       $this->restUtility->setResponseType('Practo\MDS\Model\DrugProductModel');
+       $this->restUtility->setResponseClass('Practo\MDS\Model\AddResponse');
        $this->restUtility->setResponseMethod('setAddResponseModel');
  
        return $this->restUtility;
    }
+
 }

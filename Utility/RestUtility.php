@@ -109,7 +109,7 @@ class RestUtility {
         if ($this->method == "GET") {
             $queryParams['query'] = $this->query;
         } else {
-            $queryParams['body'] = $this->body;
+            $queryParams['body'] = $this->data;
         }
         $strQuery = $this->toQueryParts("", $queryParams);
         $signature = $this->getSignature($this->path, $strQuery,
