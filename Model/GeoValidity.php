@@ -7,6 +7,7 @@ namespace Practo\MDS\Model;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use JMS\Serializer\Annotation\Type;
 
 /**
  * Protobuf type <code>Practo.MDS.Model.GeoValidity</code>
@@ -15,16 +16,17 @@ class GeoValidity extends \Google\Protobuf\Internal\Message
 {
     /**
      * <code>string country = 1;</code>
+     * @Type("string")
      */
     private $country = '';
     /**
      * <code>bool valid = 2;</code>
+     * @Type("boolean")
      */
     private $valid = false;
 
     public function __construct() {
-        \GPBMetadata\Country::initOnce();
-        parent::__construct();
+
     }
 
     /**
@@ -40,7 +42,6 @@ class GeoValidity extends \Google\Protobuf\Internal\Message
      */
     public function setCountry($var)
     {
-        GPBUtil::checkString($var, True);
         $this->country = $var;
     }
 
@@ -57,7 +58,6 @@ class GeoValidity extends \Google\Protobuf\Internal\Message
      */
     public function setValid($var)
     {
-        GPBUtil::checkBool($var);
         $this->valid = $var;
     }
 

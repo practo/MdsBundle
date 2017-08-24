@@ -23,8 +23,7 @@ class DrugRegulatoryClassificationReference extends \Google\Protobuf\Internal\Me
     private $class = '';
 
     public function __construct() {
-        \GPBMetadata\Common::initOnce();
-        parent::__construct();
+ 
     }
 
     /**
@@ -40,7 +39,6 @@ class DrugRegulatoryClassificationReference extends \Google\Protobuf\Internal\Me
      */
     public function setCountry($var)
     {
-        GPBUtil::checkString($var, True);
         $this->country = $var;
     }
 
@@ -57,7 +55,6 @@ class DrugRegulatoryClassificationReference extends \Google\Protobuf\Internal\Me
      */
     public function setClass($var)
     {
-        GPBUtil::checkString($var, True);
         $this->class = $var;
     }
 

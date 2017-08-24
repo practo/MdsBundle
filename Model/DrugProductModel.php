@@ -55,7 +55,7 @@ class DrugProductModel extends \Google\Protobuf\Internal\Message
     private $rxnorm_ids;
     /**
      * <code>repeated .Practo.MDS.Model.GeoValidity geo_validity = 9;</code>
-     * @Type("Practo\MDS\Model\GeoValidity")
+     * @Type("array")
      */
     private $geo_validity;
     /**
@@ -120,6 +120,7 @@ class DrugProductModel extends \Google\Protobuf\Internal\Message
     private $version = 0;
     /**
      * <code>repeated .Practo.MDS.Model.DrugRegulatoryClassificationReference drug_regulatory_class = 10;</code>
+     * @Type("array")
      */
     private $drug_regulatory_class;
 
@@ -157,7 +158,6 @@ class DrugProductModel extends \Google\Protobuf\Internal\Message
      */
     public function setSynonyms(&$var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->synonyms = $var;
     }
 
@@ -174,7 +174,6 @@ class DrugProductModel extends \Google\Protobuf\Internal\Message
      */
     public function setReferences(&$var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->references = $var;
     }
 
@@ -242,7 +241,6 @@ class DrugProductModel extends \Google\Protobuf\Internal\Message
      */
     public function setSnomedIds(&$var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->snomed_ids = $var;
     }
 
@@ -259,7 +257,6 @@ class DrugProductModel extends \Google\Protobuf\Internal\Message
      */
     public function setRxnormIds(&$var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->rxnorm_ids = $var;
     }
 
@@ -360,7 +357,6 @@ class DrugProductModel extends \Google\Protobuf\Internal\Message
      */
     public function setStatus($var)
     {
-        GPBUtil::checkString($var, True);
         $this->status = $var;
     }
 
@@ -377,7 +373,6 @@ class DrugProductModel extends \Google\Protobuf\Internal\Message
      */
     public function setSource($var)
     {
-        GPBUtil::checkString($var, True);
         $this->source = $var;
     }
 
@@ -394,7 +389,6 @@ class DrugProductModel extends \Google\Protobuf\Internal\Message
      */
     public function setRelationshipConcept($var)
     {
-        GPBUtil::checkBool($var);
         $this->relationship_concept = $var;
     }
 
@@ -411,7 +405,6 @@ class DrugProductModel extends \Google\Protobuf\Internal\Message
      */
     public function setCreator($var)
     {
-        GPBUtil::checkString($var, True);
         $this->creator = $var;
     }
 
@@ -461,7 +454,6 @@ class DrugProductModel extends \Google\Protobuf\Internal\Message
      */
     public function setVisible($var)
     {
-        GPBUtil::checkBool($var);
         $this->visible = $var;
     }
 
@@ -478,7 +470,6 @@ class DrugProductModel extends \Google\Protobuf\Internal\Message
      */
     public function setVersion($var)
     {
-        GPBUtil::checkInt32($var);
         $this->version = $var;
     }
 
