@@ -90,7 +90,7 @@ class RestUtility {
 
     public function getKey($prefix, $key) {
         if ($prefix != "") {
-            return $prefix . "[" . $key . "]"
+            return $prefix . "[" . $key . "]";
         }
         return $key;
     }
