@@ -122,10 +122,11 @@ class RestUtility {
     public function prepareParams() {
         if ($this->method == "GET") {
             $queryParams['query'] = $this->query;
+            $strQuery = $this->toQueryParts("", json_decode($queryParams['query'], true));
         } else {
             $queryParams['body'] = $this->data;
+            $strQuery = $this->toQueryParts("", json_decode($queryParams['body'], true));
         }
-        $strQuery = $this->toQueryParts("", json_decode($queryParams['body'], true));
         $signature = $this->getSignature($this->path, $strQuery,
             $this->source[0], $this->secret[0]);
 
