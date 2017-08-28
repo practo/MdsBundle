@@ -102,14 +102,15 @@ class RestUtility {
                 $params[] = $this->toQueryParts(
                     $this->getKey($key, $entry), $value);
             }
-        } else {
+        } else if ($obj !== NULL) {
             if ($obj === true) {
                 $obj = 'true';
             } else if ($obj === false) {
                 $obj = 'false';
             }
-
             $params[] = $key . "=" .$obj;
+        } else {
+            return null;
         }
         sort($params);
         return implode("&", $params);

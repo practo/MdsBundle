@@ -62,4 +62,23 @@ class DrugProductClient extends \Grpc\BaseStub {
        return $this->restUtility;
    }
 
+   /**
+    * @param \Practo\MDS\Model\AddDrugProductRequest $argument input argument
+    * @param array $metadata metadata
+    * @param array $options call options
+    */
+   public function fetch(\Practo\MDS\Model\FetchRequest $argument,
+     $metadata = [], $options = []) {
+
+       $path = "/concept/drug_product/".$argument->getConceptId();
+       $this->restUtility->setPath($path);
+       $this->restUtility->setMethod('GET');
+       $this->restUtility->setDefaultHeaders();
+       $this->restUtility->setResponseType('Practo\MDS\Model\DrugProductModel');
+       $this->restUtility->setResponseClass('Practo\MDS\Model\FetchDrugProductResponse');
+       $this->restUtility->setResponseMethod('setDrugProduct');
+ 
+       return $this->restUtility;
+   }
+
 }
