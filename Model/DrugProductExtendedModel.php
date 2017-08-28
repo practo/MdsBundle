@@ -7,6 +7,7 @@ namespace Practo\MDS\Model;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use JMS\Serializer\Annotation\Type;
 
 /**
  * Protobuf type <code>Practo.MDS.Model.DrugProductExtendedModel</code>
@@ -15,86 +16,107 @@ class DrugProductExtendedModel extends \Google\Protobuf\Internal\Message
 {
     /**
      * <code>string name = 1;</code>
+     * @Type("string")
      */
     private $name = '';
     /**
      * <code>repeated string synonyms = 2;</code>
+     * @Type("array")
      */
     private $synonyms;
     /**
      * <code>repeated string references = 3;</code>
+     * @Type("array")
      */
     private $references;
     /**
      * <code>.Practo.MDS.Model.DrugCombinationModel drug_combination = 4;</code>
+     * @Type("array")
      */
     private $drug_combination = null;
     /**
      * <code>.Practo.MDS.Model.DosageFormModel dosage_form = 5;</code>
+     * @Type("array")
      */
     private $dosage_form = null;
     /**
      * <code>.Practo.MDS.Model.SystemOfMedicineModel system_of_medicine = 6;</code>
+     * @Type("array")
      */
     private $system_of_medicine = null;
     /**
      * <code>repeated string snomed_ids = 7;</code>
+     * @Type("array")
      */
     private $snomed_ids;
     /**
      * <code>repeated string rxnorm_ids = 8;</code>
+     * @Type("array")
      */
     private $rxnorm_ids;
     /**
      * <code>repeated .Practo.MDS.Model.GeoValidityExtended geo_validity = 9;</code>
+     * @Type("array")
      */
     private $geo_validity;
     /**
      * <code>string id = 10;</code>
+     * @Type("string")
      */
     private $id = '';
     /**
      * <code>sfixed64 created = 11;</code>
+     * @Type("int")
      */
     private $created = 0;
     /**
      * <code>sfixed64 modified = 12;</code>
+     * @Type("int")
      */
     private $modified = 0;
     /**
      * <code>string merged_to = 13;</code>
+     * @Type("string")
      */
     private $merged_to = '';
     /**
      * <code>string status = 14;</code>
+     * @Type("string")
      */
     private $status = '';
     /**
      * <code>string source = 15;</code>
+     * @Type("string")
      */
     private $source = '';
     /**
      * <code>bool relationship_concept = 16;</code>
+     * @Type("boolean")
      */
     private $relationship_concept = false;
     /**
      * <code>string creator = 17;</code>
+     * @Type("string")
      */
     private $creator = '';
     /**
      * <code>string comments = 18;</code>
+     * @Type("string")
      */
     private $comments = '';
     /**
      * <code>map&lt;string, string&gt; additional_fields = 19;</code>
+     * @Type("array")
      */
     private $additional_fields;
     /**
      * <code>bool visible = 20;</code>
+     * @Type("boolean")
      */
     private $visible = false;
     /**
      * <code>sfixed32 version = 21;</code>
+     * @Type("int")
      */
     private $version = 0;
 

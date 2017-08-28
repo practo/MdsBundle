@@ -63,7 +63,7 @@ class DrugProductClient extends \Grpc\BaseStub {
    }
 
    /**
-    * @param \Practo\MDS\Model\AddDrugProductRequest $argument input argument
+    * @param \Practo\MDS\Model\FetchRequest $argument input argument
     * @param array $metadata metadata
     * @param array $options call options
     */
@@ -76,6 +76,30 @@ class DrugProductClient extends \Grpc\BaseStub {
        $this->restUtility->setDefaultHeaders();
        $this->restUtility->setResponseType('Practo\MDS\Model\DrugProductModel');
        $this->restUtility->setResponseClass('Practo\MDS\Model\FetchDrugProductResponse');
+       $this->restUtility->setResponseMethod('setDrugProduct');
+ 
+       return $this->restUtility;
+   }
+
+   /**
+    * @param \Practo\MDS\Model\FetchRequest $argument input argument
+    * @param array $metadata metadata
+    * @param array $options call options
+    */
+   public function fetchExtended(\Practo\MDS\Model\FetchRequest $argument,
+     $metadata = [], $options = []) {
+
+       $path = "/concept/drug_product/".$argument->getConceptId();
+       $this->restUtility->setPath($path);
+       $this->restUtility->setMethod('GET');
+       
+       $searchParams = array(
+        'extended' => "true"
+       );
+       $this->restUtility->setQuery($searchParams);
+       $this->restUtility->setDefaultHeaders();
+       $this->restUtility->setResponseType('Practo\MDS\Model\DrugProductExtendedModel');
+       $this->restUtility->setResponseClass('Practo\MDS\Model\FetchDrugProductExtendedResponse');
        $this->restUtility->setResponseMethod('setDrugProduct');
  
        return $this->restUtility;

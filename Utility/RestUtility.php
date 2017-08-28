@@ -84,7 +84,7 @@ class RestUtility {
     public function getSignature($route, $params, $domain, $secret) {
         $authString = $route.$params.$domain.$secret;
         $shaDigest = sha1($authString);
-        
+            
         return base64_encode($shaDigest);
     }
 
@@ -130,7 +130,6 @@ class RestUtility {
         }
         $signature = $this->getSignature($this->path, $strQuery,
             $this->source[0], $this->secret[0]);
-
         // Add all request headers
         $queryParams['headers'] = $this->headers;
         $queryParams['headers']['signature'] = $signature;
@@ -170,7 +169,6 @@ class RestUtility {
         try {
             $response = $this->client->request($this->method,
                 $this->getRequestURL(), $this->prepareParams());
-
             // Set success status and details
             $status->code = 0;
             $status->details = "success";
