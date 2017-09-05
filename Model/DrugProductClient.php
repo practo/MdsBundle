@@ -6,7 +6,7 @@ namespace Practo\MDS\Model;
 use \Practo\Mds\Utility\RestUtility;
 use \JMS\Serializer\SerializationContext;
 
-class DrugProductClient extends \Grpc\BaseStub {
+class DrugProductClient {
 
     /**
      * @param string $hostname hostname
@@ -82,6 +82,25 @@ class DrugProductClient extends \Grpc\BaseStub {
    }
 
    /**
+     * @param \Practo\MDS\Model\FetchAllRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function fetchAll(\Practo\MDS\Model\FetchAllRequest $argument,
+      $metadata = [], $options = []) {
+
+      $this->restUtility->setPath('/concept/drug_product');
+      $this->restUtility->setMethod('GET');
+      $this->restUtility->setDefaultHeaders();
+      $this->restUtility->setResponseType('Practo\MDS\Model\DrugProductModel');
+      $this->restUtility->setResponseClass('Practo\MDS\Model\DrugProductModelList');
+      $this->restUtility->setResponseMethod('setDrugProduct');
+      $this->restUtility->setFetchAllResponseClass('Practo\MDS\Model\FetchAllDrugProductResponse');
+
+      return $this->restUtility;
+    }
+
+   /**
     * @param \Practo\MDS\Model\FetchRequest $argument input argument
     * @param array $metadata metadata
     * @param array $options call options
@@ -105,4 +124,72 @@ class DrugProductClient extends \Grpc\BaseStub {
        return $this->restUtility;
    }
 
+   /**
+     * @param \Practo\MDS\Model\FetchAllRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function fetchAllExtended(\Practo\MDS\Model\FetchAllRequest $argument,
+      $metadata = [], $options = []) {
+        $this->restUtility->setPath('/concept/drug_product');
+        $this->restUtility->setMethod('GET');
+
+        $searchParams = array(
+         'extended' => "true"
+        );
+        $this->restUtility->setQuery($searchParams);
+        $this->restUtility->setDefaultHeaders();
+        $this->restUtility->setResponseType('Practo\MDS\Model\DrugProductExtendedModel');
+        $this->restUtility->setResponseClass('Practo\MDS\Model\DrugProductExtendedModelList');
+        $this->restUtility->setResponseMethod('setDrugProduct');
+        $this->restUtility->setFetchAllResponseClass('Practo\MDS\Model\FetchAllDrugProductExtendedResponse');
+
+        return $this->restUtility;
+    }
+
+    /**
+     * @param \Practo\MDS\Model\FetchByIdsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function fetchByIds(\Practo\MDS\Model\FetchByIdsRequest $argument,
+      $metadata = [], $options = []) {
+        $this->restUtility->setPath('/concept/fetchByIds');
+        $this->restUtility->setMethod('GET');
+
+        $searchParams = array(
+          'concept_ids' => $argument->getConceptIds()
+        );
+        $this->restUtility->setQuery($searchParams);
+        $this->restUtility->setDefaultHeaders();
+        $this->restUtility->setResponseType('Practo\MDS\Model\DrugProductModel');
+        $this->restUtility->setResponseClass('Practo\MDS\Model\DrugProductModelList');
+        $this->restUtility->setResponseMethod('setDrugProduct');
+        $this->restUtility->setFetchAllResponseClass('Practo\MDS\Model\FetchAllDrugProductResponse');
+
+        return $this->restUtility;
+    }
+
+    /**
+     * @param \Practo\MDS\Model\VisibilityChangeRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function visiblityChange(\Practo\MDS\Model\VisibilityChangeRequest $argument,
+      $metadata = [], $options = []) {
+
+        $path = "/concept/drug_product/".$argument->getConceptId()."/visibility";
+        $this->restUtility->setPath($path);
+        $this->restUtility->setMethod('PATCH');
+
+        $serializer = \JMS\Serializer\SerializerBuilder::create()->build();
+        $context = new SerializationContext();
+        $context->setSerializeNull(false);
+        $this->restUtility->setData($serializer->serialize($argument->getVisible(), 'json', $context));
+        $this->restUtility->setResponseType('string');
+        $this->restUtility->setResponseClass('Practo\MDS\Model\VisibilityChangeResponse');
+        $this->restUtility->setResponseMethod('setAddResponseModel');
+
+        return $this->restUtility;
+    }
 }
