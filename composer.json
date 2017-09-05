@@ -16,9 +16,10 @@
     ],
     "require": {
         "php": ">=5.4.0",
+        "google/protobuf": "~3.4.0",
         "symfony/framework-bundle": ">=2.0",
         "guzzlehttp/guzzle": "^6.2",
-        "jms/serializer": "master"
+        "jms/serializer": "~1.5"
     },
     "autoload": {
       "classmap": ["PractoMdsBundle.php"], 
