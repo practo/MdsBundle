@@ -3,7 +3,7 @@
 
 namespace Practo\MDS\Model {
 
-  class DrugBrandClient extends \Grpc\BaseStub {
+  class DrugBrandClient {
 
     /**
      * @param string $hostname hostname

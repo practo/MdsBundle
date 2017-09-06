@@ -58,9 +58,7 @@ services:
   practo_mds.drug_brand:
     class: Practo\MDS\Model\DrugBrandClient
     arguments:
-      - %practo_mds.base_uri%
-      - { update_metadata : ['@practo_mds.auth_utility', attachHeaders], credentials : null }
-      - '@practo_mds.grpc_channel'
+      - '@practo_mds.rest_utility'
 
   practo_mds.drug_combination:
     class: Practo\MDS\Model\DrugCombinationClient
