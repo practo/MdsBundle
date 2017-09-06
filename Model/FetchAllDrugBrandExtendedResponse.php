@@ -36,7 +36,6 @@ class FetchAllDrugBrandExtendedResponse extends \Google\Protobuf\Internal\Messag
      */
     public function setDrugBrand(&$var)
     {
-        GPBUtil::checkMessage($var, \Practo\MDS\Model\DrugBrandExtendedModelList::class);
         $this->drugBrand = $var;
     }
 

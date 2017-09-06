@@ -7,6 +7,7 @@ namespace Practo\MDS\Model;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use JMS\Serializer\Annotation\Type;
 
 /**
  * Protobuf type <code>Practo.MDS.Model.DrugBrandExtendedModel</code>
@@ -15,74 +16,92 @@ class DrugBrandExtendedModel extends \Google\Protobuf\Internal\Message
 {
     /**
      * <code>string name = 1;</code>
+     * @Type("string")
      */
     private $name = '';
     /**
      * <code>repeated string synonyms = 2;</code>
+     * @Type("array")
      */
     private $synonyms;
     /**
      * <code>repeated string references = 3;</code>
+     * @Type("array")
      */
     private $references;
     /**
      * <code>.Practo.MDS.Model.DrugProductModel drug_product = 4;</code>
+     * @Type("array")
      */
     private $drug_product = null;
     /**
      * <code>repeated .Practo.MDS.Model.GeoValidityExtended geo_validity = 5;</code>
+     * @Type("array")
      */
     private $geo_validity;
     /**
      * <code>repeated .Practo.MDS.Model.ManufacturersExtended manufacturers = 6;</code>
+     * @Type("array")
      */
     private $manufacturers;
     /**
      * <code>string id = 7;</code>
+     * @Type("string")
      */
     private $id = '';
     /**
      * <code>sfixed64 created = 8;</code>
+     * @Type("int")
      */
     private $created = 0;
     /**
      * <code>sfixed64 modified = 9;</code>
+     * @Type("int")
      */
     private $modified = 0;
     /**
      * <code>string merged_to = 10;</code>
+     * @Type("string")
      */
     private $merged_to = '';
     /**
      * <code>string status = 11;</code>
+     * @Type("string")
      */
     private $status = '';
     /**
      * <code>string source = 12;</code>
+     * @Type("string")
      */
     private $source = '';
     /**
      * <code>bool relationship_concept = 13;</code>
+     * @Type("boolean")
      */
     private $relationship_concept = false;
     /**
      * <code>string creator = 14;</code>
+     * @Type("string")
      */
     private $creator = '';
     /**
      * <code>string comments = 15;</code>
+     * @Type("string")
      */
     private $comments = '';
     /**
      * <code>map&lt;string, string&gt; additional_fields = 16;</code>
+     * @Type("array")
      */
     private $additional_fields;
     /**
      * <code>bool visible = 17;</code>
+     * @Type("boolean")
      */
     private $visible = false;
     /**
      * <code>sfixed32 version = 18;</code>
+     * @Type("int")
      */
     private $version = 0;
 
@@ -172,7 +191,6 @@ class DrugBrandExtendedModel extends \Google\Protobuf\Internal\Message
      */
     public function setGeoValidity(&$var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Practo\MDS\Model\GeoValidityExtended::class);
         $this->geo_validity = $var;
     }
 
@@ -189,7 +207,6 @@ class DrugBrandExtendedModel extends \Google\Protobuf\Internal\Message
      */
     public function setManufacturers(&$var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Practo\MDS\Model\ManufacturersExtended::class);
         $this->manufacturers = $var;
     }
 

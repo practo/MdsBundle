@@ -15,76 +15,94 @@ class DrugBrandModel extends \Google\Protobuf\Internal\Message
 {
     /**
      * <code>string name = 1;</code>
+     * @Type("string")
      */
-    private $name = '';
+    private $name;
     /**
      * <code>repeated string synonyms = 2;</code>
+     * @Type("array")
      */
     private $synonyms;
     /**
      * <code>repeated string references = 3;</code>
+     * @Type("array")
      */
     private $references;
     /**
      * <code>string drug_product = 4;</code>
+     * @Type("string")
      */
-    private $drug_product = '';
+    private $drug_product;
     /**
      * <code>repeated .Practo.MDS.Model.GeoValidity geo_validity = 5;</code>
+     * @Type("array")
      */
     private $geo_validity;
     /**
      * <code>repeated .Practo.MDS.Model.Manufacturers manufacturers = 6;</code>
+     * @Type("string")
      */
     private $manufacturers;
     /**
      * <code>string id = 7;</code>
+     * @Type("int")
      */
-    private $id = '';
+    private $id;
     /**
      * <code>sfixed64 created = 8;</code>
+     * @Type("int")
      */
-    private $created = 0;
+    private $created;
     /**
      * <code>sfixed64 modified = 9;</code>
+     * @Type("int")
      */
-    private $modified = 0;
+    private $modified;
     /**
      * <code>string merged_to = 10;</code>
+     * @Type("string")
      */
-    private $merged_to = '';
+    private $merged_to;
     /**
      * <code>string status = 11;</code>
+     * @Type("string")
      */
-    private $status = '';
+    private $status;
     /**
      * <code>string source = 12;</code>
+     * @Type("string")
      */
-    private $source = '';
+    private $source;
     /**
      * <code>bool relationship_concept = 13;</code>
+     * @Type("boolean")
      */
     private $relationship_concept = false;
     /**
      * <code>string creator = 14;</code>
+     * @Type("string")
      */
-    private $creator = '';
+    private $creator;
     /**
      * <code>string comments = 15;</code>
+     * @Type("string")
      */
-    private $comments = '';
+    private $comments;
     /**
      * <code>map&lt;string, string&gt; additional_fields = 16;</code>
+     * @Type("array")
      */
     private $additional_fields;
     /**
      * <code>bool visible = 17;</code>
+     * @Type("boolean")
      */
-    private $visible = false;
+    private $visible;
     /**
      * <code>sfixed32 version = 18;</code>
+     * @Type("int")
      */
-    private $version = 0;
+    private $version;
 
     public function __construct() {
         \GPBMetadata\DrugBrand::initOnce();
@@ -172,7 +190,6 @@ class DrugBrandModel extends \Google\Protobuf\Internal\Message
      */
     public function setGeoValidity(&$var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Practo\MDS\Model\GeoValidity::class);
         $this->geo_validity = $var;
     }
 
@@ -189,7 +206,6 @@ class DrugBrandModel extends \Google\Protobuf\Internal\Message
      */
     public function setManufacturers(&$var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Practo\MDS\Model\Manufacturers::class);
         $this->manufacturers = $var;
     }
 
