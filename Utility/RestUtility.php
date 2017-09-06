@@ -140,6 +140,9 @@ class RestUtility {
     public function deSerializeData($response){
         $serializer = \JMS\Serializer\SerializerBuilder::create()->build();
         $jsonData = json_decode($response->getBody(), false);
+        if (isset($jsonData->concepts)) {
+            $jsonData = $jsonData->concepts;
+        }
         //case when a list is returned.
         if ($this->fetchAllResponseClass != '') {
             $data = new RepeatedField($this->responseType);

@@ -274,7 +274,6 @@ class DrugProductExtendedModel extends \Google\Protobuf\Internal\Message
      */
     public function setGeoValidity(&$var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Practo\MDS\Model\GeoValidityExtended::class);
         $this->geo_validity = $var;
     }
 
