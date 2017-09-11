@@ -38,6 +38,31 @@ namespace Practo\MDS\Model {
       return $this->restUtility;
     }
 
+    /**
+     * @param \Practo\MDS\Model\DrugBrandSearchRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function searchExtended(\Practo\MDS\Model\DrugBrandSearchRequest $argument,
+      $metadata = [], $options = []) {
+      
+      $searchParams = array(
+        'q' => $argument->getQ(),
+        'extended' => true,
+      );
+      
+      $this->restUtility->setPath('/search/drug_brand');
+      $this->restUtility->setMethod('GET');
+      $this->restUtility->setDefaultHeaders();
+      $this->restUtility->setQuery($searchParams);
+      $this->restUtility->setResponseType('Practo\MDS\Model\DrugBrandExtendedModel');
+      $this->restUtility->setResponseClass('Practo\MDS\Model\DrugBrandExtendedModelList');
+      $this->restUtility->setResponseMethod('setDrugBrand');
+      $this->restUtility->setFetchAllResponseClass('Practo\MDS\Model\FetchAllDrugBrandExtendedResponse');
+      
+      return $this->restUtility;
+    }
+
    /**
     * @param \Practo\MDS\Model\AddDrugBrandRequest $argument input argument
     * @param array $metadata metadata
