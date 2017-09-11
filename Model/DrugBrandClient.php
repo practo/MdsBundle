@@ -48,7 +48,7 @@ namespace Practo\MDS\Model {
       
       $searchParams = array(
         'q' => $argument->getQ(),
-        'extended' => true,
+        'extended' => "true",
       );
       
       $this->restUtility->setPath('/search/drug_brand');

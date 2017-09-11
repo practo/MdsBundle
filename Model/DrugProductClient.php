@@ -41,6 +41,30 @@ class DrugProductClient {
       return $this->restUtility;
     }
 
+    /**
+     * @param \Practo\MDS\Model\DrugProductSearchRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function searchExtended(\Practo\MDS\Model\DrugProductSearchRequest $argument,
+      $metadata = [], $options = []) {
+        $this->restUtility->setPath('/search/drug_product');
+        $this->restUtility->setMethod('GET');
+
+        $searchParams = array(
+         'q' => $argument->getQ(),  
+         'extended' => "true"
+        );
+        $this->restUtility->setQuery($searchParams);
+        $this->restUtility->setDefaultHeaders();
+        $this->restUtility->setResponseType('Practo\MDS\Model\DrugProductExtendedModel');
+        $this->restUtility->setResponseClass('Practo\MDS\Model\DrugProductExtendedModelList');
+        $this->restUtility->setResponseMethod('setDrugProduct');
+        $this->restUtility->setFetchAllResponseClass('Practo\MDS\Model\FetchAllDrugProductExtendedResponse');
+
+        return $this->restUtility;
+    }
+
    /**
     * @param \Practo\MDS\Model\AddDrugProductRequest $argument input argument
     * @param array $metadata metadata
