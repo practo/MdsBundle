@@ -149,6 +149,7 @@ class RestUtility {
             foreach ($jsonData as $key => $value) {
                 $object = $serializer->deserialize(json_encode($value),
                     $this->responseType, 'json');
+                $object = $this->deserialize_mds_system_fields($value, $object);
                 $data[] = $object;
             }
             $resObjList = new $this->responseClass();
@@ -160,6 +161,7 @@ class RestUtility {
         } else {
             $data = $serializer->deserialize(json_encode($jsonData),
                 $this->responseType, 'json');
+            $data = $this->deserialize_mds_system_fields($jsonData, $data);
             $responseObject = new $this->responseClass();
             call_user_func_array(array($responseObject, $this->responseMethod), array(&$data));
 
@@ -191,5 +193,18 @@ class RestUtility {
             );
         }
         return [array(), $status];
+    }
+
+    public function deserialize_mds_system_fields($jsonData, $object) {
+        foreach ($jsonData as $key => $value) {
+             if ($key[0] == '$') {
+                $funcCall = 'set'.strtoupper($key[1]).substr($key, 2);
+                if (method_exists($object, $funcCall)) {
+                    call_user_func_array(array($object, $funcCall), array($value));
+                }
+             }
+         }
+
+         return $object;  
     }
 }
