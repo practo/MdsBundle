@@ -7,6 +7,7 @@ namespace Practo\MDS\Model;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use JMS\Serializer\Annotation\Type;
 
 /**
  * Protobuf type <code>Practo.MDS.Model.DrugCombinationExtendedModel</code>
@@ -15,90 +16,112 @@ class DrugCombinationExtendedModel extends \Google\Protobuf\Internal\Message
 {
     /**
      * <code>string name = 1;</code>
+     * @Type("string")
      */
     private $name = '';
     /**
      * <code>repeated string synonyms = 2;</code>
+     * @Type("array")
      */
     private $synonyms;
     /**
      * <code>repeated string references = 3;</code>
+     * @Type("array")
      */
     private $references;
     /**
      * <code>repeated .Practo.MDS.Model.ApisExtended apis = 4;</code>
+     * @Type("array")
      */
     private $apis;
     /**
      * <code>.Practo.MDS.Model.SystemOfMedicineModel system_of_medicine = 5;</code>
+     * @Type("string")
      */
     private $system_of_medicine = null;
     /**
      * <code>repeated string snomed_ids = 6;</code>
+     * @Type("array")
      */
     private $snomed_ids;
     /**
      * <code>repeated string atc_codes = 7;</code>
+     * @Type("array")
      */
     private $atc_codes;
     /**
      * <code>repeated string rxnorm_ids = 8;</code>
+     * @Type("array")
      */
     private $rxnorm_ids;
     /**
      * <code>repeated .Practo.MDS.Model.GeoValidityExtended geo_validity = 9;</code>
+     * @Type("array")
      */
     private $geo_validity;
     /**
      * <code>repeated .Practo.MDS.Model.DrugRegulatoryClassificationReferenceExtended drug_regulatory_class = 10;</code>
+     * @Type("array")
      */
     private $drug_regulatory_class;
     /**
      * <code>string id = 11;</code>
+     * @Type("string")
      */
     private $id = '';
     /**
      * <code>sfixed64 created = 12;</code>
+     * @Type("int")
      */
     private $created = 0;
     /**
      * <code>sfixed64 modified = 13;</code>
+     * @Type("int")
      */
     private $modified = 0;
     /**
      * <code>string merged_to = 14;</code>
+     * @Type("string")
      */
     private $merged_to = '';
     /**
      * <code>string status = 15;</code>
+     * @Type("string")
      */
     private $status = '';
     /**
      * <code>string source = 16;</code>
+     * @Type("string")
      */
     private $source = '';
     /**
      * <code>bool relationship_concept = 17;</code>
+     * @Type("boolean")
      */
     private $relationship_concept = false;
     /**
      * <code>string creator = 18;</code>
+     * @Type("string")
      */
     private $creator = '';
     /**
      * <code>string comments = 19;</code>
+     * @Type("string")
      */
     private $comments = '';
     /**
      * <code>map&lt;string, string&gt; additional_fields = 20;</code>
+     * @Type("array")
      */
     private $additional_fields;
     /**
      * <code>bool visible = 21;</code>
+     * @Type("boolean")
      */
     private $visible = false;
     /**
      * <code>sfixed32 version = 22;</code>
+     * @Type("int")
      */
     private $version = 0;
 
