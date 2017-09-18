@@ -56,7 +56,7 @@ class DrugCombinationExtendedModel extends \Google\Protobuf\Internal\Message
     private $rxnorm_ids;
     /**
      * <code>repeated .Practo.MDS.Model.GeoValidityExtended geo_validity = 9;</code>
-     * @Type("array")
+     * @Type("array<Practo\MDS\Model\GeoValidityExtended>")
      */
     private $geo_validity;
     /**
