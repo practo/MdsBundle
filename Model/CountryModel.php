@@ -7,124 +7,150 @@ namespace Practo\MDS\Model;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use JMS\Serializer\Annotation\Type;
 
 /**
  * Protobuf type <code>Practo.MDS.Model.CountryModel</code>
  */
-class CountryModel extends \Google\Protobuf\Internal\Message
+class CountryModel
 {
     /**
      * <code>string name = 1;</code>
+     * @Type("string")
      */
     private $name = '';
     /**
      * <code>repeated string synonyms = 2;</code>
+     * @Type("array")
      */
     private $synonyms;
     /**
      * <code>repeated string references = 3;</code>
+     * @Type("array")
      */
     private $references;
     /**
      * <code>string iso_3166_1_alpha2_code = 4;</code>
+     * @Type("string")
      */
     private $iso_3166_1_alpha2_code = '';
     /**
      * <code>string iso_3166_1_alpha3_code = 5;</code>
+     * @Type("string")
      */
     private $iso_3166_1_alpha3_code = '';
     /**
      * <code>sfixed32 iso_3166_1_numeric_code = 6;</code>
+     * @Type("string")
      */
     private $iso_3166_1_numeric_code = 0;
     /**
      * <code>string default_locale = 7;</code>
+     * @Type("string")
      */
     private $default_locale = '';
     /**
      * <code>bool has_subdivision1 = 8;</code>
+     * @Type("string")
      */
     private $has_subdivision1 = false;
     /**
      * <code>string subdivision1_label = 9;</code>
+     * @Type("string")
      */
     private $subdivision1_label = '';
     /**
      * <code>string postal_code_label = 10;</code>
+     * @Type("string")
      */
     private $postal_code_label = '';
     /**
      * <code>repeated string calling_codes = 11;</code>
+     * @Type("array")
      */
     private $calling_codes;
     /**
      * <code>string measuring_system_distance = 12;</code>
+     * @Type("string")
      */
     private $measuring_system_distance = '';
     /**
      * <code>string measuring_system_capacity = 13;</code>
+     * @Type("string")
      */
     private $measuring_system_capacity = '';
     /**
      * <code>string measuring_system_mass = 14;</code>
+     * @Type("string")
      */
     private $measuring_system_mass = '';
     /**
      * <code>string uom_temperature = 15;</code>
+     * @Type("string")
      */
     private $uom_temperature = '';
     /**
      * <code>string id = 16;</code>
+     * @Type("string")
      */
     private $id = '';
     /**
      * <code>sfixed64 created = 17;</code>
+     * @Type("int")
      */
     private $created = 0;
     /**
      * <code>sfixed64 modified = 18;</code>
+     * @Type("int")
      */
     private $modified = 0;
     /**
      * <code>string merged_to = 19;</code>
+     * @Type("string")
      */
     private $merged_to = '';
     /**
      * <code>string status = 20;</code>
+     * @Type("string")
      */
     private $status = '';
     /**
      * <code>string source = 21;</code>
+     * @Type("string")
      */
     private $source = '';
     /**
      * <code>bool relationship_concept = 22;</code>
+     * @Type("boolean")
      */
     private $relationship_concept = false;
     /**
      * <code>string creator = 23;</code>
+     * @Type("string")
      */
     private $creator = '';
     /**
      * <code>string comments = 24;</code>
+     * @Type("string")
      */
     private $comments = '';
     /**
      * <code>map&lt;string, string&gt; additional_fields = 25;</code>
+     * @Type("array")
      */
     private $additional_fields;
     /**
      * <code>bool visible = 26;</code>
+     * @Type("boolean")
      */
     private $visible = false;
     /**
      * <code>sfixed32 version = 27;</code>
+     * @Type("int")
      */
     private $version = 0;
 
     public function __construct() {
-        \GPBMetadata\Country::initOnce();
-        parent::__construct();
     }
 
     /**
@@ -140,7 +166,6 @@ class CountryModel extends \Google\Protobuf\Internal\Message
      */
     public function setName($var)
     {
-        GPBUtil::checkString($var, True);
         $this->name = $var;
     }
 
@@ -157,7 +182,6 @@ class CountryModel extends \Google\Protobuf\Internal\Message
      */
     public function setSynonyms(&$var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->synonyms = $var;
     }
 
@@ -174,7 +198,6 @@ class CountryModel extends \Google\Protobuf\Internal\Message
      */
     public function setReferences(&$var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->references = $var;
     }
 
@@ -191,7 +214,6 @@ class CountryModel extends \Google\Protobuf\Internal\Message
      */
     public function setIso31661Alpha2Code($var)
     {
-        GPBUtil::checkString($var, True);
         $this->iso_3166_1_alpha2_code = $var;
     }
 
@@ -208,7 +230,6 @@ class CountryModel extends \Google\Protobuf\Internal\Message
      */
     public function setIso31661Alpha3Code($var)
     {
-        GPBUtil::checkString($var, True);
         $this->iso_3166_1_alpha3_code = $var;
     }
 
@@ -225,7 +246,6 @@ class CountryModel extends \Google\Protobuf\Internal\Message
      */
     public function setIso31661NumericCode($var)
     {
-        GPBUtil::checkInt32($var);
         $this->iso_3166_1_numeric_code = $var;
     }
 
@@ -242,7 +262,6 @@ class CountryModel extends \Google\Protobuf\Internal\Message
      */
     public function setDefaultLocale($var)
     {
-        GPBUtil::checkString($var, True);
         $this->default_locale = $var;
     }
 
@@ -259,7 +278,6 @@ class CountryModel extends \Google\Protobuf\Internal\Message
      */
     public function setHasSubdivision1($var)
     {
-        GPBUtil::checkBool($var);
         $this->has_subdivision1 = $var;
     }
 
@@ -276,7 +294,6 @@ class CountryModel extends \Google\Protobuf\Internal\Message
      */
     public function setSubdivision1Label($var)
     {
-        GPBUtil::checkString($var, True);
         $this->subdivision1_label = $var;
     }
 
@@ -293,7 +310,6 @@ class CountryModel extends \Google\Protobuf\Internal\Message
      */
     public function setPostalCodeLabel($var)
     {
-        GPBUtil::checkString($var, True);
         $this->postal_code_label = $var;
     }
 
@@ -310,7 +326,6 @@ class CountryModel extends \Google\Protobuf\Internal\Message
      */
     public function setCallingCodes(&$var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->calling_codes = $var;
     }
 
@@ -327,7 +342,6 @@ class CountryModel extends \Google\Protobuf\Internal\Message
      */
     public function setMeasuringSystemDistance($var)
     {
-        GPBUtil::checkString($var, True);
         $this->measuring_system_distance = $var;
     }
 
@@ -344,7 +358,6 @@ class CountryModel extends \Google\Protobuf\Internal\Message
      */
     public function setMeasuringSystemCapacity($var)
     {
-        GPBUtil::checkString($var, True);
         $this->measuring_system_capacity = $var;
     }
 
@@ -361,7 +374,6 @@ class CountryModel extends \Google\Protobuf\Internal\Message
      */
     public function setMeasuringSystemMass($var)
     {
-        GPBUtil::checkString($var, True);
         $this->measuring_system_mass = $var;
     }
 
@@ -378,7 +390,6 @@ class CountryModel extends \Google\Protobuf\Internal\Message
      */
     public function setUomTemperature($var)
     {
-        GPBUtil::checkString($var, True);
         $this->uom_temperature = $var;
     }
 
@@ -395,7 +406,6 @@ class CountryModel extends \Google\Protobuf\Internal\Message
      */
     public function setId($var)
     {
-        GPBUtil::checkString($var, True);
         $this->id = $var;
     }
 
@@ -412,7 +422,6 @@ class CountryModel extends \Google\Protobuf\Internal\Message
      */
     public function setCreated($var)
     {
-        GPBUtil::checkInt64($var);
         $this->created = $var;
     }
 
@@ -429,7 +438,6 @@ class CountryModel extends \Google\Protobuf\Internal\Message
      */
     public function setModified($var)
     {
-        GPBUtil::checkInt64($var);
         $this->modified = $var;
     }
 
@@ -446,7 +454,6 @@ class CountryModel extends \Google\Protobuf\Internal\Message
      */
     public function setMergedTo($var)
     {
-        GPBUtil::checkString($var, True);
         $this->merged_to = $var;
     }
 
@@ -463,7 +470,6 @@ class CountryModel extends \Google\Protobuf\Internal\Message
      */
     public function setStatus($var)
     {
-        GPBUtil::checkString($var, True);
         $this->status = $var;
     }
 
@@ -480,7 +486,6 @@ class CountryModel extends \Google\Protobuf\Internal\Message
      */
     public function setSource($var)
     {
-        GPBUtil::checkString($var, True);
         $this->source = $var;
     }
 
@@ -497,7 +502,6 @@ class CountryModel extends \Google\Protobuf\Internal\Message
      */
     public function setRelationshipConcept($var)
     {
-        GPBUtil::checkBool($var);
         $this->relationship_concept = $var;
     }
 
@@ -514,7 +518,6 @@ class CountryModel extends \Google\Protobuf\Internal\Message
      */
     public function setCreator($var)
     {
-        GPBUtil::checkString($var, True);
         $this->creator = $var;
     }
 
@@ -531,7 +534,6 @@ class CountryModel extends \Google\Protobuf\Internal\Message
      */
     public function setComments($var)
     {
-        GPBUtil::checkString($var, True);
         $this->comments = $var;
     }
 
@@ -564,7 +566,6 @@ class CountryModel extends \Google\Protobuf\Internal\Message
      */
     public function setVisible($var)
     {
-        GPBUtil::checkBool($var);
         $this->visible = $var;
     }
 
@@ -581,7 +582,6 @@ class CountryModel extends \Google\Protobuf\Internal\Message
      */
     public function setVersion($var)
     {
-        GPBUtil::checkInt32($var);
         $this->version = $var;
     }
 

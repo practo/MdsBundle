@@ -12,7 +12,7 @@ use JMS\Serializer\Annotation\Type;
 /**
  * Protobuf type <code>Practo.MDS.Model.GeoValidityExtended</code>
  */
-class GeoValidityExtended extends \Google\Protobuf\Internal\Message
+class GeoValidityExtended
 {
     /**
      * <code>.Practo.MDS.Model.CountryModel country = 1;</code>
