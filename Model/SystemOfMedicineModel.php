@@ -15,72 +15,87 @@ class SystemOfMedicineModel extends \Google\Protobuf\Internal\Message
 {
     /**
      * <code>string name = 1;</code>
+     * @Type("string")
      */
     private $name = '';
     /**
      * <code>repeated string synonyms = 2;</code>
+     * @Type("array")
      */
     private $synonyms;
     /**
      * <code>repeated string references = 3;</code>
+     * @Type("array")
      */
     private $references;
     /**
      * <code>repeated .Practo.MDS.Model.GeoValidity geo_validity = 4;</code>
+     * @Type("Practo\Mds\Model\GeoValidity")
      */
     private $geo_validity;
     /**
      * <code>string id = 5;</code>
+     * @Type("string")
      */
     private $id = '';
     /**
      * <code>sfixed64 created = 6;</code>
+     * @Type("int")
      */
     private $created = 0;
     /**
      * <code>sfixed64 modified = 7;</code>
+     * @Type("int")
      */
     private $modified = 0;
     /**
      * <code>string merged_to = 8;</code>
+     * @Type("string")
      */
     private $merged_to = '';
     /**
      * <code>string status = 9;</code>
+     * @Type("string")
      */
     private $status = '';
     /**
      * <code>string source = 10;</code>
+     * @Type("string")
      */
     private $source = '';
     /**
      * <code>bool relationship_concept = 11;</code>
+     * @Type("boolean")
      */
     private $relationship_concept = false;
     /**
      * <code>string creator = 12;</code>
+     * @Type("string")
      */
     private $creator = '';
     /**
      * <code>string comments = 13;</code>
+     * @Type("string")
      */
     private $comments = '';
     /**
      * <code>map&lt;string, string&gt; additional_fields = 14;</code>
+     * @Type("array")
      */
     private $additional_fields;
     /**
      * <code>bool visible = 15;</code>
+     * @Type("boolean")
      */
     private $visible = false;
     /**
      * <code>sfixed32 version = 16;</code>
+     * @Type("int")
      */
     private $version = 0;
 
     public function __construct() {
-        \GPBMetadata\SystemOfMedicine::initOnce();
-        parent::__construct();
+
     }
 
     /**
@@ -96,7 +111,6 @@ class SystemOfMedicineModel extends \Google\Protobuf\Internal\Message
      */
     public function setName($var)
     {
-        GPBUtil::checkString($var, True);
         $this->name = $var;
     }
 
@@ -113,7 +127,6 @@ class SystemOfMedicineModel extends \Google\Protobuf\Internal\Message
      */
     public function setSynonyms(&$var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->synonyms = $var;
     }
 
@@ -130,7 +143,6 @@ class SystemOfMedicineModel extends \Google\Protobuf\Internal\Message
      */
     public function setReferences(&$var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->references = $var;
     }
 
@@ -147,7 +159,6 @@ class SystemOfMedicineModel extends \Google\Protobuf\Internal\Message
      */
     public function setGeoValidity(&$var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Practo\MDS\Model\GeoValidity::class);
         $this->geo_validity = $var;
     }
 
@@ -164,7 +175,6 @@ class SystemOfMedicineModel extends \Google\Protobuf\Internal\Message
      */
     public function setId($var)
     {
-        GPBUtil::checkString($var, True);
         $this->id = $var;
     }
 
@@ -181,7 +191,6 @@ class SystemOfMedicineModel extends \Google\Protobuf\Internal\Message
      */
     public function setCreated($var)
     {
-        GPBUtil::checkInt64($var);
         $this->created = $var;
     }
 
@@ -198,7 +207,6 @@ class SystemOfMedicineModel extends \Google\Protobuf\Internal\Message
      */
     public function setModified($var)
     {
-        GPBUtil::checkInt64($var);
         $this->modified = $var;
     }
 
@@ -215,7 +223,6 @@ class SystemOfMedicineModel extends \Google\Protobuf\Internal\Message
      */
     public function setMergedTo($var)
     {
-        GPBUtil::checkString($var, True);
         $this->merged_to = $var;
     }
 
@@ -232,7 +239,6 @@ class SystemOfMedicineModel extends \Google\Protobuf\Internal\Message
      */
     public function setStatus($var)
     {
-        GPBUtil::checkString($var, True);
         $this->status = $var;
     }
 
@@ -249,7 +255,6 @@ class SystemOfMedicineModel extends \Google\Protobuf\Internal\Message
      */
     public function setSource($var)
     {
-        GPBUtil::checkString($var, True);
         $this->source = $var;
     }
 
@@ -266,7 +271,6 @@ class SystemOfMedicineModel extends \Google\Protobuf\Internal\Message
      */
     public function setRelationshipConcept($var)
     {
-        GPBUtil::checkBool($var);
         $this->relationship_concept = $var;
     }
 
@@ -283,7 +287,6 @@ class SystemOfMedicineModel extends \Google\Protobuf\Internal\Message
      */
     public function setCreator($var)
     {
-        GPBUtil::checkString($var, True);
         $this->creator = $var;
     }
 
@@ -300,7 +303,6 @@ class SystemOfMedicineModel extends \Google\Protobuf\Internal\Message
      */
     public function setComments($var)
     {
-        GPBUtil::checkString($var, True);
         $this->comments = $var;
     }
 
@@ -333,7 +335,6 @@ class SystemOfMedicineModel extends \Google\Protobuf\Internal\Message
      */
     public function setVisible($var)
     {
-        GPBUtil::checkBool($var);
         $this->visible = $var;
     }
 
@@ -350,7 +351,6 @@ class SystemOfMedicineModel extends \Google\Protobuf\Internal\Message
      */
     public function setVersion($var)
     {
-        GPBUtil::checkInt32($var);
         $this->version = $var;
     }
 
