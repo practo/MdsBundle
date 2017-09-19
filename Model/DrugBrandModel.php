@@ -6,7 +6,6 @@ namespace Practo\MDS\Model;
 
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\RepeatedField;
-use Google\Protobuf\Internal\GPBUtil;
 use JMS\Serializer\Annotation\Type;
 
 /**
@@ -36,12 +35,12 @@ class DrugBrandModel extends \Google\Protobuf\Internal\Message
     private $drug_product;
     /**
      * <code>repeated .Practo.MDS.Model.GeoValidity geo_validity = 5;</code>
-     * @Type("array")
+     * @Type("array<Practo\MDS\Model\GeoValidity>")
      */
     private $geo_validity;
     /**
      * <code>repeated .Practo.MDS.Model.Manufacturers manufacturers = 6;</code>
-     * @Type("string")
+     * @Type("array<Practo\MDS\Model\Manufacturers>")
      */
     private $manufacturers;
     /**
@@ -106,8 +105,7 @@ class DrugBrandModel extends \Google\Protobuf\Internal\Message
     private $version;
 
     public function __construct() {
-        \GPBMetadata\DrugBrand::initOnce();
-        parent::__construct();
+
     }
 
     /**
@@ -123,7 +121,6 @@ class DrugBrandModel extends \Google\Protobuf\Internal\Message
      */
     public function setName($var)
     {
-        GPBUtil::checkString($var, True);
         $this->name = $var;
     }
 
@@ -140,7 +137,6 @@ class DrugBrandModel extends \Google\Protobuf\Internal\Message
      */
     public function setSynonyms(&$var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->synonyms = $var;
     }
 
@@ -157,7 +153,6 @@ class DrugBrandModel extends \Google\Protobuf\Internal\Message
      */
     public function setReferences(&$var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->references = $var;
     }
 
@@ -174,7 +169,6 @@ class DrugBrandModel extends \Google\Protobuf\Internal\Message
      */
     public function setDrugProduct($var)
     {
-        GPBUtil::checkString($var, True);
         $this->drug_product = $var;
     }
 
@@ -223,7 +217,6 @@ class DrugBrandModel extends \Google\Protobuf\Internal\Message
      */
     public function setId($var)
     {
-        GPBUtil::checkString($var, True);
         $this->id = $var;
     }
 
@@ -240,7 +233,6 @@ class DrugBrandModel extends \Google\Protobuf\Internal\Message
      */
     public function setCreated($var)
     {
-        GPBUtil::checkInt64($var);
         $this->created = $var;
     }
 
@@ -257,7 +249,6 @@ class DrugBrandModel extends \Google\Protobuf\Internal\Message
      */
     public function setModified($var)
     {
-        GPBUtil::checkInt64($var);
         $this->modified = $var;
     }
 
@@ -274,7 +265,6 @@ class DrugBrandModel extends \Google\Protobuf\Internal\Message
      */
     public function setMergedTo($var)
     {
-        GPBUtil::checkString($var, True);
         $this->merged_to = $var;
     }
 
@@ -291,7 +281,6 @@ class DrugBrandModel extends \Google\Protobuf\Internal\Message
      */
     public function setStatus($var)
     {
-        GPBUtil::checkString($var, True);
         $this->status = $var;
     }
 
@@ -308,7 +297,6 @@ class DrugBrandModel extends \Google\Protobuf\Internal\Message
      */
     public function setSource($var)
     {
-        GPBUtil::checkString($var, True);
         $this->source = $var;
     }
 
@@ -325,7 +313,6 @@ class DrugBrandModel extends \Google\Protobuf\Internal\Message
      */
     public function setRelationshipConcept($var)
     {
-        GPBUtil::checkBool($var);
         $this->relationship_concept = $var;
     }
 
@@ -342,7 +329,6 @@ class DrugBrandModel extends \Google\Protobuf\Internal\Message
      */
     public function setCreator($var)
     {
-        GPBUtil::checkString($var, True);
         $this->creator = $var;
     }
 
@@ -359,7 +345,6 @@ class DrugBrandModel extends \Google\Protobuf\Internal\Message
      */
     public function setComments($var)
     {
-        GPBUtil::checkString($var, True);
         $this->comments = $var;
     }
 
@@ -392,7 +377,6 @@ class DrugBrandModel extends \Google\Protobuf\Internal\Message
      */
     public function setVisible($var)
     {
-        GPBUtil::checkBool($var);
         $this->visible = $var;
     }
 
@@ -409,7 +393,6 @@ class DrugBrandModel extends \Google\Protobuf\Internal\Message
      */
     public function setVersion($var)
     {
-        GPBUtil::checkInt32($var);
         $this->version = $var;
     }
 

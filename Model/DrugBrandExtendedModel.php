@@ -36,12 +36,12 @@ class DrugBrandExtendedModel extends \Google\Protobuf\Internal\Message
     private $drug_product = null;
     /**
      * <code>repeated .Practo.MDS.Model.GeoValidityExtended geo_validity = 5;</code>
-     * @Type("array")
+     * @Type("array<Practo\MDS\Model\GeoValidityExtended>")
      */
     private $geo_validity;
     /**
      * <code>repeated .Practo.MDS.Model.ManufacturersExtended manufacturers = 6;</code>
-     * @Type("array")
+     * @Type("array<Practo\MDS\Model\ManufacturersExtended>")
      */
     private $manufacturers;
     /**
