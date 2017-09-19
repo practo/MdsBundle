@@ -6,6 +6,7 @@ namespace Practo\MDS\Model;
 
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\RepeatedField;
+use JMS\Serializer\Annotation\Type;
 
 /**
  * Protobuf type <code>Practo.MDS.Model.DosageFormModel</code>

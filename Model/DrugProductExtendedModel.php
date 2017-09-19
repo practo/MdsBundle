@@ -35,12 +35,12 @@ class DrugProductExtendedModel extends \Google\Protobuf\Internal\Message
     private $drug_combination = null;
     /**
      * <code>.Practo.MDS.Model.DosageFormModel dosage_form = 5;</code>
-     * @Type("Practo.MDS.Model.DosageFormModel")
+     * @Type("Practo\MDS\Model\DosageFormModel")
      */
     private $dosage_form = null;
     /**
      * <code>.Practo.MDS.Model.SystemOfMedicineModel system_of_medicine = 6;</code>
-     * @Type("Practo.MDS.Model.SystemOfMedicineModel")
+     * @Type("Practo\MDS\Model\SystemOfMedicineModel")
      */
     private $system_of_medicine = null;
     /**
@@ -55,7 +55,7 @@ class DrugProductExtendedModel extends \Google\Protobuf\Internal\Message
     private $rxnorm_ids;
     /**
      * <code>repeated .Practo.MDS.Model.GeoValidityExtended geo_validity = 9;</code>
-     * @Type("Practo.MDS.Model.GeoValidityExtended")
+     * @Type("array<Practo\MDS\Model\GeoValidityExtended>")
      */
     private $geo_validity;
     /**
@@ -118,6 +118,12 @@ class DrugProductExtendedModel extends \Google\Protobuf\Internal\Message
      * @Type("int")
      */
     private $version = 0;
+
+    /**
+     * <code>repeated .Practo.MDS.Model.DrugRegulatoryClassificationReferenceExtended drug_regulatory_class = 9;</code>
+     * @Type("array<Practo\MDS\Model\DrugRegulatoryClassificationReferenceExtended>")
+     */
+    private $drug_regulatory_class;
 
     public function __construct() {
     }
@@ -456,6 +462,22 @@ class DrugProductExtendedModel extends \Google\Protobuf\Internal\Message
     public function setVersion($var)
     {
         $this->version = $var;
+    }
+
+    /**
+     * <code>repeated .Practo.MDS.Model.DrugRegulatoryClassificationReferenceExtended drug_regulatory_class = 9;</code>
+     */
+    public function getDrugRegulatoryClass()
+    {
+        return $this->drug_regulatory_class;
+    }
+
+    /**
+     * <code>repeated .Practo.MDS.Model.DrugRegulatoryClassificationReferenceExtended drug_regulatory_class = 9;</code>
+     */
+    public function setDrugRegulatoryClass(&$var)
+    {
+        $this->drug_regulatory_class = $var;
     }
 
 }

@@ -7,6 +7,7 @@ namespace Practo\MDS\Model;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use JMS\Serializer\Annotation\Type;
 
 /**
  * Protobuf type <code>Practo.MDS.Model.DrugRegulatoryClassificationReference</code>
@@ -15,10 +16,12 @@ class DrugRegulatoryClassificationReference extends \Google\Protobuf\Internal\Me
 {
     /**
      * <code>string country = 1;</code>
+     * @Type("string")
      */
     private $country = '';
     /**
      * <code>string class = 2;</code>
+     * @Type("string")
      */
     private $class = '';
 
