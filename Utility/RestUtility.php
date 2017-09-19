@@ -143,13 +143,13 @@ class RestUtility {
         if (isset($jsonData->concepts)) {
             $jsonData = $jsonData->concepts;
         }
+        $jsonData = $this->truncate_sys_fields_prefix($jsonData);
         //case when a list is returned.
         if ($this->fetchAllResponseClass != '') {
             $data = new RepeatedField($this->responseType);
             foreach ($jsonData as $key => $value) {
                 $object = $serializer->deserialize(json_encode($value),
                     $this->responseType, 'json');
-                $object = $this->deserialize_mds_system_fields($value, $object);
                 $data[] = $object;
             }
             $resObjList = new $this->responseClass();
@@ -161,7 +161,6 @@ class RestUtility {
         } else {
             $data = $serializer->deserialize(json_encode($jsonData),
                 $this->responseType, 'json');
-            $data = $this->deserialize_mds_system_fields($jsonData, $data);
             $responseObject = new $this->responseClass();
             call_user_func_array(array($responseObject, $this->responseMethod), array(&$data));
 
@@ -195,16 +194,20 @@ class RestUtility {
         return [array(), $status];
     }
 
-    public function deserialize_mds_system_fields($jsonData, $object) {
+    public function truncate_sys_fields_prefix($jsonData) {
+        $newJson = [];
         foreach ($jsonData as $key => $value) {
-             if ($key[0] == '$') {
-                $funcCall = 'set'.strtoupper($key[1]).substr($key, 2);
-                if (method_exists($object, $funcCall)) {
-                    call_user_func_array(array($object, $funcCall), array($value));
-                }
-             }
-         }
+            $newValue = $value;
+            $newKey = $key;
+            if ($key[0] == '$') {
+               $newKey = substr($key, 1);
+            } elseif (is_object($value) || is_array($value)) {
+                $newKey = $key;
+                $newValue = $this->truncate_sys_fields_prefix($value);
+            }
+            $newJson[$newKey] = $newValue;
+        }
 
-         return $object;  
+        return $newJson;
     }
 }
