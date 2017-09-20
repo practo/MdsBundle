@@ -6,13 +6,12 @@ namespace Practo\MDS\Model;
 
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\RepeatedField;
-use Google\Protobuf\Internal\GPBUtil;
 use JMS\Serializer\Annotation\Type;
 
 /**
  * Protobuf type <code>Practo.MDS.Model.DrugProductModel</code>
  */
-class DrugProductModel extends \Google\Protobuf\Internal\Message
+class DrugProductModel
 {
     /**
      * <code>string name = 1;</code>
@@ -142,7 +141,6 @@ class DrugProductModel extends \Google\Protobuf\Internal\Message
      */
     public function setName($var)
     {
-        GPBUtil::checkString($var, True);
         $this->name = $var;
     }
 
@@ -207,7 +205,6 @@ class DrugProductModel extends \Google\Protobuf\Internal\Message
      */
     public function setDosageForm($var)
     {
-        GPBUtil::checkString($var, True);
         $this->dosage_form = $var;
     }
 
@@ -224,7 +221,6 @@ class DrugProductModel extends \Google\Protobuf\Internal\Message
      */
     public function setSystemOfMedicine($var)
     {
-        GPBUtil::checkString($var, True);
         $this->system_of_medicine = $var;
     }
 
@@ -289,7 +285,6 @@ class DrugProductModel extends \Google\Protobuf\Internal\Message
      */
     public function setId($var)
     {
-        GPBUtil::checkString($var, True);
         $this->id = $var;
     }
 
@@ -306,7 +301,6 @@ class DrugProductModel extends \Google\Protobuf\Internal\Message
      */
     public function setCreated($var)
     {
-        GPBUtil::checkInt64($var);
         $this->created = $var;
     }
 
@@ -323,7 +317,6 @@ class DrugProductModel extends \Google\Protobuf\Internal\Message
      */
     public function setModified($var)
     {
-        GPBUtil::checkInt64($var);
         $this->modified = $var;
     }
 
@@ -340,7 +333,6 @@ class DrugProductModel extends \Google\Protobuf\Internal\Message
      */
     public function setMergedTo($var)
     {
-        GPBUtil::checkString($var, True);
         $this->merged_to = $var;
     }
 
@@ -421,7 +413,6 @@ class DrugProductModel extends \Google\Protobuf\Internal\Message
      */
     public function setComments($var)
     {
-        GPBUtil::checkString($var, True);
         $this->comments = $var;
     }
 
