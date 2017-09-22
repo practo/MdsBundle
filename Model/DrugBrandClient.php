@@ -26,6 +26,10 @@ namespace Practo\MDS\Model {
         'q' => $argument->getQ()
       );
       
+      if ($argument->getLimit()) {
+        $searchParams['limit'] => $argument->getLimit();
+      }
+      
       $this->restUtility->setPath('/search/drug_brand');
       $this->restUtility->setMethod('GET');
       $this->restUtility->setDefaultHeaders();
@@ -48,8 +52,12 @@ namespace Practo\MDS\Model {
       
       $searchParams = array(
         'q' => $argument->getQ(),
-        'extended' => "true",
+        'extended' => "true"
       );
+      
+      if ($argument->getLimit()) {
+        $searchParams['limit'] => $argument->getLimit();
+      }
       
       $this->restUtility->setPath('/search/drug_brand');
       $this->restUtility->setMethod('GET');
