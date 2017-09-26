@@ -27,7 +27,7 @@ class DrugProductClient {
       
       $searchParams = array(
         'q' => $argument->getQ(),
-        'offset' => $argument->getOffset();
+        'offset' => $argument->getOffset()
       );
 
       if ($argument->getLimit()) {
@@ -124,7 +124,9 @@ class DrugProductClient {
     public function fetchAll(\Practo\MDS\Model\FetchAllRequest $argument,
       $metadata = [], $options = []) {
 
-      $searchParams["offset"] = $argument->getOffset();
+      $searchParams = array(
+        "offset" => $argument->getOffset()
+      );
       if ($argument->getLimit()) {
         $searchParams['limit'] = $argument->getLimit();
       }
