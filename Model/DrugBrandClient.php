@@ -23,11 +23,12 @@ namespace Practo\MDS\Model {
       $metadata = [], $options = []) {
       
       $searchParams = array(
-        'q' => $argument->getQ()
+        'q' => $argument->getQ(),
+        'offset' => $argument->getOffset()
       );
       
       if ($argument->getLimit()) {
-        $searchParams['limit'] => $argument->getLimit();
+        $searchParams['limit'] = $argument->getLimit();
       }
       
       $this->restUtility->setPath('/search/drug_brand');
@@ -52,11 +53,12 @@ namespace Practo\MDS\Model {
       
       $searchParams = array(
         'q' => $argument->getQ(),
-        'extended' => "true"
+        'extended' => "true",
+        'offset' => $argument->getOffset()
       );
       
       if ($argument->getLimit()) {
-        $searchParams['limit'] => $argument->getLimit();
+        $searchParams['limit'] = $argument->getLimit();
       }
       
       $this->restUtility->setPath('/search/drug_brand');
@@ -119,9 +121,16 @@ namespace Practo\MDS\Model {
     public function fetchAll(\Practo\MDS\Model\FetchAllRequest $argument,
       $metadata = [], $options = []) {
 
+      $searchParams = array(
+        'offset' => $argument->getOffset()
+      );
+      if ($argument->getLimit()) {
+        $searchParams['limit'] = $argument->getLimit();
+      }
       $this->restUtility->setPath('/concept/drug_brand');
       $this->restUtility->setMethod('GET');
       $this->restUtility->setDefaultHeaders();
+      $this->restUtility->setQuery($searchParams);
       $this->restUtility->setResponseType('Practo\MDS\Model\DrugBrandModel');
       $this->restUtility->setResponseClass('Practo\MDS\Model\DrugBrandModelList');
       $this->restUtility->setResponseMethod('setDrugBrand');
@@ -143,7 +152,7 @@ namespace Practo\MDS\Model {
        $this->restUtility->setMethod('GET');
        
        $searchParams = array(
-        'extended' => "true"
+        'extended' => "true",
        );
        $this->restUtility->setQuery($searchParams);
        $this->restUtility->setDefaultHeaders();
@@ -165,7 +174,8 @@ namespace Practo\MDS\Model {
         $this->restUtility->setMethod('GET');
 
         $searchParams = array(
-         'extended' => "true"
+         'extended' => "true",
+         'offset' => $argument->getOffset()
         );
         $this->restUtility->setQuery($searchParams);
         $this->restUtility->setDefaultHeaders();

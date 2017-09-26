@@ -26,8 +26,13 @@ class DrugProductClient {
       $metadata = [], $options = []) {
       
       $searchParams = array(
-        'q' => $argument->getQ()
+        'q' => $argument->getQ(),
+        'offset' = $argument->getOffset();
       );
+
+      if ($argument->getLimit()) {
+        $searchParams['limit'] = $argument->getLimit();
+      }
       
       $this->restUtility->setPath('/search/drug_product');
       $this->restUtility->setMethod('GET');
@@ -53,8 +58,14 @@ class DrugProductClient {
 
         $searchParams = array(
          'q' => $argument->getQ(),  
-         'extended' => "true"
+         'extended' => "true",
+         'offset' = $argument->getOffset()
         );
+
+        if ($argument->getLimit()) {
+          $searchParams['limit'] = $argument->getLimit();
+        }
+
         $this->restUtility->setQuery($searchParams);
         $this->restUtility->setDefaultHeaders();
         $this->restUtility->setResponseType('Practo\MDS\Model\DrugProductExtendedModel');
@@ -113,9 +124,14 @@ class DrugProductClient {
     public function fetchAll(\Practo\MDS\Model\FetchAllRequest $argument,
       $metadata = [], $options = []) {
 
+      $searchParams["offset"] = $argument->getOffset();
+      if ($argument->getLimit()) {
+        $searchParams['limit'] = $argument->getLimit();
+      }
       $this->restUtility->setPath('/concept/drug_product');
       $this->restUtility->setMethod('GET');
       $this->restUtility->setDefaultHeaders();
+      $this->restUtility->setQuery($searchParams);
       $this->restUtility->setResponseType('Practo\MDS\Model\DrugProductModel');
       $this->restUtility->setResponseClass('Practo\MDS\Model\DrugProductModelList');
       $this->restUtility->setResponseMethod('setDrugProduct');
@@ -159,7 +175,8 @@ class DrugProductClient {
         $this->restUtility->setMethod('GET');
 
         $searchParams = array(
-         'extended' => "true"
+         'extended' => "true",
+         'offset' => $argument->getOffset()
         );
         $this->restUtility->setQuery($searchParams);
         $this->restUtility->setDefaultHeaders();
