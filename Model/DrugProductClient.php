@@ -59,7 +59,7 @@ class DrugProductClient {
         $searchParams = array(
          'q' => $argument->getQ(),  
          'extended' => "true",
-         'offset' = $argument->getOffset()
+         'offset' => $argument->getOffset()
         );
 
         if ($argument->getLimit()) {
