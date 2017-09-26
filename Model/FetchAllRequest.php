@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class FetchAllRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>sfixed32 page = 1;</code>
+     * <code>sfixed32 offset = 1;</code>
      */
-    private $page = 0;
+    private $offset = 0;
     /**
      * <code>sfixed32 limit = 2;</code>
      */
@@ -40,20 +40,20 @@ class FetchAllRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>sfixed32 page = 1;</code>
+     * <code>sfixed32 offset = 1;</code>
      */
-    public function getPage()
+    public function getOffset()
     {
-        return $this->page;
+        return $this->offset;
     }
 
     /**
-     * <code>sfixed32 page = 1;</code>
+     * <code>sfixed32 offset = 1;</code>
      */
-    public function setPage($var)
+    public function setOffset($var)
     {
         GPBUtil::checkInt32($var);
-        $this->page = $var;
+        $this->offset = $var;
     }
 
     /**
