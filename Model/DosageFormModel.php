@@ -6,7 +6,7 @@ namespace Practo\MDS\Model;
 
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\RepeatedField;
-use Google\Protobuf\Internal\GPBUtil;
+use JMS\Serializer\Annotation\Type;
 
 /**
  * Protobuf type <code>Practo.MDS.Model.DosageFormModel</code>
@@ -15,76 +15,92 @@ class DosageFormModel extends \Google\Protobuf\Internal\Message
 {
     /**
      * <code>string name = 1;</code>
+     * @Type("string")
      */
     private $name = '';
     /**
      * <code>repeated string synonyms = 2;</code>
+     * @Type("array")
      */
     private $synonyms;
     /**
      * <code>repeated string references = 3;</code>
+     * @Type("array")
      */
     private $references;
     /**
      * <code>string route_of_adminstration = 4;</code>
+     * @Type("string")
      */
     private $route_of_adminstration = '';
     /**
      * <code>repeated string snomed_ids = 5;</code>
+     * @Type("array")
      */
     private $snomed_ids;
     /**
      * <code>string id = 6;</code>
+     * @Type("string")
      */
     private $id = '';
     /**
      * <code>sfixed64 created = 7;</code>
+     * @Type("int")
      */
     private $created = 0;
     /**
      * <code>sfixed64 modified = 8;</code>
+     * @Type("int")
      */
     private $modified = 0;
     /**
      * <code>string merged_to = 9;</code>
+     * @Type("string")
      */
     private $merged_to = '';
     /**
      * <code>string status = 10;</code>
+     * @Type("string")
      */
     private $status = '';
     /**
      * <code>string source = 11;</code>
+     * @Type("string")
      */
     private $source = '';
     /**
      * <code>bool relationship_concept = 12;</code>
+     * @Type("boolean")
      */
     private $relationship_concept = false;
     /**
      * <code>string creator = 13;</code>
+     * @Type("string")
      */
     private $creator = '';
     /**
      * <code>string comments = 14;</code>
+     * @Type("string")
      */
     private $comments = '';
     /**
      * <code>map&lt;string, string&gt; additional_fields = 15;</code>
+     * @Type("array")
      */
     private $additional_fields;
     /**
      * <code>bool visible = 16;</code>
+     * @Type("boolean")
      */
     private $visible = false;
     /**
      * <code>sfixed32 version = 17;</code>
+     * @Type("int")
      */
     private $version = 0;
 
     public function __construct() {
-        \GPBMetadata\DosageForm::initOnce();
-        parent::__construct();
+
     }
 
     /**
@@ -100,7 +116,6 @@ class DosageFormModel extends \Google\Protobuf\Internal\Message
      */
     public function setName($var)
     {
-        GPBUtil::checkString($var, True);
         $this->name = $var;
     }
 
@@ -117,7 +132,6 @@ class DosageFormModel extends \Google\Protobuf\Internal\Message
      */
     public function setSynonyms(&$var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->synonyms = $var;
     }
 
@@ -134,7 +148,6 @@ class DosageFormModel extends \Google\Protobuf\Internal\Message
      */
     public function setReferences(&$var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->references = $var;
     }
 
@@ -151,7 +164,6 @@ class DosageFormModel extends \Google\Protobuf\Internal\Message
      */
     public function setRouteOfAdminstration($var)
     {
-        GPBUtil::checkString($var, True);
         $this->route_of_adminstration = $var;
     }
 
@@ -168,7 +180,6 @@ class DosageFormModel extends \Google\Protobuf\Internal\Message
      */
     public function setSnomedIds(&$var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->snomed_ids = $var;
     }
 
@@ -185,7 +196,6 @@ class DosageFormModel extends \Google\Protobuf\Internal\Message
      */
     public function setId($var)
     {
-        GPBUtil::checkString($var, True);
         $this->id = $var;
     }
 
@@ -202,7 +212,6 @@ class DosageFormModel extends \Google\Protobuf\Internal\Message
      */
     public function setCreated($var)
     {
-        GPBUtil::checkInt64($var);
         $this->created = $var;
     }
 
@@ -219,7 +228,6 @@ class DosageFormModel extends \Google\Protobuf\Internal\Message
      */
     public function setModified($var)
     {
-        GPBUtil::checkInt64($var);
         $this->modified = $var;
     }
 
@@ -236,7 +244,6 @@ class DosageFormModel extends \Google\Protobuf\Internal\Message
      */
     public function setMergedTo($var)
     {
-        GPBUtil::checkString($var, True);
         $this->merged_to = $var;
     }
 
@@ -253,7 +260,6 @@ class DosageFormModel extends \Google\Protobuf\Internal\Message
      */
     public function setStatus($var)
     {
-        GPBUtil::checkString($var, True);
         $this->status = $var;
     }
 
@@ -270,7 +276,6 @@ class DosageFormModel extends \Google\Protobuf\Internal\Message
      */
     public function setSource($var)
     {
-        GPBUtil::checkString($var, True);
         $this->source = $var;
     }
 
@@ -287,7 +292,6 @@ class DosageFormModel extends \Google\Protobuf\Internal\Message
      */
     public function setRelationshipConcept($var)
     {
-        GPBUtil::checkBool($var);
         $this->relationship_concept = $var;
     }
 
@@ -304,7 +308,6 @@ class DosageFormModel extends \Google\Protobuf\Internal\Message
      */
     public function setCreator($var)
     {
-        GPBUtil::checkString($var, True);
         $this->creator = $var;
     }
 
@@ -321,7 +324,6 @@ class DosageFormModel extends \Google\Protobuf\Internal\Message
      */
     public function setComments($var)
     {
-        GPBUtil::checkString($var, True);
         $this->comments = $var;
     }
 
@@ -354,7 +356,6 @@ class DosageFormModel extends \Google\Protobuf\Internal\Message
      */
     public function setVisible($var)
     {
-        GPBUtil::checkBool($var);
         $this->visible = $var;
     }
 
@@ -371,7 +372,6 @@ class DosageFormModel extends \Google\Protobuf\Internal\Message
      */
     public function setVersion($var)
     {
-        GPBUtil::checkInt32($var);
         $this->version = $var;
     }
 

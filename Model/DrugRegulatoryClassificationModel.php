@@ -7,6 +7,7 @@ namespace Practo\MDS\Model;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use JMS\Serializer\Annotation\Type;
 
 /**
  * Protobuf type <code>Practo.MDS.Model.DrugRegulatoryClassificationModel</code>
@@ -15,66 +16,82 @@ class DrugRegulatoryClassificationModel extends \Google\Protobuf\Internal\Messag
 {
     /**
      * <code>string label = 1;</code>
+     * @Type("string")
      */
     private $label = '';
     /**
      * <code>bool requires_prescription = 2;</code>
+     * @Type("boolean")
      */
     private $requires_prescription = false;
     /**
      * <code>repeated string references = 3;</code>
+     * @Type("array")
      */
     private $references;
     /**
      * <code>repeated .Practo.MDS.Model.GeoValidity geo_validity = 4;</code>
+     * @Type("Practo\MDS\Model\GeoValidity")
      */
     private $geo_validity;
     /**
      * <code>string id = 5;</code>
+     * @Type("string")
      */
     private $id = '';
     /**
      * <code>sfixed64 created = 6;</code>
+     * @Type("int")
      */
     private $created = 0;
     /**
      * <code>sfixed64 modified = 7;</code>
+     * @Type("int")
      */
     private $modified = 0;
     /**
      * <code>string merged_to = 8;</code>
+     * @Type("string")
      */
     private $merged_to = '';
     /**
      * <code>string status = 9;</code>
+     * @Type("string")
      */
     private $status = '';
     /**
      * <code>string source = 10;</code>
+     * @Type("string")
      */
     private $source = '';
     /**
      * <code>bool relationship_concept = 11;</code>
+     * @Type("boolean")
      */
     private $relationship_concept = false;
     /**
      * <code>string creator = 12;</code>
+     * @Type("string")
      */
     private $creator = '';
     /**
      * <code>string comments = 13;</code>
+     * @Type("string")
      */
     private $comments = '';
     /**
      * <code>map&lt;string, string&gt; additional_fields = 14;</code>
+     * @Type("array")
      */
     private $additional_fields;
     /**
      * <code>bool visible = 15;</code>
+     * @Type("boolean")
      */
     private $visible = false;
     /**
      * <code>sfixed32 version = 16;</code>
+     * @Type("int")
      */
     private $version = 0;
 

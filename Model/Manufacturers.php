@@ -6,7 +6,7 @@ namespace Practo\MDS\Model;
 
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\RepeatedField;
-use Google\Protobuf\Internal\GPBUtil;
+use JMS\Serializer\Annotation\Type;
 
 /**
  * Protobuf type <code>Practo.MDS.Model.Manufacturers</code>
@@ -15,16 +15,17 @@ class Manufacturers extends \Google\Protobuf\Internal\Message
 {
     /**
      * <code>string country = 1;</code>
+     * @Type("string")
      */
-    private $country = '';
+    private $country;
     /**
      * <code>string manufacturer = 2;</code>
+     * @Type("string")
      */
-    private $manufacturer = '';
+    private $manufacturer;
 
     public function __construct() {
-        \GPBMetadata\DrugBrand::initOnce();
-        parent::__construct();
+
     }
 
     /**
@@ -40,7 +41,6 @@ class Manufacturers extends \Google\Protobuf\Internal\Message
      */
     public function setCountry($var)
     {
-        GPBUtil::checkString($var, True);
         $this->country = $var;
     }
 
@@ -57,7 +57,6 @@ class Manufacturers extends \Google\Protobuf\Internal\Message
      */
     public function setManufacturer($var)
     {
-        GPBUtil::checkString($var, True);
         $this->manufacturer = $var;
     }
 

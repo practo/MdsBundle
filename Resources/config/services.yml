@@ -2,9 +2,9 @@
 # Refer https://github.com/practo/mds/blob/master/package.sh
 
 parameters:
-    practo_mds.base_uri: %mds.base_uri%
-    practo_mds.secret: %mds.secret%
-    practo_mds.source: %mds.source%
+    practo_mds.base_uri: 'https://mds-core.practodev.com'
+    practo_mds.secret: 'asdadasdadasda'
+    practo_mds.source: 'ray'
 
 services:
 
@@ -13,6 +13,13 @@ services:
     calls:
       - [setSource, [%practo_mds.source%]]
       - [setSecret, [%practo_mds.secret%]]
+
+  practo_mds.rest_utility:
+    class: Practo\MDS\Utility\RestUtility
+    arguments:
+      - [%practo_mds.source%]
+      - [%practo_mds.secret%]
+      - [%practo_mds.base_uri%]
 
   practo_mds.grpc_channel:
     class: Grpc\Channel
@@ -51,16 +58,12 @@ services:
   practo_mds.drug_brand:
     class: Practo\MDS\Model\DrugBrandClient
     arguments:
-      - %practo_mds.base_uri%
-      - { update_metadata : ['@practo_mds.auth_utility', attachHeaders], credentials : null }
-      - '@practo_mds.grpc_channel'
+      - '@practo_mds.rest_utility'
 
   practo_mds.drug_combination:
     class: Practo\MDS\Model\DrugCombinationClient
     arguments:
-      - %practo_mds.base_uri%
-      - { update_metadata : ['@practo_mds.auth_utility', attachHeaders], credentials : null }
-      - '@practo_mds.grpc_channel'
+      - '@practo_mds.rest_utility'
 
   practo_mds.drug_manufacturer:
     class: Practo\MDS\Model\DrugManufacturerClient
@@ -72,9 +75,7 @@ services:
   practo_mds.drug_product:
     class: Practo\MDS\Model\DrugProductClient
     arguments:
-      - %practo_mds.base_uri%
-      - { update_metadata : ['@practo_mds.auth_utility', attachHeaders], credentials : null }
-      - '@practo_mds.grpc_channel'
+      - '@practo_mds.rest_utility'
 
   practo_mds.drug_regulatory_classification:
     class: Practo\MDS\Model\DrugRegulatoryClassificationClient

@@ -1,114 +1,22 @@
 <?php
 // GENERATED CODE -- DO NOT EDIT!
 
-namespace Practo\MDS\Model {
+namespace Practo\MDS\Model;
 
-  class DrugCombinationClient extends \Grpc\BaseStub {
+use \Practo\Mds\Utility\RestUtility;
+use \JMS\Serializer\SerializationContext;
+
+class DrugCombinationClient {
 
     /**
      * @param string $hostname hostname
      * @param array $opts channel options
      * @param Grpc\Channel $channel (optional) re-use channel object
      */
-    public function __construct($hostname, $opts, $channel = null) {
-      parent::__construct($hostname, $opts, $channel);
+    public function __construct($restUtility) {
+      $this->restUtility = $restUtility;
     }
-
-    /**
-     * @param \Practo\MDS\Model\AddDrugCombinationRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     */
-    public function add(\Practo\MDS\Model\AddDrugCombinationRequest $argument,
-      $metadata = [], $options = []) {
-      $request = $argument->encode();
-      $callFunc = function($entry) {
-        return sprintf("%02X",$entry);
-      };
-      $hexPayLoad = implode("", array_map($callFunc, unpack("C*", $request)));
-      $metadata["_auth_payload"] = "Practo.MDS.Model.DrugCombination/add" . $hexPayLoad;
-      return $this->_simpleRequest('/Practo.MDS.Model.DrugCombination/add',
-      $argument,
-      ['\Practo\MDS\Model\AddResponse', 'decode'],
-      $metadata, $options);
-    }
-
-    /**
-     * @param \Practo\MDS\Model\FetchRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     */
-    public function fetch(\Practo\MDS\Model\FetchRequest $argument,
-      $metadata = [], $options = []) {
-      $request = $argument->encode();
-      $callFunc = function($entry) {
-        return sprintf("%02X",$entry);
-      };
-      $hexPayLoad = implode("", array_map($callFunc, unpack("C*", $request)));
-      $metadata["_auth_payload"] = "Practo.MDS.Model.DrugCombination/fetch" . $hexPayLoad;
-      return $this->_simpleRequest('/Practo.MDS.Model.DrugCombination/fetch',
-      $argument,
-      ['\Practo\MDS\Model\FetchDrugCombinationResponse', 'decode'],
-      $metadata, $options);
-    }
-
-    /**
-     * @param \Practo\MDS\Model\FetchAllRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     */
-    public function fetchAll(\Practo\MDS\Model\FetchAllRequest $argument,
-      $metadata = [], $options = []) {
-      $request = $argument->encode();
-      $callFunc = function($entry) {
-        return sprintf("%02X",$entry);
-      };
-      $hexPayLoad = implode("", array_map($callFunc, unpack("C*", $request)));
-      $metadata["_auth_payload"] = "Practo.MDS.Model.DrugCombination/fetchAll" . $hexPayLoad;
-      return $this->_simpleRequest('/Practo.MDS.Model.DrugCombination/fetchAll',
-      $argument,
-      ['\Practo\MDS\Model\FetchAllDrugCombinationResponse', 'decode'],
-      $metadata, $options);
-    }
-
-    /**
-     * @param \Practo\MDS\Model\FetchRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     */
-    public function fetchExtended(\Practo\MDS\Model\FetchRequest $argument,
-      $metadata = [], $options = []) {
-      $request = $argument->encode();
-      $callFunc = function($entry) {
-        return sprintf("%02X",$entry);
-      };
-      $hexPayLoad = implode("", array_map($callFunc, unpack("C*", $request)));
-      $metadata["_auth_payload"] = "Practo.MDS.Model.DrugCombination/fetchExtended" . $hexPayLoad;
-      return $this->_simpleRequest('/Practo.MDS.Model.DrugCombination/fetchExtended',
-      $argument,
-      ['\Practo\MDS\Model\FetchDrugCombinationExtendedResponse', 'decode'],
-      $metadata, $options);
-    }
-
-    /**
-     * @param \Practo\MDS\Model\FetchAllRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     */
-    public function fetchAllExtended(\Practo\MDS\Model\FetchAllRequest $argument,
-      $metadata = [], $options = []) {
-      $request = $argument->encode();
-      $callFunc = function($entry) {
-        return sprintf("%02X",$entry);
-      };
-      $hexPayLoad = implode("", array_map($callFunc, unpack("C*", $request)));
-      $metadata["_auth_payload"] = "Practo.MDS.Model.DrugCombination/fetchAllExtended" . $hexPayLoad;
-      return $this->_simpleRequest('/Practo.MDS.Model.DrugCombination/fetchAllExtended',
-      $argument,
-      ['\Practo\MDS\Model\FetchAllDrugCombinationExtendedResponse', 'decode'],
-      $metadata, $options);
-    }
-
+    
     /**
      * @param \Practo\MDS\Model\DrugCombinationSearchRequest $argument input argument
      * @param array $metadata metadata
@@ -116,56 +24,151 @@ namespace Practo\MDS\Model {
      */
     public function search(\Practo\MDS\Model\DrugCombinationSearchRequest $argument,
       $metadata = [], $options = []) {
-      $request = $argument->encode();
-      $callFunc = function($entry) {
-        return sprintf("%02X",$entry);
-      };
-      $hexPayLoad = implode("", array_map($callFunc, unpack("C*", $request)));
-      $metadata["_auth_payload"] = "Practo.MDS.Model.DrugCombination/search" . $hexPayLoad;
-      return $this->_simpleRequest('/Practo.MDS.Model.DrugCombination/search',
-      $argument,
-      ['\Practo\MDS\Model\FetchAllDrugCombinationResponse', 'decode'],
-      $metadata, $options);
+      
+      $searchParams = array(
+        'q' => $argument->getQ()
+      );
+      
+      $this->restUtility->setPath('/search/drug_combination');
+      $this->restUtility->setMethod('GET');
+      $this->restUtility->setDefaultHeaders();
+      $this->restUtility->setQuery($searchParams);
+      $this->restUtility->setResponseType('Practo\MDS\Model\DrugCombinationModel');
+      $this->restUtility->setResponseClass('Practo\MDS\Model\DrugCombinationModelList');
+      $this->restUtility->setResponseMethod('setDrugCombination');
+      $this->restUtility->setFetchAllResponseClass('Practo\MDS\Model\FetchAllDrugCombinationResponse');
+
+      return $this->restUtility;
     }
 
     /**
-     * @param \Practo\MDS\Model\FetchByIdsRequest $argument input argument
+     * @param \Practo\MDS\Model\DrugCombinationSearchRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function fetchByIds(\Practo\MDS\Model\FetchByIdsRequest $argument,
+    public function searchExtended(\Practo\MDS\Model\DrugCombinationSearchRequest $argument,
       $metadata = [], $options = []) {
-      $request = $argument->encode();
-      $callFunc = function($entry) {
-        return sprintf("%02X",$entry);
-      };
-      $hexPayLoad = implode("", array_map($callFunc, unpack("C*", $request)));
-      $metadata["_auth_payload"] = "Practo.MDS.Model.DrugCombination/fetchByIds" . $hexPayLoad;
-      return $this->_simpleRequest('/Practo.MDS.Model.DrugCombination/fetchByIds',
-      $argument,
-      ['\Practo\MDS\Model\FetchAllDrugCombinationResponse', 'decode'],
-      $metadata, $options);
+      
+      $searchParams = array(
+        'q' => $argument->getQ(),
+        'extended' => "true",
+      );
+      
+      $this->restUtility->setPath('/search/drug_product');
+      $this->restUtility->setMethod('GET');
+      $this->restUtility->setDefaultHeaders();
+      $this->restUtility->setQuery($searchParams);
+      $this->restUtility->setResponseType('Practo\MDS\Model\DrugCombinationExtendedModel');
+      $this->restUtility->setResponseClass('Practo\MDS\Model\DrugCombinationExtendedModelList');
+      $this->restUtility->setResponseMethod('setDrugCombination');
+      $this->restUtility->setFetchAllResponseClass('Practo\MDS\Model\FetchAllDrugCombinationExtendedResponse');
+      
+      return $this->restUtility;
     }
 
-    /**
-     * @param \Practo\MDS\Model\VisibilityChangeRequest $argument input argument
+   /**
+    * @param \Practo\MDS\Model\AddDrugCombinationRequest $argument input argument
+    * @param array $metadata metadata
+    * @param array $options call options
+    */
+   public function add(\Practo\MDS\Model\AddDrugCombinationRequest $argument,
+     $metadata = [], $options = []) {
+       $this->restUtility->setPath('/concept/drug_combination');
+       $this->restUtility->setMethod('POST');
+       $this->restUtility->setDefaultHeaders();
+       $serializer = \JMS\Serializer\SerializerBuilder::create()->build();
+       $context = new SerializationContext();
+       $context->setSerializeNull(false);
+       $this->restUtility->setData($serializer->serialize($argument->getDrugCombination(), 'json', $context));
+       $this->restUtility->setResponseType('Practo\MDS\Model\AddResponseModel');
+       $this->restUtility->setResponseClass('Practo\MDS\Model\AddResponse');
+       $this->restUtility->setResponseMethod('setAddResponseModel');
+ 
+       return $this->restUtility;
+   }
+
+   /**
+    * @param \Practo\MDS\Model\FetchRequest $argument input argument
+    * @param array $metadata metadata
+    * @param array $options call options
+    */
+   public function fetch(\Practo\MDS\Model\FetchRequest $argument,
+     $metadata = [], $options = []) {
+
+       $path = "/concept/drug_combination/".$argument->getConceptId();
+       $this->restUtility->setPath($path);
+       $this->restUtility->setMethod('GET');
+       $this->restUtility->setDefaultHeaders();
+       $this->restUtility->setResponseType('Practo\MDS\Model\DrugCombinationModel');
+       $this->restUtility->setResponseClass('Practo\MDS\Model\FetchDrugCombinationResponse');
+       $this->restUtility->setResponseMethod('setDrugCombination');
+ 
+       return $this->restUtility;
+   }
+
+   /**
+     * @param \Practo\MDS\Model\FetchAllRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function visiblityChange(\Practo\MDS\Model\VisibilityChangeRequest $argument,
+    public function fetchAll(\Practo\MDS\Model\FetchAllRequest $argument,
       $metadata = [], $options = []) {
-      $request = $argument->encode();
-      $callFunc = function($entry) {
-        return sprintf("%02X",$entry);
-      };
-      $hexPayLoad = implode("", array_map($callFunc, unpack("C*", $request)));
-      $metadata["_auth_payload"] = "Practo.MDS.Model.DrugCombination/visiblityChange" . $hexPayLoad;
-      return $this->_simpleRequest('/Practo.MDS.Model.DrugCombination/visiblityChange',
-      $argument,
-      ['\Practo\MDS\Model\VisibilityChangeResponse', 'decode'],
-      $metadata, $options);
+
+      $this->restUtility->setPath('/concept/drug_combination');
+      $this->restUtility->setMethod('GET');
+      $this->restUtility->setDefaultHeaders();
+      $this->restUtility->setResponseType('Practo\MDS\Model\DrugCombinationModel');
+      $this->restUtility->setResponseClass('Practo\MDS\Model\DrugCombinationModelList');
+      $this->restUtility->setResponseMethod('setDrugCombination');
+      $this->restUtility->setFetchAllResponseClass('Practo\MDS\Model\FetchAllDrugCombinationResponse');
+
+      return $this->restUtility;
     }
 
-  }
+   /**
+    * @param \Practo\MDS\Model\FetchRequest $argument input argument
+    * @param array $metadata metadata
+    * @param array $options call options
+    */
+   public function fetchExtended(\Practo\MDS\Model\FetchRequest $argument,
+     $metadata = [], $options = []) {
 
+       $path = "/concept/drug_combination/".$argument->getConceptId();
+       $this->restUtility->setPath($path);
+       $this->restUtility->setMethod('GET');
+       
+       $searchParams = array(
+        'extended' => "true"
+       );
+       $this->restUtility->setQuery($searchParams);
+       $this->restUtility->setDefaultHeaders();
+       $this->restUtility->setResponseType('Practo\MDS\Model\DrugCombinationExtendedModel');
+       $this->restUtility->setResponseClass('Practo\MDS\Model\FetchDrugCombinationExtendedResponse');
+       $this->restUtility->setResponseMethod('setDrugCombination');
+ 
+       return $this->restUtility;
+   }
+
+   /**
+     * @param \Practo\MDS\Model\FetchAllRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function fetchAllExtended(\Practo\MDS\Model\FetchAllRequest $argument,
+      $metadata = [], $options = []) {
+        $this->restUtility->setPath('/concept/drug_combination');
+        $this->restUtility->setMethod('GET');
+
+        $searchParams = array(
+         'extended' => "true"
+        );
+        $this->restUtility->setQuery($searchParams);
+        $this->restUtility->setDefaultHeaders();
+        $this->restUtility->setResponseType('Practo\MDS\Model\DrugCombinationExtendedModel');
+        $this->restUtility->setResponseClass('Practo\MDS\Model\DrugCombinationExtendedModelList');
+        $this->restUtility->setResponseMethod('setDrugCombination');
+        $this->restUtility->setFetchAllResponseClass('Practo\MDS\Model\FetchAllDrugCombinationExtendedResponse');
+
+        return $this->restUtility;
+    }
 }

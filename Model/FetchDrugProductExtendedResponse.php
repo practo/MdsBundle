@@ -36,7 +36,7 @@ class FetchDrugProductExtendedResponse extends \Google\Protobuf\Internal\Message
      */
     public function setDrugProduct(&$var)
     {
-        GPBUtil::checkMessage($var, \Practo\MDS\Model\DrugProductExtendedModel::class);
+        // GPBUtil::checkMessage($var, \Practo\MDS\Model\DrugProductExtendedModel::class);
         $this->drugProduct = $var;
     }
 

@@ -23,8 +23,7 @@ class AddResponseModel extends \Google\Protobuf\Internal\Message
     private $version = 0;
 
     public function __construct() {
-        \GPBMetadata\Common::initOnce();
-        parent::__construct();
+
     }
 
     /**
@@ -40,7 +39,6 @@ class AddResponseModel extends \Google\Protobuf\Internal\Message
      */
     public function setId($var)
     {
-        GPBUtil::checkString($var, True);
         $this->id = $var;
     }
 
@@ -57,7 +55,6 @@ class AddResponseModel extends \Google\Protobuf\Internal\Message
      */
     public function setVersion($var)
     {
-        GPBUtil::checkInt32($var);
         $this->version = $var;
     }
 

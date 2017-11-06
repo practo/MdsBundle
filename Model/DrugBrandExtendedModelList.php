@@ -40,7 +40,6 @@ class DrugBrandExtendedModelList extends \Google\Protobuf\Internal\Message
      */
     public function setDrugBrand(&$var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Practo\MDS\Model\DrugBrandExtendedModel::class);
         $this->drugBrand = $var;
     }
 

@@ -7,6 +7,7 @@ namespace Practo\MDS\Model;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use JMS\Serializer\Annotation\Type;
 
 /**
  * Protobuf type <code>Practo.MDS.Model.DrugBrandModelList</code>
@@ -40,7 +41,6 @@ class DrugBrandModelList extends \Google\Protobuf\Internal\Message
      */
     public function setDrugBrand(&$var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Practo\MDS\Model\DrugBrandModel::class);
         $this->drugBrand = $var;
     }
 
