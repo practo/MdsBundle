@@ -19,7 +19,7 @@ services:
     arguments:
       - [%practo_mds.source%]
       - [%practo_mds.secret%]
-      - [%practo_mds.base_uri%]
+      - ["@request"]
 
   practo_mds.grpc_channel:
     class: Grpc\Channel
