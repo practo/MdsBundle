@@ -31,13 +31,9 @@ class RestUtility {
 
     private $fetchAllResponseClass;
 
-    public function __construct($source, $secret, $request) {
+    public function __construct($source, $secret) {
         $this->source = $source;
         $this->secret = $secret;
-        if ($request instanceof Request) {
-            $this->baseUrl = $request->getSchemeAndHttpHost();
-        }
-        
         $this->client = new Client();
     }
 
@@ -212,5 +208,9 @@ class RestUtility {
         }
 
         return $newJson;
+    }
+
+    public function setRequest($request) {
+        $this->baseUrl = $request->getSchemeAndHttpHost();
     }
 }
