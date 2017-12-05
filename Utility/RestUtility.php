@@ -2,6 +2,7 @@
 //Rest client for mds
 namespace Practo\MDS\Utility;
 
+use Symfony\Component\HttpFoundation\Request;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\BadResponseException;
@@ -30,11 +31,9 @@ class RestUtility {
 
     private $fetchAllResponseClass;
 
-    public function __construct($source, $secret, $baseUrl) {
+    public function __construct($source, $secret) {
         $this->source = $source;
         $this->secret = $secret;
-        $this->baseUrl = $baseUrl;
-        
         $this->client = new Client();
     }
 
@@ -209,5 +208,9 @@ class RestUtility {
         }
 
         return $newJson;
+    }
+
+    public function setRequest($request) {
+        $this->baseUrl = $request->getSchemeAndHttpHost();
     }
 }
