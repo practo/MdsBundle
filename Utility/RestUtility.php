@@ -128,7 +128,7 @@ class RestUtility {
             $strQuery = $this->toQueryParts("", json_decode($queryParams['body'], true));
         }
         $signature = $this->getSignature($this->path, $strQuery,
-            $this->source, $this->secret);
+            $this->source[0], $this->secret[0]);
         // Add all request headers
         $queryParams['headers'] = $this->headers;
         $queryParams['headers']['signature'] = $signature;
