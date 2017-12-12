@@ -47,7 +47,7 @@ class RestUtility {
 
     public function setDefaultHeaders(){
         $this->headers = [
-            'domain' => $this->source[0],
+            'domain' => $this->source,
             'Content-Type' => 'application/json'
         ];
     }
@@ -116,7 +116,7 @@ class RestUtility {
     }
 
     public function getRequestURL() {
-        return $this->baseUrl[0] . $this->path;
+        return $this->baseUrl . $this->path;
     }
 
     public function prepareParams() {
@@ -210,7 +210,7 @@ class RestUtility {
         return $newJson;
     }
 
-    public function setRequest($request) {
-        $this->baseUrl = $request->getSchemeAndHttpHost();
+    public function setRequest($requestStack) {
+        $this->baseUrl = $requestStack->getCurrentRequest()->getSchemeAndHttpHost();
     }
 }

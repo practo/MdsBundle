@@ -16,12 +16,11 @@ services:
 
   practo_mds.rest_utility:
     class: Practo\MDS\Utility\RestUtility
-    scope: request
     arguments:
       - [%practo_mds.source%]
       - [%practo_mds.secret%]
     calls:
-      - [ setRequest, [ '@?request=' ]]
+      - [ setRequest, [ "@request_stack" ]]
 
   practo_mds.grpc_channel:
     class: Grpc\Channel
@@ -31,7 +30,6 @@ services:
 
   practo_mds.api_classification:
     class: Practo\MDS\Model\ApiClassificationClient
-    scope: request
     arguments:
       - %practo_mds.base_uri%
       - { update_metadata : ['@practo_mds.auth_utility', attachHeaders], credentials : null }
@@ -39,7 +37,6 @@ services:
 
   practo_mds.api:
     class: Practo\MDS\Model\ApiClient
-    scope: request
     arguments:
       - %practo_mds.base_uri%
       - { update_metadata : ['@practo_mds.auth_utility', attachHeaders], credentials : null }
@@ -47,7 +44,6 @@ services:
 
   practo_mds.country:
     class: Practo\MDS\Model\CountryClient
-    scope: request
     arguments:
       - %practo_mds.base_uri%
       - { update_metadata : ['@practo_mds.auth_utility', attachHeaders], credentials : null }
@@ -55,7 +51,6 @@ services:
 
   practo_mds.dosage_form:
     class: Practo\MDS\Model\DosageFormClient
-    scope: request
     arguments:
       - %practo_mds.base_uri%
       - { update_metadata : ['@practo_mds.auth_utility', attachHeaders], credentials : null }
@@ -63,19 +58,16 @@ services:
 
   practo_mds.drug_brand:
     class: Practo\MDS\Model\DrugBrandClient
-    scope: request
     arguments:
       - '@practo_mds.rest_utility'
 
   practo_mds.drug_combination:
     class: Practo\MDS\Model\DrugCombinationClient
-    scope: request
     arguments:
       - '@practo_mds.rest_utility'
 
   practo_mds.drug_manufacturer:
     class: Practo\MDS\Model\DrugManufacturerClient
-    scope: request
     arguments:
       - %practo_mds.base_uri%
       - { update_metadata : ['@practo_mds.auth_utility', attachHeaders], credentials : null }
@@ -83,13 +75,11 @@ services:
 
   practo_mds.drug_product:
     class: Practo\MDS\Model\DrugProductClient
-    scope: request
     arguments:
       - '@practo_mds.rest_utility'
 
   practo_mds.drug_regulatory_classification:
     class: Practo\MDS\Model\DrugRegulatoryClassificationClient
-    scope: request
     arguments:
       - %practo_mds.base_uri%
       - { update_metadata : ['@practo_mds.auth_utility', attachHeaders], credentials : null }
@@ -97,7 +87,6 @@ services:
 
   practo_mds.route_of_administration:
     class: Practo\MDS\Model\RouteOfAdministrationClient
-    scope: request
     arguments:
       - %practo_mds.base_uri%
       - { update_metadata : ['@practo_mds.auth_utility', attachHeaders], credentials : null }
@@ -105,7 +94,6 @@ services:
 
   practo_mds.specialization:
     class: Practo\MDS\Model\SpecializationClient
-    scope: request
     arguments:
       - %practo_mds.base_uri%
       - { update_metadata : ['@practo_mds.auth_utility', attachHeaders], credentials : null }
@@ -113,7 +101,6 @@ services:
 
   practo_mds.system_of_medicine:
     class: Practo\MDS\Model\SystemOfMedicineClient
-    scope: request
     arguments:
       - %practo_mds.base_uri%
       - { update_metadata : ['@practo_mds.auth_utility', attachHeaders], credentials : null }
@@ -121,7 +108,6 @@ services:
 
   practo_mds.unit_of_measure:
     class: Practo\MDS\Model\UnitOfMeasureClient
-    scope: request
     arguments:
       - %practo_mds.base_uri%
       - { update_metadata : ['@practo_mds.auth_utility', attachHeaders], credentials : null }
