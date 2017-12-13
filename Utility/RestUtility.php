@@ -211,6 +211,20 @@ class RestUtility {
     }
 
     public function setRequest($requestStack) {
-        $this->baseUrl = $requestStack->getCurrentRequest()->getSchemeAndHttpHost();
+        $this->baseUrl = $this->getHost('mds', $requestStack);
+    }
+
+    public function getHost($subdomain = null, $requestStack)
+    {
+        $fitHost = $requestStack->getCurrentRequest()->getSchemeAndHttpHost();
+        $fitHostRaw = $requestStack->getCurrentRequest()->getHost();
+        if (!$subdomain) {
+            return $fitHost;
+        }
+        $origSubdomain = explode('.', $fitHostRaw);
+        $origSubdomain = $origSubdomain[0];
+        $origSubdomain = explode('-', $origSubdomain);
+        $origSubdomain = $origSubdomain[0];
+        return str_replace($origSubdomain, $subdomain, $fitHost);
     }
 }
