@@ -109,6 +109,4 @@ services:
   practo_mds.unit_of_measure:
     class: Practo\MDS\Model\UnitOfMeasureClient
     arguments:
-      - %practo_mds.base_uri%
-      - { update_metadata : ['@practo_mds.auth_utility', attachHeaders], credentials : null }
-      - '@practo_mds.grpc_channel'
+      - '@practo_mds.rest_utility'
