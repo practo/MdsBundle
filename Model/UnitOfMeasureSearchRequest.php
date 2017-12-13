@@ -33,6 +33,10 @@ class UnitOfMeasureSearchRequest extends \Google\Protobuf\Internal\Message
      * <code>sfixed32 limit = 5;</code>
      */
     private $limit = 0;
+    /**
+     * <code>sfixed32 offset = 6;</code>
+     */
+    private $offset = 0;
 
     public function __construct() {
         \GPBMetadata\GeneralStore::initOnce();
@@ -122,6 +126,23 @@ class UnitOfMeasureSearchRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->limit = $var;
+    }
+
+    /**
+     * <code>sfixed32 offset = 6;</code>
+     */
+    public function getOffset()
+    {
+        return $this->offset;
+    }
+
+    /**
+     * <code>sfixed32 offset = 6;</code>
+     */
+    public function setOffset($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->offset = $var;
     }
 
 }
