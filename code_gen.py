@@ -124,9 +124,37 @@ def edit_client_file(folder_path, file_name):
     f.write("       return $this->restUtility;\n")
     f.write("   }\n")
 
-    #generate fetch all function
-    fetch_all_rest_path_name = '/concept/' + convert_to_snake_case(concept_name)
+    
+    #generate fetch extended function
+    fetch_rest_path_name = '/concept/' + convert_to_snake_case(concept_name)
+    fetch_extended_response = 'Fetch' + class_name + 'ExtendedResponse'
 
+    f.write("   /**\n")
+    f.write("    * @param \Practo\MDS\Model\FetchRequest $argument input argument\n")
+    f.write("    * @param array $metadata metadata\n")
+    f.write("    * @param array $options call options\n")
+    f.write("    */\n")
+    f.write("   public function fetchExtended(\Practo\MDS\Model\FetchRequest $argument,\n")
+    f.write("     $metadata = [], $options = []) {\n")
+    f.write("\n")
+    f.write("       $path = '" + fetch_rest_path_name + "/'.$argument->getConceptId();\n")
+    f.write("       $this->restUtility->setPath($path);\n")
+    f.write("       $this->restUtility->setMethod('GET');\n")
+    f.write("\n")
+    f.write("       $searchParams = array(\n")
+    f.write("        'extended' => \"true\",\n")
+    f.write("       );\n")
+    f.write("       $this->restUtility->setQuery($searchParams);\n")
+    f.write("       $this->restUtility->setDefaultHeaders();\n")
+    f.write("       $this->restUtility->setResponseType('Practo\MDS\Model\\" + extended_response_type + "');\n")
+    f.write("       $this->restUtility->setResponseClass('Practo\MDS\Model\\" + fetch_extended_response +  "');\n")
+    f.write("       $this->restUtility->setResponseMethod('" + response_method + "');\n")
+    f.write("\n")
+    f.write("       return $this->restUtility;\n")
+    f.write("   }\n")
+
+    #generate fetch all function
+    
     f.write("\n")
     f.write("   /**\n")
     f.write("     * @param \Practo\MDS\Model\FetchAllRequest $argument input argument\n")
@@ -142,7 +170,7 @@ def edit_client_file(folder_path, file_name):
     f.write("      if ($argument->getLimit()) {\n")
     f.write("        $searchParams['limit'] = $argument->getLimit();\n")
     f.write("      }\n")
-    f.write("      $this->restUtility->setPath('/search/" + fetch_all_rest_path_name + "');\n")
+    f.write("      $this->restUtility->setPath('" + fetch_rest_path_name + "');\n")
     f.write("      $this->restUtility->setMethod('GET');\n")
     f.write("      $this->restUtility->setDefaultHeaders();\n")
     f.write("      $this->restUtility->setQuery($searchParams);\n")
@@ -163,7 +191,7 @@ def edit_client_file(folder_path, file_name):
     f.write("     */\n")
     f.write("    public function fetchAllExtended(\Practo\MDS\Model\FetchAllRequest $argument,\n")
     f.write("      $metadata = [], $options = []) {\n")
-    f.write("        $this->restUtility->setPath('/search/" + fetch_all_rest_path_name + "');\n")
+    f.write("        $this->restUtility->setPath('" + fetch_rest_path_name + "');\n")
     f.write("        $this->restUtility->setMethod('GET');\n")
     f.write("\n")
     f.write("        $searchParams = array(\n")
@@ -181,6 +209,8 @@ def edit_client_file(folder_path, file_name):
     f.write("    }\n")
     f.write("\n")
     f.write("  }\n")
+
+    f.write("}")
 
 
 
