@@ -40,14 +40,18 @@ def create_jms_annotation(type_str):
             if field_type in proto_to_php_types.keys():
                 field_type = proto_to_php_types[field_type]
             field_type = field_type.replace(".", "\\")
-            jms_annotation = 'array<' + field_type[1:] + '>'
-    else:
+            if field_type[0] == '\\':
+                jms_annotation = 'array<' + field_type[1:] + '>'
+            else:
+                jms_annotation = 'array<' + field_type + '>'
+    elif field_type_str in proto_to_php_types.keys():
         jms_annotation = proto_to_php_types[field_type_str]
     jms_annotation = '@Type("' + jms_annotation + '")'        
     
     return jms_annotation
 
-def update_model_jms_annotation(folder_path, file_name):
+# creating new model files with jms annotations
+def create_model_jms_annotation(folder_path, file_name):
     print('generating jms annotations for: ' + file_name)
     input_file_name = folder_path + '/' + file_name
     output_file_name = folder_path + '/rest_models/' + file_name
@@ -63,8 +67,6 @@ def update_model_jms_annotation(folder_path, file_name):
                 jms_annotation = create_jms_annotation(annotation_input)
                 annotation_input_list.append(annotation_input)
                 out_f.write('     * ' + jms_annotation + '\n')
-    sys.exit()
-
 
 
 #generate individual client files
@@ -285,7 +287,7 @@ def create_concept_clients():
             gen_client_file(path, file)
 
 # loop through all the models, and add the jms annoations
-def update_concept_models():
+def create_concept_models():
     #get current file path
     path = os.getcwd()
     #get model folder
@@ -295,11 +297,11 @@ def update_concept_models():
     client_file_list = []
     for file in os.listdir(path):
         if "Model.php" in file:
-            update_model_jms_annotation(path, file)
+            create_model_jms_annotation(path, file)
 
 
 #methods to run
-#create_concept_clients()
-update_concept_models()
+create_concept_clients()
+create_concept_models()
 
 
