@@ -1,6 +1,5 @@
 #script to generate code
 
-
 import os
 import sys
 import re
@@ -9,7 +8,29 @@ def convert_to_snake_case(name):
     s1 = re.sub('(.)([A-Z][a-z]+)', r'\1_\2', name)
     return re.sub('([a-z0-9])([A-Z])', r'\1_\2', s1).lower()
 
-def edit_client_file(folder_path, file_name):
+
+def create_jms_annotation(type_str):
+    type_str_arr = type_str.split(" ")
+    truncate_slice_obj = slice(len(type_str_arr) - 3, len(type_str_arr), 1)
+    truncate_str = ' '.join(type_str_arr[truncate_slice_obj])
+    field_type_str = type_str.replace(truncate_str, "").strip()
+    jms_annotation = field_type_str
+    if " " in field_type_str:
+        jms_annotation_arr = field_type_str.split(" ")
+        if jms_annotation_arr[0] == 'repeated':
+            field_type = jms_annotation_arr[1]
+            field_type = field_type.replace(".", "\\")
+            jms_annotation = 'array<' + field_type[1:] + '>'
+    jms_annotation = '@Type("' + jms_annotation + '")'        
+    print(jms_annotation)
+    return jms_annotation
+
+def update_model_jms_annotation(path, file_name):
+    print(file_name)
+
+
+#generate individual client files
+def gen_client_file(folder_path, file_name):
     full_file_name = folder_path + '/rest_client/' + file_name
     print(full_file_name)
     f = open(full_file_name,"w+")
@@ -213,18 +234,35 @@ def edit_client_file(folder_path, file_name):
     f.write("}")
 
 
+#method to create clients for concepts (rest version of the clients).
+def create_concept_clients():
+    #get current file path
+    path = os.getcwd()
+    #get model folder
+    path = path + '/Model'
+
+    #get list of all client files
+    client_file_list = []
+    for file in os.listdir(path):
+        if "Client.php" in file:
+            gen_client_file(path, file)
+
+# loop through all the models, and add the jms annoations
+def update_concept_models():
+    #get current file path
+    path = os.getcwd()
+    #get model folder
+    path = path + '/Model'
+
+    #get list of all client files
+    client_file_list = []
+    for file in os.listdir(path):
+        if "Model.php" in file:
+            update_model_jms_annotation(path, file)
 
 
+#methods to run
+#create_concept_clients()
+update_concept_models()
 
-
-#get current file path
-path = os.getcwd()
-#get model folder
-path = path + '/Model'
-
-#get list of all client files
-client_file_list = []
-for file in os.listdir(path):
-    if "Client.php" in file:
-        edit_client_file(path, file)
 
