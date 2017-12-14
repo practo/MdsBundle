@@ -8,6 +8,24 @@ def convert_to_snake_case(name):
     s1 = re.sub('(.)([A-Z][a-z]+)', r'\1_\2', name)
     return re.sub('([a-z0-9])([A-Z])', r'\1_\2', s1).lower()
 
+proto_to_php_types = {
+    "double": "float",
+    "float": "float",
+    "int32": "integer",
+    "int64": "integer",
+    "uint32": "integer",
+    "uint64": "integer",
+    "sint32": "integer",
+    "sint64": "integer",
+    "fixed32": "integer",
+    "fixed64": "integer",
+    "sfixed32": "integer",
+    "sfixed64": "integer",
+    "bool": "boolean",
+    "string": "string",
+    "bytes": "string"
+}
+
 
 def create_jms_annotation(type_str):
     type_str_arr = type_str.split(" ")
@@ -19,20 +37,39 @@ def create_jms_annotation(type_str):
         jms_annotation_arr = field_type_str.split(" ")
         if jms_annotation_arr[0] == 'repeated':
             field_type = jms_annotation_arr[1]
+            if field_type in proto_to_php_types.keys():
+                field_type = proto_to_php_types[field_type]
             field_type = field_type.replace(".", "\\")
             jms_annotation = 'array<' + field_type[1:] + '>'
+    else:
+        jms_annotation = proto_to_php_types[field_type_str]
     jms_annotation = '@Type("' + jms_annotation + '")'        
-    print(jms_annotation)
+    
     return jms_annotation
 
-def update_model_jms_annotation(path, file_name):
-    print(file_name)
+def update_model_jms_annotation(folder_path, file_name):
+    print('generating jms annotations for: ' + file_name)
+    input_file_name = folder_path + '/' + file_name
+    output_file_name = folder_path + '/rest_models/' + file_name
+    input_f = open(input_file_name, 'r')
+    out_f = open(output_file_name,"w+")
+    # to prevent writing annotaions on setters and getters
+    annotation_input_list = []
+    for line in input_f:
+        out_f.write(line)
+        if "<code>" in line and "Protobuf" not in line:
+            annotation_input = line.strip().replace("<code>","").replace("</code>","").strip("*")
+            if annotation_input not in annotation_input_list:
+                jms_annotation = create_jms_annotation(annotation_input)
+                annotation_input_list.append(annotation_input)
+                out_f.write('     * ' + jms_annotation + '\n')
+    sys.exit()
+
 
 
 #generate individual client files
 def gen_client_file(folder_path, file_name):
     full_file_name = folder_path + '/rest_client/' + file_name
-    print(full_file_name)
     f = open(full_file_name,"w+")
     f.write("<?php")
     f.write("\n")
