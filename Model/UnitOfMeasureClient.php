@@ -79,6 +79,29 @@ namespace Practo\MDS\Model {
 
        return $this->restUtility;
    }
+   /**
+    * @param \Practo\MDS\Model\FetchRequest $argument input argument
+    * @param array $metadata metadata
+    * @param array $options call options
+    */
+   public function fetchExtended(\Practo\MDS\Model\FetchRequest $argument,
+     $metadata = [], $options = []) {
+
+       $path = '/concept/unit_of_measure/'.$argument->getConceptId();
+       $this->restUtility->setPath($path);
+       $this->restUtility->setMethod('GET');
+
+       $searchParams = array(
+        'extended' => "true",
+       );
+       $this->restUtility->setQuery($searchParams);
+       $this->restUtility->setDefaultHeaders();
+       $this->restUtility->setResponseType('Practo\MDS\Model\UnitOfMeasureExtendedModel');
+       $this->restUtility->setResponseClass('Practo\MDS\Model\FetchUnitOfMeasureClientExtendedResponse');
+       $this->restUtility->setResponseMethod('setUnitOfMeasure');
+
+       return $this->restUtility;
+   }
 
    /**
      * @param \Practo\MDS\Model\FetchAllRequest $argument input argument
@@ -94,7 +117,7 @@ namespace Practo\MDS\Model {
       if ($argument->getLimit()) {
         $searchParams['limit'] = $argument->getLimit();
       }
-      $this->restUtility->setPath('/search//concept/unit_of_measure');
+      $this->restUtility->setPath('/concept/unit_of_measure');
       $this->restUtility->setMethod('GET');
       $this->restUtility->setDefaultHeaders();
       $this->restUtility->setQuery($searchParams);
@@ -113,7 +136,7 @@ namespace Practo\MDS\Model {
      */
     public function fetchAllExtended(\Practo\MDS\Model\FetchAllRequest $argument,
       $metadata = [], $options = []) {
-        $this->restUtility->setPath('/search//concept/unit_of_measure');
+        $this->restUtility->setPath('/concept/unit_of_measure');
         $this->restUtility->setMethod('GET');
 
         $searchParams = array(
@@ -131,3 +154,4 @@ namespace Practo\MDS\Model {
     }
 
   }
+}

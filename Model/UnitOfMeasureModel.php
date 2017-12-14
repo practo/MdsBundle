@@ -15,66 +15,82 @@ class UnitOfMeasureModel extends \Google\Protobuf\Internal\Message
 {
     /**
      * <code>string symbol = 1;</code>
+     * @Type("string")
      */
     private $symbol = '';
     /**
      * <code>repeated string tags = 2;</code>
+     * @Type("array<string>")
      */
     private $tags;
     /**
      * <code>repeated string references = 3;</code>
+     * @Type("array<string>")
      */
     private $references;
     /**
      * <code>repeated string synonyms = 4;</code>
+     * @Type("array<string>")
      */
     private $synonyms;
     /**
      * <code>string id = 5;</code>
+     * @Type("string")
      */
     private $id = '';
     /**
      * <code>sfixed64 created = 6;</code>
+     * @Type("integer")
      */
     private $created = 0;
     /**
      * <code>sfixed64 modified = 7;</code>
+     * @Type("integer")
      */
     private $modified = 0;
     /**
      * <code>string merged_to = 8;</code>
+     * @Type("string")
      */
     private $merged_to = '';
     /**
      * <code>string status = 9;</code>
+     * @Type("string")
      */
     private $status = '';
     /**
      * <code>string source = 10;</code>
+     * @Type("string")
      */
     private $source = '';
     /**
      * <code>bool relationship_concept = 11;</code>
+     * @Type("boolean")
      */
     private $relationship_concept = false;
     /**
      * <code>string creator = 12;</code>
+     * @Type("string")
      */
     private $creator = '';
     /**
      * <code>string comments = 13;</code>
+     * @Type("string")
      */
     private $comments = '';
     /**
      * <code>map&lt;string, string&gt; additional_fields = 14;</code>
+     * @Type("array")
      */
     private $additional_fields;
     /**
      * <code>bool visible = 15;</code>
+     * @Type("boolean")
      */
     private $visible = false;
     /**
      * <code>sfixed32 version = 16;</code>
+     * @Type("integer")
      */
     private $version = 0;
 
