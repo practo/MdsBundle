@@ -27,12 +27,17 @@ proto_to_php_types = {
 }
 
 
+# function to create jms annotation from protobuf type comment
 def create_jms_annotation(type_str):
     type_str_arr = type_str.split(" ")
     truncate_slice_obj = slice(len(type_str_arr) - 3, len(type_str_arr), 1)
     truncate_str = ' '.join(type_str_arr[truncate_slice_obj])
     field_type_str = type_str.replace(truncate_str, "").strip()
     jms_annotation = field_type_str
+    # special case of map
+    if 'map&lt;string, string&gt;' in field_type_str:
+        jms_annotation = '@Type("array")'
+        return jms_annotation
     if " " in field_type_str:
         jms_annotation_arr = field_type_str.split(" ")
         if jms_annotation_arr[0] == 'repeated':
