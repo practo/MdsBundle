@@ -27,6 +27,20 @@ proto_to_php_types = {
 }
 
 
+#remove gpb util checks for individual files.
+def remove_protobuf_type_checks(folder_path, file_name):
+    print('removing GPBUtil checks for file: ' + file_name)
+    input_file_name = folder_path + '/' + file_name
+    output_file_name = folder_path + '/rest_models/' + file_name
+    input_f = open(input_file_name, 'r')
+    out_f = open(output_file_name,"w+")
+
+    for line in input_f:
+        #discard protobuf type checks
+        if "GPBUtil::check" not in line:
+            out_f.write(line)
+
+
 # function to create jms annotation from protobuf type comment
 def create_jms_annotation(type_str):
     type_str_arr = type_str.split(" ")
@@ -65,7 +79,13 @@ def create_model_jms_annotation(folder_path, file_name):
     # to prevent writing annotaions on setters and getters
     annotation_input_list = []
     for line in input_f:
-        out_f.write(line)
+        #discard protobuf type checks
+        if "GPBUtil::check" not in line:
+            out_f.write(line)
+        #add annotation type dependency
+        if 'namespace' in line:
+            out_f.write('\n\n')
+            out_f.write('use JMS\Serializer\Annotation\Type;')
         if "<code>" in line and "Protobuf" not in line:
             annotation_input = line.strip().replace("<code>","").replace("</code>","").strip("*")
             if annotation_input not in annotation_input_list:
@@ -304,9 +324,23 @@ def create_concept_models():
         if "Model.php" in file:
             create_model_jms_annotation(path, file)
 
+def remove_protobuf_type_checks_for_non_models_clients():
+    #get current file path
+    path = os.getcwd()
+    #get model folder
+    path = path + '/Model'
+
+    #get list of all client files
+    client_file_list = []
+    for file in os.listdir(path):
+        if (os.path.isfile(os.path.join(path, file))) and ("Model.php" not in file) and ("Client.php" not in file):
+            remove_protobuf_type_checks(path, file)
+
+
 
 #methods to run
-create_concept_clients()
-create_concept_models()
+#create_concept_clients()
+#create_concept_models()
+remove_protobuf_type_checks_for_non_models_clients()
 
 
