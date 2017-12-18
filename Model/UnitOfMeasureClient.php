@@ -1,74 +1,34 @@
 <?php
+
 // GENERATED CODE -- DO NOT EDIT!
 
 namespace Practo\MDS\Model {
 
-  class UnitOfMeasureClient extends \Grpc\BaseStub {
+  class UnitOfMeasureClient {
 
-    /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param Grpc\Channel $channel (optional) re-use channel object
-     */
-    public function __construct($hostname, $opts, $channel = null) {
-      parent::__construct($hostname, $opts, $channel);
+    public function __construct($restUtility) {
+      $this->restUtility = $restUtility;
     }
 
-    /**
-     * @param \Practo\MDS\Model\AddUnitOfMeasureRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     */
-    public function add(\Practo\MDS\Model\AddUnitOfMeasureRequest $argument,
+    public function search(\Practo\MDS\Model\UnitOfMeasureSearchRequest $argument,
       $metadata = [], $options = []) {
-      $request = $argument->encode();
-      $callFunc = function($entry) {
-        return sprintf("%02X",$entry);
-      };
-      $hexPayLoad = implode("", array_map($callFunc, unpack("C*", $request)));
-      $metadata["_auth_payload"] = "Practo.MDS.Model.UnitOfMeasure/add" . $hexPayLoad;
-      return $this->_simpleRequest('/Practo.MDS.Model.UnitOfMeasure/add',
-      $argument,
-      ['\Practo\MDS\Model\AddResponse', 'decode'],
-      $metadata, $options);
-    }
+      $searchParams = array(
+        'q' => $argument->getQ(),
+        'offset' => $argument->getOffset()
+      );
+      if ($argument->getLimit()) {
+        $searchParams['limit'] = $argument->getLimit();
+      }
+      $this->restUtility->setPath('/search/unit_of_measure');
+      $this->restUtility->setMethod('GET');
+      $this->restUtility->setDefaultHeaders();
+      $this->restUtility->setQuery($searchParams);
+      $this->restUtility->setResponseType('Practo\MDS\Model\UnitOfMeasureModel');
+      $this->restUtility->setResponseClass('Practo\MDS\Model\UnitOfMeasureModelList');
+      $this->restUtility->setResponseMethod('setUnitOfMeasure');
+      $this->restUtility->setFetchAllResponseClass('Practo\MDS\Model\FetchAllUnitOfMeasureResponse');
 
-    /**
-     * @param \Practo\MDS\Model\FetchRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     */
-    public function fetch(\Practo\MDS\Model\FetchRequest $argument,
-      $metadata = [], $options = []) {
-      $request = $argument->encode();
-      $callFunc = function($entry) {
-        return sprintf("%02X",$entry);
-      };
-      $hexPayLoad = implode("", array_map($callFunc, unpack("C*", $request)));
-      $metadata["_auth_payload"] = "Practo.MDS.Model.UnitOfMeasure/fetch" . $hexPayLoad;
-      return $this->_simpleRequest('/Practo.MDS.Model.UnitOfMeasure/fetch',
-      $argument,
-      ['\Practo\MDS\Model\FetchUnitOfMeasureResponse', 'decode'],
-      $metadata, $options);
-    }
-
-    /**
-     * @param \Practo\MDS\Model\FetchAllRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     */
-    public function fetchAll(\Practo\MDS\Model\FetchAllRequest $argument,
-      $metadata = [], $options = []) {
-      $request = $argument->encode();
-      $callFunc = function($entry) {
-        return sprintf("%02X",$entry);
-      };
-      $hexPayLoad = implode("", array_map($callFunc, unpack("C*", $request)));
-      $metadata["_auth_payload"] = "Practo.MDS.Model.UnitOfMeasure/fetchAll" . $hexPayLoad;
-      return $this->_simpleRequest('/Practo.MDS.Model.UnitOfMeasure/fetchAll',
-      $argument,
-      ['\Practo\MDS\Model\FetchAllUnitOfMeasureResponse', 'decode'],
-      $metadata, $options);
+      return $this->restUtility;
     }
 
     /**
@@ -76,58 +36,122 @@ namespace Practo\MDS\Model {
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function search(\Practo\MDS\Model\UnitOfMeasureSearchRequest $argument,
+    public function searchExtended(\Practo\MDS\Model\UnitOfMeasureSearchRequest $argument,
       $metadata = [], $options = []) {
-      $request = $argument->encode();
-      $callFunc = function($entry) {
-        return sprintf("%02X",$entry);
-      };
-      $hexPayLoad = implode("", array_map($callFunc, unpack("C*", $request)));
-      $metadata["_auth_payload"] = "Practo.MDS.Model.UnitOfMeasure/search" . $hexPayLoad;
-      return $this->_simpleRequest('/Practo.MDS.Model.UnitOfMeasure/search',
-      $argument,
-      ['\Practo\MDS\Model\FetchAllUnitOfMeasureResponse', 'decode'],
-      $metadata, $options);
+
+      $searchParams = array(
+        'q' => $argument->getQ(),
+        'extended' => "true",
+        'offset' => $argument->getOffset()
+      );
+
+      if ($argument->getLimit()) {
+        $searchParams['limit'] = $argument->getLimit();
+      }
+
+      $this->restUtility->setPath('/search/unit_of_measure');
+      $this->restUtility->setMethod('GET');
+      $this->restUtility->setDefaultHeaders();
+      $this->restUtility->setQuery($searchParams);
+      $this->restUtility->setResponseType('Practo\MDS\Model\UnitOfMeasureExtendedModel');
+      $this->restUtility->setResponseClass('Practo\MDS\Model\UnitOfMeasureExtendedModelList');
+      $this->restUtility->setResponseMethod('setUnitOfMeasure');
+      $this->restUtility->setFetchAllResponseClass('Practo\MDS\Model\FetchAllUnitOfMeasureExtendedResponse');
+
+      return $this->restUtility;
     }
 
-    /**
-     * @param \Practo\MDS\Model\FetchByIdsRequest $argument input argument
+   /**
+    * @param \Practo\MDS\Model\FetchRequest $argument input argument
+    * @param array $metadata metadata
+    * @param array $options call options
+    */
+   public function fetch(\Practo\MDS\Model\FetchRequest $argument,
+     $metadata = [], $options = []) {
+
+       $path = /concept/unit_of_measure/".$argument->getConceptId();
+       $this->restUtility->setPath($path);
+       $this->restUtility->setMethod('GET');
+       $this->restUtility->setDefaultHeaders();
+       $this->restUtility->setResponseType('Practo\MDS\Model\UnitOfMeasureModel');
+       $this->restUtility->setResponseClass('Practo\MDS\Model\FetchUnitOfMeasureResponse');
+       $this->restUtility->setResponseMethod('setUnitOfMeasure');
+
+       return $this->restUtility;
+   }
+   /**
+    * @param \Practo\MDS\Model\FetchRequest $argument input argument
+    * @param array $metadata metadata
+    * @param array $options call options
+    */
+   public function fetchExtended(\Practo\MDS\Model\FetchRequest $argument,
+     $metadata = [], $options = []) {
+
+       $path = '/concept/unit_of_measure/'.$argument->getConceptId();
+       $this->restUtility->setPath($path);
+       $this->restUtility->setMethod('GET');
+
+       $searchParams = array(
+        'extended' => "true",
+       );
+       $this->restUtility->setQuery($searchParams);
+       $this->restUtility->setDefaultHeaders();
+       $this->restUtility->setResponseType('Practo\MDS\Model\UnitOfMeasureExtendedModel');
+       $this->restUtility->setResponseClass('Practo\MDS\Model\FetchUnitOfMeasureClientExtendedResponse');
+       $this->restUtility->setResponseMethod('setUnitOfMeasure');
+
+       return $this->restUtility;
+   }
+
+   /**
+     * @param \Practo\MDS\Model\FetchAllRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function fetchByIds(\Practo\MDS\Model\FetchByIdsRequest $argument,
+    public function fetchAll(\Practo\MDS\Model\FetchAllRequest $argument,
       $metadata = [], $options = []) {
-      $request = $argument->encode();
-      $callFunc = function($entry) {
-        return sprintf("%02X",$entry);
-      };
-      $hexPayLoad = implode("", array_map($callFunc, unpack("C*", $request)));
-      $metadata["_auth_payload"] = "Practo.MDS.Model.UnitOfMeasure/fetchByIds" . $hexPayLoad;
-      return $this->_simpleRequest('/Practo.MDS.Model.UnitOfMeasure/fetchByIds',
-      $argument,
-      ['\Practo\MDS\Model\FetchAllUnitOfMeasureResponse', 'decode'],
-      $metadata, $options);
+
+      $searchParams = array(
+        'offset' => $argument->getOffset()
+      );
+      if ($argument->getLimit()) {
+        $searchParams['limit'] = $argument->getLimit();
+      }
+      $this->restUtility->setPath('/concept/unit_of_measure');
+      $this->restUtility->setMethod('GET');
+      $this->restUtility->setDefaultHeaders();
+      $this->restUtility->setQuery($searchParams);
+      $this->restUtility->setResponseType('Practo\MDS\Model\UnitOfMeasureModel');
+      $this->restUtility->setResponseClass('Practo\MDS\Model\UnitOfMeasureModelList');
+      $this->restUtility->setResponseMethod('setUnitOfMeasure');
+      $this->restUtility->setFetchAllResponseClass('Practo\MDS\Model\FetchAllUnitOfMeasureResponse');
+
+      return $this->restUtility;
     }
 
-    /**
-     * @param \Practo\MDS\Model\VisibilityChangeRequest $argument input argument
+   /**
+     * @param \Practo\MDS\Model\FetchAllRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function visiblityChange(\Practo\MDS\Model\VisibilityChangeRequest $argument,
+    public function fetchAllExtended(\Practo\MDS\Model\FetchAllRequest $argument,
       $metadata = [], $options = []) {
-      $request = $argument->encode();
-      $callFunc = function($entry) {
-        return sprintf("%02X",$entry);
-      };
-      $hexPayLoad = implode("", array_map($callFunc, unpack("C*", $request)));
-      $metadata["_auth_payload"] = "Practo.MDS.Model.UnitOfMeasure/visiblityChange" . $hexPayLoad;
-      return $this->_simpleRequest('/Practo.MDS.Model.UnitOfMeasure/visiblityChange',
-      $argument,
-      ['\Practo\MDS\Model\VisibilityChangeResponse', 'decode'],
-      $metadata, $options);
+        $this->restUtility->setPath('/concept/unit_of_measure');
+        $this->restUtility->setMethod('GET');
+
+        $searchParams = array(
+         'extended' => "true",
+         'offset' => $argument->getOffset()
+        );
+        $this->restUtility->setQuery($searchParams);
+        $this->restUtility->setDefaultHeaders();
+        $this->restUtility->setResponseType('Practo\MDS\Model\UnitOfMeasureExtendedModel');
+        $this->restUtility->setResponseClass('Practo\MDS\Model\UnitOfMeasureExtendedModelList');
+        $this->restUtility->setResponseMethod('setUnitOfMeasure');
+        $this->restUtility->setFetchAllResponseClass('Practo\MDS\Model\FetchAllUnitOfMeasureExtendedResponse');
+
+        return $this->restUtility;
     }
 
   }
-
 }

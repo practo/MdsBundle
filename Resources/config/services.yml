@@ -31,30 +31,22 @@ services:
   practo_mds.api_classification:
     class: Practo\MDS\Model\ApiClassificationClient
     arguments:
-      - %practo_mds.base_uri%
-      - { update_metadata : ['@practo_mds.auth_utility', attachHeaders], credentials : null }
-      - '@practo_mds.grpc_channel'
+      - '@practo_mds.rest_utility'
 
   practo_mds.api:
     class: Practo\MDS\Model\ApiClient
     arguments:
-      - %practo_mds.base_uri%
-      - { update_metadata : ['@practo_mds.auth_utility', attachHeaders], credentials : null }
-      - '@practo_mds.grpc_channel'
+      - '@practo_mds.rest_utility'
 
   practo_mds.country:
     class: Practo\MDS\Model\CountryClient
     arguments:
-      - %practo_mds.base_uri%
-      - { update_metadata : ['@practo_mds.auth_utility', attachHeaders], credentials : null }
-      - '@practo_mds.grpc_channel'
+      - '@practo_mds.rest_utility'
 
   practo_mds.dosage_form:
     class: Practo\MDS\Model\DosageFormClient
     arguments:
-      - %practo_mds.base_uri%
-      - { update_metadata : ['@practo_mds.auth_utility', attachHeaders], credentials : null }
-      - '@practo_mds.grpc_channel'
+      - '@practo_mds.rest_utility'
 
   practo_mds.drug_brand:
     class: Practo\MDS\Model\DrugBrandClient
@@ -69,9 +61,7 @@ services:
   practo_mds.drug_manufacturer:
     class: Practo\MDS\Model\DrugManufacturerClient
     arguments:
-      - %practo_mds.base_uri%
-      - { update_metadata : ['@practo_mds.auth_utility', attachHeaders], credentials : null }
-      - '@practo_mds.grpc_channel'
+      - '@practo_mds.rest_utility'
 
   practo_mds.drug_product:
     class: Practo\MDS\Model\DrugProductClient
@@ -81,34 +71,24 @@ services:
   practo_mds.drug_regulatory_classification:
     class: Practo\MDS\Model\DrugRegulatoryClassificationClient
     arguments:
-      - %practo_mds.base_uri%
-      - { update_metadata : ['@practo_mds.auth_utility', attachHeaders], credentials : null }
-      - '@practo_mds.grpc_channel'
+      - '@practo_mds.rest_utility'
 
   practo_mds.route_of_administration:
     class: Practo\MDS\Model\RouteOfAdministrationClient
     arguments:
-      - %practo_mds.base_uri%
-      - { update_metadata : ['@practo_mds.auth_utility', attachHeaders], credentials : null }
-      - '@practo_mds.grpc_channel'
+      - '@practo_mds.rest_utility'
 
   practo_mds.specialization:
     class: Practo\MDS\Model\SpecializationClient
     arguments:
-      - %practo_mds.base_uri%
-      - { update_metadata : ['@practo_mds.auth_utility', attachHeaders], credentials : null }
-      - '@practo_mds.grpc_channel'
+      - '@practo_mds.rest_utility'
 
   practo_mds.system_of_medicine:
     class: Practo\MDS\Model\SystemOfMedicineClient
     arguments:
-      - %practo_mds.base_uri%
-      - { update_metadata : ['@practo_mds.auth_utility', attachHeaders], credentials : null }
-      - '@practo_mds.grpc_channel'
+      - '@practo_mds.rest_utility'
 
   practo_mds.unit_of_measure:
     class: Practo\MDS\Model\UnitOfMeasureClient
     arguments:
-      - %practo_mds.base_uri%
-      - { update_metadata : ['@practo_mds.auth_utility', attachHeaders], credentials : null }
-      - '@practo_mds.grpc_channel'
+      - '@practo_mds.rest_utility'

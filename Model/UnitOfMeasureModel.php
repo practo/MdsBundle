@@ -4,6 +4,8 @@
 
 namespace Practo\MDS\Model;
 
+
+use JMS\Serializer\Annotation\Type;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
@@ -15,66 +17,82 @@ class UnitOfMeasureModel extends \Google\Protobuf\Internal\Message
 {
     /**
      * <code>string symbol = 1;</code>
+     * @Type("string")
      */
     private $symbol = '';
     /**
      * <code>repeated string tags = 2;</code>
+     * @Type("array<string>")
      */
     private $tags;
     /**
      * <code>repeated string references = 3;</code>
+     * @Type("array<string>")
      */
     private $references;
     /**
      * <code>repeated string synonyms = 4;</code>
+     * @Type("array<string>")
      */
     private $synonyms;
     /**
      * <code>string id = 5;</code>
+     * @Type("string")
      */
     private $id = '';
     /**
      * <code>sfixed64 created = 6;</code>
+     * @Type("integer")
      */
     private $created = 0;
     /**
      * <code>sfixed64 modified = 7;</code>
+     * @Type("integer")
      */
     private $modified = 0;
     /**
      * <code>string merged_to = 8;</code>
+     * @Type("string")
      */
     private $merged_to = '';
     /**
      * <code>string status = 9;</code>
+     * @Type("string")
      */
     private $status = '';
     /**
      * <code>string source = 10;</code>
+     * @Type("string")
      */
     private $source = '';
     /**
      * <code>bool relationship_concept = 11;</code>
+     * @Type("boolean")
      */
     private $relationship_concept = false;
     /**
      * <code>string creator = 12;</code>
+     * @Type("string")
      */
     private $creator = '';
     /**
      * <code>string comments = 13;</code>
+     * @Type("string")
      */
     private $comments = '';
     /**
      * <code>map&lt;string, string&gt; additional_fields = 14;</code>
+     * @Type("array")
      */
     private $additional_fields;
     /**
      * <code>bool visible = 15;</code>
+     * @Type("boolean")
      */
     private $visible = false;
     /**
      * <code>sfixed32 version = 16;</code>
+     * @Type("integer")
      */
     private $version = 0;
 
@@ -96,7 +114,6 @@ class UnitOfMeasureModel extends \Google\Protobuf\Internal\Message
      */
     public function setSymbol($var)
     {
-        GPBUtil::checkString($var, True);
         $this->symbol = $var;
     }
 
@@ -113,7 +130,6 @@ class UnitOfMeasureModel extends \Google\Protobuf\Internal\Message
      */
     public function setTags(&$var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->tags = $var;
     }
 
@@ -130,7 +146,6 @@ class UnitOfMeasureModel extends \Google\Protobuf\Internal\Message
      */
     public function setReferences(&$var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->references = $var;
     }
 
@@ -147,7 +162,6 @@ class UnitOfMeasureModel extends \Google\Protobuf\Internal\Message
      */
     public function setSynonyms(&$var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->synonyms = $var;
     }
 
@@ -164,7 +178,6 @@ class UnitOfMeasureModel extends \Google\Protobuf\Internal\Message
      */
     public function setId($var)
     {
-        GPBUtil::checkString($var, True);
         $this->id = $var;
     }
 
@@ -181,7 +194,6 @@ class UnitOfMeasureModel extends \Google\Protobuf\Internal\Message
      */
     public function setCreated($var)
     {
-        GPBUtil::checkInt64($var);
         $this->created = $var;
     }
 
@@ -198,7 +210,6 @@ class UnitOfMeasureModel extends \Google\Protobuf\Internal\Message
      */
     public function setModified($var)
     {
-        GPBUtil::checkInt64($var);
         $this->modified = $var;
     }
 
@@ -215,7 +226,6 @@ class UnitOfMeasureModel extends \Google\Protobuf\Internal\Message
      */
     public function setMergedTo($var)
     {
-        GPBUtil::checkString($var, True);
         $this->merged_to = $var;
     }
 
@@ -232,7 +242,6 @@ class UnitOfMeasureModel extends \Google\Protobuf\Internal\Message
      */
     public function setStatus($var)
     {
-        GPBUtil::checkString($var, True);
         $this->status = $var;
     }
 
@@ -249,7 +258,6 @@ class UnitOfMeasureModel extends \Google\Protobuf\Internal\Message
      */
     public function setSource($var)
     {
-        GPBUtil::checkString($var, True);
         $this->source = $var;
     }
 
@@ -266,7 +274,6 @@ class UnitOfMeasureModel extends \Google\Protobuf\Internal\Message
      */
     public function setRelationshipConcept($var)
     {
-        GPBUtil::checkBool($var);
         $this->relationship_concept = $var;
     }
 
@@ -283,7 +290,6 @@ class UnitOfMeasureModel extends \Google\Protobuf\Internal\Message
      */
     public function setCreator($var)
     {
-        GPBUtil::checkString($var, True);
         $this->creator = $var;
     }
 
@@ -300,7 +306,6 @@ class UnitOfMeasureModel extends \Google\Protobuf\Internal\Message
      */
     public function setComments($var)
     {
-        GPBUtil::checkString($var, True);
         $this->comments = $var;
     }
 
@@ -333,7 +338,6 @@ class UnitOfMeasureModel extends \Google\Protobuf\Internal\Message
      */
     public function setVisible($var)
     {
-        GPBUtil::checkBool($var);
         $this->visible = $var;
     }
 
@@ -350,7 +354,6 @@ class UnitOfMeasureModel extends \Google\Protobuf\Internal\Message
      */
     public function setVersion($var)
     {
-        GPBUtil::checkInt32($var);
         $this->version = $var;
     }
 
