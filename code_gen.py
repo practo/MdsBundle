@@ -187,7 +187,7 @@ def gen_client_file(folder_path, file_name):
     f.write("    }\n")
 
     #generate fetch function
-    fetch_response = class_name + 'Response'
+    fetch_response = 'Fetch' + concept_name + 'Response'
 
     f.write("\n")
     f.write("   /**\n")
@@ -198,7 +198,7 @@ def gen_client_file(folder_path, file_name):
     f.write("   public function fetch(\Practo\MDS\Model\FetchRequest $argument,\n")
     f.write("     $metadata = [], $options = []) {\n")
     f.write("\n")
-    f.write("       $path = \"/concept/drug_brand/\".$argument->getConceptId();\n")
+    f.write("       $path = \"/concept/" + class_name + "/\".$argument->getConceptId();\n")
     f.write("       $this->restUtility->setPath($path);\n")
     f.write("       $this->restUtility->setMethod('GET');\n")
     f.write("       $this->restUtility->setDefaultHeaders();\n")
