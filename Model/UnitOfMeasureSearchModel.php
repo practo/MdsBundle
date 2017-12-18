@@ -4,6 +4,8 @@
 
 namespace Practo\MDS\Model;
 
+
+use JMS\Serializer\Annotation\Type;
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
@@ -15,14 +17,17 @@ class UnitOfMeasureSearchModel extends \Google\Protobuf\Internal\Message
 {
     /**
      * <code>string symbol = 1;</code>
+     * @Type("string")
      */
     private $symbol = '';
     /**
      * <code>string tags = 2;</code>
+     * @Type("string")
      */
     private $tags = '';
     /**
      * <code>string synonyms = 4;</code>
+     * @Type("string")
      */
     private $synonyms = '';
 
@@ -44,7 +49,6 @@ class UnitOfMeasureSearchModel extends \Google\Protobuf\Internal\Message
      */
     public function setSymbol($var)
     {
-        GPBUtil::checkString($var, True);
         $this->symbol = $var;
     }
 
@@ -61,7 +65,6 @@ class UnitOfMeasureSearchModel extends \Google\Protobuf\Internal\Message
      */
     public function setTags($var)
     {
-        GPBUtil::checkString($var, True);
         $this->tags = $var;
     }
 
@@ -78,7 +81,6 @@ class UnitOfMeasureSearchModel extends \Google\Protobuf\Internal\Message
      */
     public function setSynonyms($var)
     {
-        GPBUtil::checkString($var, True);
         $this->synonyms = $var;
     }
 

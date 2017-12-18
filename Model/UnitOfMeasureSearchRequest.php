@@ -56,7 +56,6 @@ class UnitOfMeasureSearchRequest extends \Google\Protobuf\Internal\Message
      */
     public function setQ($var)
     {
-        GPBUtil::checkString($var, True);
         $this->q = $var;
     }
 
@@ -73,7 +72,6 @@ class UnitOfMeasureSearchRequest extends \Google\Protobuf\Internal\Message
      */
     public function setUnitOfMeasure(&$var)
     {
-        GPBUtil::checkMessage($var, \Practo\MDS\Model\UnitOfMeasureSearchModel::class);
         $this->unitOfMeasure = $var;
     }
 
@@ -90,7 +88,6 @@ class UnitOfMeasureSearchRequest extends \Google\Protobuf\Internal\Message
      */
     public function setLocale($var)
     {
-        GPBUtil::checkString($var, True);
         $this->locale = $var;
     }
 
@@ -107,7 +104,6 @@ class UnitOfMeasureSearchRequest extends \Google\Protobuf\Internal\Message
      */
     public function setSource($var)
     {
-        GPBUtil::checkString($var, True);
         $this->source = $var;
     }
 
@@ -124,7 +120,6 @@ class UnitOfMeasureSearchRequest extends \Google\Protobuf\Internal\Message
      */
     public function setLimit($var)
     {
-        GPBUtil::checkInt32($var);
         $this->limit = $var;
     }
 
@@ -141,7 +136,6 @@ class UnitOfMeasureSearchRequest extends \Google\Protobuf\Internal\Message
      */
     public function setOffset($var)
     {
-        GPBUtil::checkInt32($var);
         $this->offset = $var;
     }
 

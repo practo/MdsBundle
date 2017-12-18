@@ -40,7 +40,6 @@ class UnitOfMeasureModelList extends \Google\Protobuf\Internal\Message
      */
     public function setUnitOfMeasure(&$var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Practo\MDS\Model\UnitOfMeasureModel::class);
         $this->unitOfMeasure = $var;
     }
 
@@ -57,7 +56,6 @@ class UnitOfMeasureModelList extends \Google\Protobuf\Internal\Message
      */
     public function setCount($var)
     {
-        GPBUtil::checkInt64($var);
         $this->count = $var;
     }
 
