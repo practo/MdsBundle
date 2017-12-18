@@ -187,6 +187,7 @@ def gen_client_file(folder_path, file_name):
     f.write("    }\n")
 
     #generate fetch function
+    fetch_rest_path_name = '/concept/' + convert_to_snake_case(concept_name)
     fetch_response = 'Fetch' + concept_name + 'Response'
 
     f.write("\n")
@@ -198,7 +199,7 @@ def gen_client_file(folder_path, file_name):
     f.write("   public function fetch(\Practo\MDS\Model\FetchRequest $argument,\n")
     f.write("     $metadata = [], $options = []) {\n")
     f.write("\n")
-    f.write("       $path = \"/concept/" + class_name + "/\".$argument->getConceptId();\n")
+    f.write("       $path = " + fetch_rest_path_name + "/\".$argument->getConceptId();\n")
     f.write("       $this->restUtility->setPath($path);\n")
     f.write("       $this->restUtility->setMethod('GET');\n")
     f.write("       $this->restUtility->setDefaultHeaders();\n")
@@ -211,7 +212,6 @@ def gen_client_file(folder_path, file_name):
 
     
     #generate fetch extended function
-    fetch_rest_path_name = '/concept/' + convert_to_snake_case(concept_name)
     fetch_extended_response = 'Fetch' + class_name + 'ExtendedResponse'
 
     f.write("   /**\n")
@@ -339,8 +339,8 @@ def remove_protobuf_type_checks_for_non_models_clients():
 
 
 #methods to run
-#create_concept_clients()
-#create_concept_models()
+create_concept_clients()
+create_concept_models()
 remove_protobuf_type_checks_for_non_models_clients()
 
 

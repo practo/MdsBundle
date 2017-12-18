@@ -69,12 +69,12 @@ namespace Practo\MDS\Model {
    public function fetch(\Practo\MDS\Model\FetchRequest $argument,
      $metadata = [], $options = []) {
 
-       $path = "/concept/drug_brand/".$argument->getConceptId();
+       $path = /concept/unit_of_measure/".$argument->getConceptId();
        $this->restUtility->setPath($path);
        $this->restUtility->setMethod('GET');
        $this->restUtility->setDefaultHeaders();
        $this->restUtility->setResponseType('Practo\MDS\Model\UnitOfMeasureModel');
-       $this->restUtility->setResponseClass('Practo\MDS\Model\UnitOfMeasureClientResponse');
+       $this->restUtility->setResponseClass('Practo\MDS\Model\FetchUnitOfMeasureResponse');
        $this->restUtility->setResponseMethod('setUnitOfMeasure');
 
        return $this->restUtility;
