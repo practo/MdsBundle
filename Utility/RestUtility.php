@@ -198,7 +198,10 @@ class RestUtility {
         foreach ($jsonData as $key => $value) {
             $newValue = $value;
             $newKey = $key;
-            if ($key[0] == '$') {
+            // Numeric keys (list items) are ints; PHP 7.4 raises "Trying to access array
+            // offset on value of type int" for $key[0], which Symfony escalates to an
+            // ErrorException and breaks every drug search. 7.0 silently gave null.
+            if (is_string($key) && isset($key[0]) && $key[0] == '$') {
                $newKey = substr($key, 1);
             } elseif (is_object($value) || is_array($value)) {
                 $newKey = $key;
